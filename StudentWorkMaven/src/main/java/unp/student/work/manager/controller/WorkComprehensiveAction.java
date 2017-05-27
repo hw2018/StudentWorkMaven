@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import unp.student.work.manager.domain.StudentQuanxian;
 import unp.student.work.manager.domain.comprehensive_record;
 import unp.student.work.manager.service.WorkComprehensiveService;
-import unp.student.work.manager.service.StudentQuanXianService;
+import unp.student.work.manager.service.WebStudentQuanXianService;
 import unp.student.work.manager.utils.PageBean;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -26,7 +26,7 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 	@Resource
 	private WorkComprehensiveService comprehensiveService;
 	@Resource
-	private StudentQuanXianService studentQuanXianService;
+	private WebStudentQuanXianService studentQuanXianService;
 	private Map<String,Object> request=null;
 	private  Map<String,Object> session=null;
 	private comprehensive_record comprehensive_record=new comprehensive_record();

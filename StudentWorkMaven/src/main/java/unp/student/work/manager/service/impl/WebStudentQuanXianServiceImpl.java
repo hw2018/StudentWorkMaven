@@ -6,15 +6,15 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import unp.student.work.manager.dao.StudentQuanXianDao;
+import unp.student.work.manager.dao.WebStudentQuanXianDao;
 import unp.student.work.manager.domain.StudentQuanxian;
-import unp.student.work.manager.service.StudentQuanXianService;
+import unp.student.work.manager.service.WebStudentQuanXianService;
 
 @Service("studentQuanXianService")
-public class StudentQuanXianServiceImpl implements StudentQuanXianService {
+public class WebStudentQuanXianServiceImpl implements WebStudentQuanXianService {
 
 	@Resource
-	private StudentQuanXianDao studentQuanXianDao;
+	private WebStudentQuanXianDao studentQuanXianDao;
 	
 	//根据学号获取学生权限
 	public StudentQuanxian getByStduent(String studentid) {

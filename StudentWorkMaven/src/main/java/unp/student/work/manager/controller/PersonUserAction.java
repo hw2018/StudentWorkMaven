@@ -19,7 +19,7 @@ import unp.student.work.manager.domain.PersonPersonInfo;
 import unp.student.work.manager.domain.PersonPersonInfoDto2;
 import unp.student.work.manager.domain.StudentQuanxian;
 import unp.student.work.manager.service.PersonInfoService;
-import unp.student.work.manager.service.StudentQuanXianService;
+import unp.student.work.manager.service.WebStudentQuanXianService;
 
 @Component
 public class PersonUserAction extends ActionSupport 
@@ -36,7 +36,7 @@ public class PersonUserAction extends ActionSupport
 	PersonInfoService personInfoService;
 	
 	@Resource
-	StudentQuanXianService studentQuanXianService;
+	WebStudentQuanXianService studentQuanXianService;
 	public String userValidate() throws Exception 
 	{
 		Map<String, Object> session = ActionContext.getContext().getSession();

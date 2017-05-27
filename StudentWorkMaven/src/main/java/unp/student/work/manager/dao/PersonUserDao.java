@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Component;
 
 import unp.student.work.manager.domain.PersonPersonInfo;
-import unp.student.work.manager.domain.teacher_quanxian;
+import unp.student.work.manager.domain.TeacherQuanxian;
 
 @Component
 public class PersonUserDao 
@@ -32,9 +32,9 @@ public class PersonUserDao
 	public boolean checkTeacher(String studentid, String password)throws Exception
 	{
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("from teacher_quanxian tq where tq.passname=? and tq.password=?").setParameter(0, studentid).setParameter(1, password);;
+		Query q = session.createQuery("from TeacherQuanxian tq where tq.passname=? and tq.password=?").setParameter(0, studentid).setParameter(1, password);;
 		//因setParameter返回的是Query，所以可以一直嵌套下去
-		teacher_quanxian tq = (teacher_quanxian)q.uniqueResult();
+		TeacherQuanxian tq = (TeacherQuanxian)q.uniqueResult();
 		if(tq!=null)
 			return true;
 		else

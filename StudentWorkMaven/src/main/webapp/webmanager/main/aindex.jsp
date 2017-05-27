@@ -61,7 +61,7 @@
     			<div title="基本操作">   
         			<ul>
 						<li><a href="#" title="send/student_query.action">学生权限管理</a>
-						<li><a href="#" title="send_product_query.action">教师权限管理</a>
+						<li><a href="#" title="send/teacher_query.action">教师权限管理</a>
 					</ul>
     			</div>   
     			  

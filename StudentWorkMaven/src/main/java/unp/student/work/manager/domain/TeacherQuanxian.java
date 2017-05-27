@@ -7,7 +7,7 @@ package unp.student.work.manager.domain;
  * teacher_quanxian entity. @author MyEclipse Persistence Tools
  */
 
-public class teacher_quanxian  implements java.io.Serializable {
+public class TeacherQuanxian  implements java.io.Serializable {
 
 
     // Fields    
@@ -21,12 +21,12 @@ public class teacher_quanxian  implements java.io.Serializable {
     // Constructors
 
     /** default constructor */
-    public teacher_quanxian() {
+    public TeacherQuanxian() {
     }
 
     
     /** full constructor */
-    public teacher_quanxian(String passname, String password, String quanxian) {
+    public TeacherQuanxian(String passname, String password, String quanxian) {
         this.passname = passname;
         this.password = password;
         this.quanxian = quanxian;

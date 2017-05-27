@@ -10,7 +10,7 @@ import unp.student.work.manager.domain.student_counsellor;
 
 
 
-public interface StudentQuanXianService {
+public interface WebStudentQuanXianService {
 	
 	
 	public StudentQuanxian getByStduent(String studentid);

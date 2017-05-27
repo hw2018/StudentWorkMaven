@@ -30,7 +30,7 @@ import unp.student.work.manager.domain.StudentQuanxian;
 import unp.student.work.manager.domain.late_info;
 import unp.student.work.manager.domain.late_person;
 import unp.student.work.manager.service.WorkLateInfoService;
-import unp.student.work.manager.service.StudentQuanXianService;
+import unp.student.work.manager.service.WebStudentQuanXianService;
 import unp.student.work.manager.utils.PageBean;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -56,7 +56,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 	
 	
 	@Resource
-	private StudentQuanXianService studentQuanXianService;
+	private WebStudentQuanXianService studentQuanXianService;
 	
 	@Resource
 	private WorkLateInfoService lateInfoService;

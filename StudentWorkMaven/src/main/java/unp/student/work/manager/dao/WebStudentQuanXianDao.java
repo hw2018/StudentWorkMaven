@@ -4,7 +4,7 @@ import java.util.List;
 
 import unp.student.work.manager.domain.StudentQuanxian;
 
-public interface StudentQuanXianDao extends BaseDao<StudentQuanxian>{
+public interface WebStudentQuanXianDao extends BaseDao<StudentQuanxian>{
 
 	
 	public StudentQuanxian getByStudent(String studentid);

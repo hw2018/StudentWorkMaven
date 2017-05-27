@@ -14,21 +14,21 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import unp.student.work.manager.domain.StudentQuanxian;
-import unp.student.work.manager.service.StudentQuanXianService;
+import unp.student.work.manager.service.WebStudentQuanXianService;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Controller("studentquanxianAction")
 @Scope("prototype")
-public class StudentQuanxianAction extends ActionSupport implements ModelDriven<StudentQuanxian>,RequestAware,SessionAware{
+public class WebStudentQuanxianAction extends ActionSupport implements ModelDriven<StudentQuanxian>,RequestAware,SessionAware{
 
 	private Map<String,Object> session=null;
 	private Map<String,Object> request=null;
 	private StudentQuanxian studentQuanxian=new StudentQuanxian();
 	
 	@Resource
-	private StudentQuanXianService studentQuanXianService;
+	private WebStudentQuanXianService studentQuanXianService;
 	
 	private int page;
 	private int rows;
