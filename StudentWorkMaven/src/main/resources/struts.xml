@@ -362,9 +362,7 @@
 			<result name="showActivities">/apply/activity_list.jsp</result>	
 			<result name="success" type="chain">showActivity</result>			
 		</action>
-		
-		<!-- 用于链接请求 -->
-		<!-- 这里就是直接显示新增页面 -->
+
 		<action name="activity_add">
 		    <!-- 此处需要“/” -->
 			<result name="success">/apply/apply/activity_add.jsp</result>
