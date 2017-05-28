@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import unp.student.work.manager.domain.counsellor;
 import unp.student.work.manager.domain.student_counsellor;
 import unp.student.work.manager.service.WorkCounsellorService;
+import unp.student.work.manager.utils.PageBean;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,6 +28,8 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 	private float[] singlescore;
 	private int select;
 	
+	private int pageno=1;
+	
 	@Resource
 	private WorkCounsellorService counsellorService;
 	public counsellor getModel() {
@@ -34,6 +37,20 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 		return this.counsellor;
 	}
 	
+
+
+
+	public int getPageno() {
+		return pageno;
+	}
+
+
+
+
+	public void setPageno(int pageno) {
+		this.pageno = pageno;
+	}
+
 
 
 
@@ -98,5 +115,12 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 		request.put("teacher", select);
 		
 		return "test";
+	}
+	
+	public String getresult(){
+		PageBean pageBean=counsellorService.getResult(pageno, 10);
+		
+		request.put("pageBean", pageBean);
+		return "result";
 	}
 }

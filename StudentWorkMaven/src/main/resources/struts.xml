@@ -37,7 +37,8 @@
 			<action name="*_counsellor" class="counsellorAction" method="{1}">
 				<result name="select" >/work/counsellor/counsellor_select.jsp</result>
 				<result name="test" >/work/counsellor/counsellor_test.jsp</result>
-			</action>
+				<result name="result">/work/counsellor/counsellor_result.jsp</result>
+ 			</action>
 		</package>
 		<!-- 后台学生权限部分 -->
 		<package name="studentquanxian" namespace="/studentquanxian" extends="json-default">

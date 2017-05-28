@@ -5,7 +5,7 @@
 <html>
  <head>		
  		<base href="<%=basePath%>">
-		<title>基金交易系统</title>
+		<title>工作管理</title>
 </head>		
 	<FRAMESET frameSpacing="0" cols="260,*">
 		<FRAME name=menu src="work/index/left.jsp"  frameBorder=0>

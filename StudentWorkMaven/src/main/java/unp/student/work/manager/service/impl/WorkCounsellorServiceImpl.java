@@ -21,6 +21,7 @@ import unp.student.work.manager.domain.PersonInfo;
 import unp.student.work.manager.domain.counsellor;
 import unp.student.work.manager.domain.student_counsellor;
 import unp.student.work.manager.service.WorkCounsellorService;
+import unp.student.work.manager.utils.PageBean;
 
 @Service("counsellorService")
 public class WorkCounsellorServiceImpl implements WorkCounsellorService {
@@ -127,6 +128,16 @@ public class WorkCounsellorServiceImpl implements WorkCounsellorService {
 		studentCounsellorDao.save(sc);
 		
 		
+	}
+	@Override
+	public PageBean getResult(int pageno,int size) {
+		// TODO Auto-generated method stub
+		PageBean pageBean=new PageBean();
+		pageBean.setCurPage(pageno);
+		pageBean.setData(counsellorDao.getResultByPage(pageno, size));
+		pageBean.setMaxPage((int)counsellorDao.findCount(counsellor.class));
+		
+		return pageBean;
 	}
 
 
