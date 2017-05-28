@@ -11,7 +11,7 @@ unp.student.work.manager.service.PersonPlanService,
 org.springframework.context.ApplicationContext,
 org.springframework.context.support.ClassPathXmlApplicationContext,
 org.hibernate.Session,org.hibernate.Query" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> 
 <% 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -173,7 +173,7 @@ int []n = personPlanServices.getStatistics((String)session.getAttribute("student
 &#12288;已完成：<%=n[0]%>项<br/><br/>
 &#12288;未完成：<%=n[1]%>项<br/><br/>
 &#12288;总数量：<%=n[2]%>项&#12288;&#12288;
-&#12288;完成率：<%=(((float)n[0])/((float)n[2]))*100.0f%>%
+&#12288;完成率：<fmt:formatNumber value="<%=((float)n[0])/((float)n[2])*100.0f%>" pattern="0.00"/> %
 <br/>
 </div>
 </td>
@@ -188,7 +188,7 @@ int []n = personPlanServices.getStatistics((String)session.getAttribute("student
 
 
 
-<h2 align="left">计划列表：</h2><br/>
+<h2 align="left">计划列表：</h2>
 
 <%!
 ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml"); 
