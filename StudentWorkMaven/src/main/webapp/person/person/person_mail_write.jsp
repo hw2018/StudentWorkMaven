@@ -50,7 +50,7 @@ function getdiv()
 
 <h2 align="left">写邮件：</h2>
 
-<form name="form1" method="post" action="<%=basePath%>person/sendMail"> 
+<form name="form1" method="post" action="<%=basePath%>person/sendMail.action"> 
 发件人：<select name="from" style="width:330px;">
 <%
 ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml"); 

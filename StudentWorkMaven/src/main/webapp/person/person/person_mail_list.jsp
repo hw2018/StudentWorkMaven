@@ -58,7 +58,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:300px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyMailAccount">
+<form method="post" action="<%=basePath%>person/modifyMailAccount.action">
 <input id="" name="studentid" type="hidden" value="<%=session.getAttribute("studentid")%>"/> <!-- 隐藏域用于传递session中的studentid信息到Action -->
 <lable style="line-height:30px;">ID：&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">邮箱：<input type="text" id = "modifyaddress" name="address" maxlength="50" size="50"/></lable><br/>  
@@ -73,7 +73,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">添加邮箱账号：&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288<a href="<%=basePath%>person/person/person_mail_write.jsp" target=dmMain><input type="button" value="写邮件"/></a></h2>
-<form name="form1" method="post" onsubmit="" action="<%=basePath%>person/addMailAccount" style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" onsubmit="" action="<%=basePath%>person/addMailAccount.action" style="padding:15px;border:thin dashed black;">
 <input id="" name="studentid" type="hidden" value="<%=session.getAttribute("studentid")%>"/> <!-- 隐藏域用于传递session中的studentid信息到Action -->
 <table><tr>
 <td>
@@ -152,7 +152,7 @@ personMailAccount = (PersonMailAccount)it.next();  //初始时Iterator的指针�
 <td class="content" style="width:15%;"><%=personMailAccount.getPassword()%></td>
 <td class="content" style="width:35%;"><%=personMailAccount.getRemark()%></td>
 <td class="content" style="width:15%;"><a onclick="fun1('<%=personMailAccount.getId()%>','<%=personMailAccount.getAddress()%>','<%=personMailAccount.getAccount()%>','<%=personMailAccount.getPassword()%>','<%=personMailAccount.getRemark()%>')" style="cursor:pointer;">修改&#160|&#160
-</a><a href="<%=basePath%>person/deleteMailAccount?id=<%=personMailAccount.getId()%>">删除</a></td>
+</a><a href="<%=basePath%>person/deleteMailAccount.action?id=<%=personMailAccount.getId()%>">删除</a></td>
 </tr>
 <%}
 while(it.hasNext());

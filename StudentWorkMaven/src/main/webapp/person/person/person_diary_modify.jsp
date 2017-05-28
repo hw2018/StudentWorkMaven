@@ -68,7 +68,7 @@ function setdiv()
 <h2 align="left">日记本：</h2>
 
 
-<form name="form2" method="post" action="<%=basePath%>person/modifyDiary"> 
+<form name="form2" method="post" action="<%=basePath%>person/modifyDiary.action"> 
 <div style="position:relative; margin:0 auto;width:800px;">
 &#12288&#12288&#12288&#12288&#12288&#12288
 <input id="id" name="id" type="hidden"/>    <!-- 更新日记后，需要action做更新操作，但是action需要知道这条记录的主键id，这里通过隐藏域传递主键id值 -->

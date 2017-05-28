@@ -37,7 +37,7 @@ a{color:black;font-size:15px;font-fimily:楷体;text-decoration:none;margin-left
       <input type="text" name="studentid" placeholder="用户名"/>
       <input type="password" name="password" placeholder="密码"/>
       <input class="b" type="submit" style="font-size:20px;" value="登陆"/>
-      <a href="#">注册</a>
+      <a href="register.jsp">注册</a>
     </form>
   </div>   
   

@@ -62,7 +62,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:270px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyFinance">
+<form method="post" action="<%=basePath%>person/modifyFinance.action">
 <lable style="line-height:30px;">编号：<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">名称：<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>
 类型：<select id="modifytype" name="type">  
@@ -87,7 +87,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <tr>
 <td>
 <h2 align="left">添加财务记录：</h2>
-<form name="form1" method="post" action="<%=basePath%>person/addFinance"  style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" action="<%=basePath%>person/addFinance.action"  style="padding:15px;border:thin dashed black;">
 名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
 类型：
 <select name="type"> 
@@ -198,7 +198,7 @@ else if(type.equals("borrow")) out.println("借贷");
 <td class="content" style="width:20%;"><%=personFinance.getCreatetime()%></td>
 <td class="content" style="width:20%;"><%=personFinance.getRemark()%></td>
 <td class="content" style="width:15%;"><a onclick="fun1('<%=personFinance.getId()%>','<%=personFinance.getName()%>','<%=personFinance.getType()%>','<%=personFinance.getMoney()%>','<%=personFinance.getCreatetime()%>','<%=personFinance.getRemark()%>')" style="cursor:pointer;">修改&#160|&#160
-</a><a href="<%=basePath%>person/deleteFinance?id=<%=personFinance.getId()%>">删除</a></td>
+</a><a href="<%=basePath%>person/deleteFinance.action?id=<%=personFinance.getId()%>">删除</a></td>
 </tr>
 <%}
 while(it.hasNext());

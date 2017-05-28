@@ -87,7 +87,7 @@ personDiary = (PersonDiary)it.next();  //初始时Iterator的指针指向第一�
 <td class="content" style="width:30%;"><%=personDiary.getName()%></td>
 <td class="content" style="width:40%;"><%=personDiary.getCreatetime()%></td>
 <td class="content" style="width:20%;"><a href="<%=basePath%>person/person/person_diary_modify.jsp?personDiaryId=<%=personDiary.getId()%>">编辑&#160|&#160</a>
-<a href="<%=basePath%>person/deleteDiary?id=<%=personDiary.getId()%>">删除</a></td>
+<a href="<%=basePath%>person/deleteDiary.action?id=<%=personDiary.getId()%>">删除</a></td>
 </tr>
 <%}
 while(it.hasNext());

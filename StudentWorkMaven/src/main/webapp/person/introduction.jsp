@@ -34,7 +34,7 @@ table{border:thin solid black;}
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <h1 align="center">欢迎使用个人管理系统！</h1>
 
-
+<SCRIPT src="person/resources/scripts/canvas-nest.min.js" type="text/javascript" count="120" opacity="100" zindex="-1" color="0,0,255"></SCRIPT>
 </body>
 </html>
 

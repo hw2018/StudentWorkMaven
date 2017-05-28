@@ -50,7 +50,7 @@ function getdiv()
 
 <h2 align="left">日记本：</h2>
 
-<form name="form1" method="post" action="<%=basePath%>person/addDiary"> 
+<form name="form1" method="post" action="<%=basePath%>person/addDiary.action"> 
 <div style="position:relative; margin:0 auto;width:800px;">
 &#12288&#12288&#12288&#12288&#12288&#12288  
 <input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('标题不能为空!')" id="name" class="title" type="text" name="name" size="50" maxlength="128" placeholder="请在这里输入日记标题" />
