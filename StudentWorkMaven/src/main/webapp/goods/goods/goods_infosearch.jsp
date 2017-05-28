@@ -37,10 +37,9 @@ input{background-color:ebf2fb;border:thin solid black;}
 </div>
 
 <h2 align="left">关键字搜索：</h2>
-<form name="form1" method="post" action="<%=basePath%>goods/searchgoodsinfo"  style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" action="<%=basePath%>goods/searchgoodsinfo.action"  style="padding:15px;border:thin dashed black;">
 <div>名称：<input class="text-input medium-input" name="searchkey" id="name" type="text" maxlength="50" size="50" />&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288<input type="submit" value="搜索"/>&#12288<input type="reset" value="取消"/></div><br/>
 </form>
-<s:property value="searchkey"/>
 
 <br/>
 
@@ -53,13 +52,12 @@ public int pageSize;  //用来保存每一页的行数
 public int pageCount;	//用来保存页数
 public int curPage; 
 public Goodsinfoall goodsinfoall;
-public GoodsInfoallAction goodsinfoallAction = new GoodsInfoallAction();
-private String key = goodsinfoallAction.getSearchkey();
+private String key;
 %>
 
 <%
-String studentid="221400401"; //这里模拟获取session中用户名的方法 
-
+String studentid = (String)session.getAttribute("studentid"); //获取当前用户的studentid
+key = (String)request.getAttribute("key");
 goodsinfosearchPageDao.initialize(key);
 pageSize = goodsinfosearchPageDao.getPageSize();  //设置每一页的行数
 pageCount = goodsinfosearchPageDao.getPageCount();	//用来保存页数
@@ -91,9 +89,9 @@ Iterator it = goodsinfoallt.iterator();
 <td class="top" style="width:5%;">id</td>
 <td class="top" style="width:15%;">名称</td>
 <td class="top" style="width:10%;">单价</td>
-<td class="top" style="width:40%;">描述</td>
-<td class="top" style="width:20%;">时间</td>
-<td class="top" style="width:10%;">联系方式</td>
+<td class="top" style="width:35%;">描述</td>
+<td class="top" style="width:15%;">时间</td>
+<td class="top" style="width:20%;">联系方式</td>
 </tr>
 
 <% 
@@ -105,9 +103,9 @@ goodsinfoall = (Goodsinfoall)it.next(); //初始时Iterator的指针指向第一
 <td class="content" style="width:5%;"><%=goodsinfoall.getId()%></td>
 <td class="content" style="width:15%;"><%=goodsinfoall.getName()%></td>
 <td class="content" style="width:10%;"><%=goodsinfoall.getPrice()%></td>
-<td class="content" style="width:40%;"><%=goodsinfoall.getDes()%></td>
-<td class="content" style="width:20%;"><%=goodsinfoall.getTime()%></td>
-<td class="content" style="width:20%;"><%=goodsinfoall.getTime()%></td>
+<td class="content" style="width:35%;"><%=goodsinfoall.getDes()%></td>
+<td class="content" style="width:15%;"><%=goodsinfoall.getTime()%></td>
+<td class="content" style="width:20%;"><%=goodsinfoall.getContact()%></td>
 </tr>
 <%}
 while(it.hasNext());
@@ -121,12 +119,12 @@ while(it.hasNext());
 <tr>
 <td></td>
 <td></td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infosearch.jsp?curPage=1">首页&nbsp|</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infosearch.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infosearch.jsp?curPage=1">首页&nbsp|</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infosearch.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
 <td class="bottom">第<%=curPage%>页/</td> 
 <td class="bottom">共<%=pageCount%>页</td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infosearch.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infosearch.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infosearch.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infosearch.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
 <td ></td>
 <td></td>
 </tr>

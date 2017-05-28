@@ -35,6 +35,9 @@ public class Goodsrbpmy {
 	@Column(name = "des")
 	private String des;
 
+	@Column(name = "contact")
+	private String contact;
+
 	@Column(name = "time")
 	private Date time;
 
@@ -94,6 +97,14 @@ public class Goodsrbpmy {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 }

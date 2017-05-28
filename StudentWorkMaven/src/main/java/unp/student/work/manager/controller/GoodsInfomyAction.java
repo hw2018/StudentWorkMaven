@@ -1,11 +1,13 @@
 package unp.student.work.manager.controller;
 
 import java.util.Date;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import unp.student.work.manager.domain.Goodsinfomy;
@@ -29,7 +31,10 @@ public class GoodsInfomyAction extends ActionSupport {
 	public String add() throws Exception {
 
 		Date d = new Date();
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsinfomy.setName(name);
 		goodsinfomy.setPrice(price);
 		goodsinfomy.setDes(des);
@@ -57,7 +62,10 @@ public class GoodsInfomyAction extends ActionSupport {
 		goodsinfomy.setDes(des);
 		goodsinfomy.setContact(contact);
 		goodsinfomy.setTime(d);
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsinfomy.setPersonPersonInfo(personPersonInfo);
 		goodsinfomyService.modify(goodsinfomy);
 

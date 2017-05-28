@@ -27,7 +27,7 @@ public class GoodsrbpallPageDao {
 	public void initialize() // 完成成员变量的初始化工作
 	{
 		Session s = sessionFactory.getCurrentSession();
-		Query q = s.createQuery("select count(*) from Goodsrbpmy");
+		Query q = s.createQuery("select count(*) from Goodsrbpall");
 		Number number = (Number) q.uniqueResult(); // uniqueResult返回的是object类型。这一句实现了得到查询结果的记录数量而不用返回查询结果
 		totalRecord = number.intValue(); // Number是Long和Integer的父类
 		pageCount = (totalRecord % pageSize == 0 ? totalRecord / pageSize : totalRecord / pageSize + 1);
