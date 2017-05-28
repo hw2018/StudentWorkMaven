@@ -28,7 +28,7 @@
 		<h3>新建活动</h3>
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="apply/addActivity.action" method="post"
+		<form name="form1" action="apply/apply/addActivity.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
 				活动人数：<input class="text-input medium-input" type="text"

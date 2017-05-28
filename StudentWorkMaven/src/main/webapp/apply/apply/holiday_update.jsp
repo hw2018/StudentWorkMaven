@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.util.List,com.studentmanagement.apply.domain.Holiday"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Holiday"%>
 <%@ include file="../common/head.jsp"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -32,7 +32,7 @@
 		<h3>更新基金信息</h3>
 	</div>
 	<div class="content-box-content">
-		<s:form name="form1" action="apply/saveHoliday.action" method="post"
+		<s:form name="form1" action="apply/apply/saveHoliday.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
 				留校开始日期：<input class="text-input medium-input" type="text"

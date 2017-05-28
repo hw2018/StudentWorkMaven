@@ -1,9 +1,9 @@
-<%@page import="com.studentmanagement.apply.util.PageBean"%>
+<%@page import="unp.student.work.manager.utils.PageBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@page import="java.util.List,com.studentmanagement.apply.domain.Activity"%>
-<%@page import="com.studentmanagement.apply.dao.ActivityDao"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Activity"%>
+<%@page import="unp.student.work.manager.dao.ApplyActivityDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -43,13 +43,13 @@
 			<td><s:property value="#f.principal"/></td>			
 			<td>
 			<s:date name="#f.createTime" format="yyyy-MM-dd"/>
-			<td><a href="apply/updateActivity.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/deleteActivity.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<td><a href="apply/apply/updateActivity.action?id=<s:property value='#f.id'/>">修改</a> 
+			<a href="apply/apply/deleteActivity.action?id=<s:property value='#f.id'/>">删除</a></td>
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/showActivity.action" method="post">
+	<form name="PageForm" action="apply/apply/showActivity.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>

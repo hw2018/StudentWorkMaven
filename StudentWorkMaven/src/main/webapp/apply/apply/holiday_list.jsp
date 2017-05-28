@@ -1,9 +1,9 @@
-<%@page import="com.studentmanagement.apply.util.PageBean"%>
+<%@page import="unp.student.work.manager.utils.PageBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@page import="java.util.List,com.studentmanagement.apply.domain.Holiday"%>
-<%@page import="com.studentmanagement.apply.dao.HolidayDao"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Holiday"%>
+<%@page import="unp.student.work.manager.dao.ApplyHolidayDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -42,13 +42,13 @@
 			<td><s:property value="#f.status"/></td>		
 			<td>
 			<s:date name="#f.createtime" format="yyyy-MM-dd"/>
-			<td><a href="apply/updateHoliday.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/deleteHoliday.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<td><a href="apply/apply/updateHoliday.action?id=<s:property value='#f.id'/>">修改</a> 
+			<a href="apply/apply/deleteHoliday.action?id=<s:property value='#f.id'/>">删除</a></td>
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/showHoliday.action" method="post">
+	<form name="PageForm" action="apply/apply/showHoliday.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>
