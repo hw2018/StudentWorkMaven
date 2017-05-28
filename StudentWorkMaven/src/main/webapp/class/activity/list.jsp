@@ -16,13 +16,6 @@
 </head>
 <body>
 
-	<h5 align="left">查询活动信息：</h5>
-<form name="form1" method="post" onsubmit="" action="search_classActivity.action" style="padding:15px;border:thin dashed black;">
-<table><tr>
-<td>
-<div>活动编号：<input class="text-input medium-input" name="body" id="name1" type="text" maxlength="100" size="30" /></div><br/>
-<input class="button" type="submit" value="查询" />
-</td>
 
 
 
@@ -60,7 +53,7 @@
 			<td><s:property value="#f.date"/></td>
 			
 			<td><s:property value="#f.master"/></td>
-			<td><a href="class/activity/content.jsp?id=<s:property value='#f.id'/>">查看</a></td>
+		    <td><s:property value="#f.content"/></td>
 			<td><a href="update_classActivity.action?id=<s:property value='#f.id'/>">修改</a> 
 			<a href="delete_classActivity.action?id=<s:property value='#f.id'/>">删除</a></td>
 		</tr>

@@ -1,7 +1,7 @@
 <%@page import="unp.student.work.manager.utils.PageBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/common/head.jsp"%>
+<%@ include file="../common/head.jsp"%>
 <%@page import="java.util.List,unp.student.work.manager.domain.ClassActivity"%>
 <%@page import="unp.student.work.manager.dao.ClassActivityDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
@@ -12,7 +12,7 @@
 <!--定义基准路径  -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>申请活动页面</title>
-<%@ include file="/common/cssjs.inc"%>
+<%@ include file="../common/cssjs.inc"%>
 <script language="javascript">
 	function checkNull() {
 		/*判断是否有空内容*/

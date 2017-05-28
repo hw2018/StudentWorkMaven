@@ -16,13 +16,6 @@
 </head>
 <body>
 
-	<h5 align="left">查询作业信息：</h5>
-<form name="form1" method="post" onsubmit="" action="search_classHomework.action" style="padding:15px;border:thin dashed black;">
-<table><tr>
-<td>
-<div>作业编号：<input class="text-input medium-input" name="body" id="name1" type="text" maxlength="100" size="30" /></div><br/>
-<input class="button" type="submit" value="查询" />
-</td>
 
 
 
