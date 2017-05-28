@@ -20,9 +20,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <base href="<%=basePath%>">   <!--定义基准路径  -->
-<script type="text/javascript" src="person/resources/scripts/jquery.js"></script>
-<script type="text/javascript" src="person/resources/scripts/hDate.js"></script>
-<link href="person/resources/css/hDate.css" rel="stylesheet" />
+
+<link href="person/resources/css/datePicker.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="person/resources/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="person/resources/scripts/jquery.date_input.pack.js"></script> 
+
 <style type="text/css">
 td.top{font-size:20px;font-weight:bold;border:thin dashed grey;text-align:center;line-height:30px;}
 td.content{font-size:20px;border:thin dashed grey;text-align:center;line-height:30px;}
@@ -52,6 +54,31 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 {
 	document.getElementById("modify").style.display = "none";
 }
+
+function check1()
+{
+	var start = document.getElementById("start");
+	var end = document.getElementById("end");
+	if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
+	{
+		alert("开始时间不能大于结束时间！");
+		return false;
+	}
+	
+}
+
+function check2()
+{
+	var start = document.getElementById("modifystart");
+	var end = document.getElementById("modifyend");
+	if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
+	{
+		alert("开始时间不能大于结束时间！");
+		return false;
+	}
+	
+}
+
 </script>
 
 
@@ -59,15 +86,24 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <body style="background-color:dee6f2">
 
 
+<script type="text/javascript">   <!-- 必须写在body中 -->
+$(function(){
+	$('#modifystart').date_input();
+	$('#modifyend').date_input();
+	$('#start').date_input();
+	$('#end').date_input();
+	})
+</script>
+
 
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:270px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="person/modifyPlan">
+<form method="post" onsubmit="return check2()" action="person/modifyPlan.action">
 <lable style="line-height:30px;">计划编号：<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">计划名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>
-<lable style="line-height:30px;">开始时间：<input onclick="calendar.show({ id: this })" type="text" id = "modifystart" name="start" maxlength="100" size="10" /></lable>&#12288;&#12288;&#12288;&nbsp;&nbsp;&nbsp;
-<lable style="line-height:30px;">结束时间：<input onclick="calendar.show({ id: this })" type="text" id = "modifyend" name="end" maxlength="100" size="10" /></lable><br/> 
+<lable style="line-height:30px;">开始时间：<input type="text" id = "modifystart" name="start" maxlength="100" size="10" /></lable>&#12288;&#12288;&#12288;&nbsp;&nbsp;&nbsp;
+<lable style="line-height:30px;">结束时间：<input type="text" id = "modifyend" name="end" maxlength="100" size="10" /></lable><br/> 
 
 计划状态：<select id="modifyresult" name="result" style="width:88px;">  
 <option value="unfinished">未完成</option> 
@@ -89,14 +125,14 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <table><tr>
 <td>
 <h2 align="left">新的计划：</h2>
-<form name="form1" method="post" onsubmit="return check()" action="person/addPlan" style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" onsubmit="return check1()" action="person/addPlan.action" style="padding:15px;border:thin dashed black;">
 
 <table style="padding:15px;">
 <tr>
 <td>
-<div>计划名称：<input  onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" name="name" id="name1" type="text" maxlength="100" size="30" /></div><br/>
-<div>开始时间：<input  onclick="calendar.show({ id: this })" name="start" id ="Text1" type="text" maxlength="100" size="30"/></div><br/>
-<div>结束时间：<input  onclick="calendar.show({ id: this })" name="end" id ="password" type="text" maxlength="30" size="30" />
+<div>计划名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" name="name" id="name1" type="text" maxlength="100" size="30" /></div><br/>
+<div>开始时间：<input name="start" id ="start" type="text" maxlength="100" size="30"/></div><br/>
+<div>结束时间：<input name="end" id ="end" type="text" maxlength="30" size="30" />
 </div>
 
 </td>
@@ -211,7 +247,7 @@ else if(type.equals("unfinished")) out.println("未完成");
 %>
 </td>
 <td class="content" style="width:10%;"><a onclick="fun1('<%=personPlan.getId()%>','<%=personPlan.getName()%>','<%=new SimpleDateFormat("yyyy-MM-dd").format(personPlan.getStart())%>','<%=new SimpleDateFormat("yyyy-MM-dd").format(personPlan.getEnd())%>','<%=new SimpleDateFormat("yyyy-MM-dd").format(personPlan.getCreatetime())%>','<%=personPlan.getResult()%>','<%=personPlan.getRemark()%>')" style="cursor:pointer;">修改&#160|&#160
-</a><a href="<%=basePath%>person/deletePlan?id=<%=personPlan.getId()%>">删除</a></td>
+</a><a href="<%=basePath%>person/deletePlan.action?id=<%=personPlan.getId()%>">删除</a></td>
 </tr>
 <%}
 while(it.hasNext());

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>	
 	
 	<frameset frameSpacing="-30px" cols="260,*" >
-		<frame name=menu src="person/index/left.jsp">
-		<frame name=dmMain src="person/person_introduction.jsp">
+		<frame name=menu src="person/navigation.jsp">
+		<frame name=dmMain src="person/introduction.jsp">
 	</frameset>
 </html>
