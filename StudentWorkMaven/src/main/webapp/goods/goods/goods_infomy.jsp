@@ -28,7 +28,7 @@ input{background-color:ebf2fb;border:thin solid black;}
 </style>
 
 <script type="text/javascript">
-function fun1(id,name,price,des)
+function fun1(id,name,price,contact,des)
 {
 	//alert(id);
 	//alert(name);  //已检测到值传递过来
@@ -57,7 +57,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:260px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>goods/modifygoodsinfo">
+<form method="post" action="<%=basePath%>goods/modifygoodsinfo.action">
 <lable style="line-height:30px;">&#12288ID：&#12288&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">&#12288名称：&#12288<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">&#12288单价：&#12288<input type="text" id = "modifyprice" name="price" maxlength="50" size="50"/></lable><br/>  
@@ -72,7 +72,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">添加物品：</h2>
-<form name="form1" method="post" action="<%=basePath%>goods/addgoodsinfo"  style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" action="<%=basePath%>goods/addgoodsinfo.action"  style="padding:15px;border:thin dashed black;">
 <div>名称：<input class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="50" />&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288<input type="submit" value="添加"/>&#12288<input type="reset" value="取消"/></div><br/>
 <div>单价：<input class="text-input medium-input" name="price" id ="price" type="text" maxlength="50" size="50" /></div><br/>
 <div>联系方式：<input class="text-input medium-input" name="contact" id ="contact" type="text" maxlength="50" size="50" /></div><br/>
@@ -93,7 +93,7 @@ public Goodsinfomy goodsinfomy;
 %>
 
 <%
-String studentid="221400401"; //这里模拟获取session中用户名的方法 
+String studentid = (String)session.getAttribute("studentid"); //获取当前用户的studentid
 
 goodsinfomyPageDao.initialize(studentid);
 pageSize = goodsinfomyPageDao.getPageSize();  //设置每一页的行数
@@ -142,8 +142,8 @@ goodsinfomy = (Goodsinfomy)it.next(); //初始时Iterator的指针指向第一�
 <td class="content" style="width:10%;"><%=goodsinfomy.getPrice()%></td>
 <td class="content" style="width:40%;"><%=goodsinfomy.getDes()%></td>
 <td class="content" style="width:15%;"><%=goodsinfomy.getTime()%></td>
-<td class="content" style="width:15%;"><a onclick="fun1('<%=goodsinfomy.getId()%>','<%=goodsinfomy.getName()%>','<%=goodsinfomy.getPrice()%>','<%=goodsinfomy.getDes()%>')" style="cursor:pointer;">修改&#160|&#160
-</a><a href="<%=basePath%>goods/deletegoodsinfo?id=<%=goodsinfomy.getId()%>">删除</a></td>
+<td class="content" style="width:15%;"><a onclick="fun1('<%=goodsinfomy.getId()%>','<%=goodsinfomy.getName()%>','<%=goodsinfomy.getPrice()%>','<%=goodsinfomy.getContact()%>','<%=goodsinfomy.getDes()%>')" style="cursor:pointer;">修改&#160|&#160
+</a><a href="<%=basePath%>goods/deletegoodsinfo.action?id=<%=goodsinfomy.getId()%>">删除</a></td>
 </tr>
 <%}
 while(it.hasNext());
@@ -157,12 +157,12 @@ while(it.hasNext());
 <tr>
 <td></td>
 <td></td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infomy.jsp?curPage=1">首页&nbsp|</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infomy.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infomy.jsp?curPage=1">首页&nbsp|</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infomy.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
 <td class="bottom">第<%=curPage%>页/</td> 
 <td class="bottom">共<%=pageCount%>页</td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infomy.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_infomy.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infomy.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_infomy.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
 <td ></td>
 <td></td>
 </tr>

@@ -1,11 +1,13 @@
 package unp.student.work.manager.controller;
 
 import java.util.Date;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import unp.student.work.manager.domain.Goodsrbpmy;
@@ -18,6 +20,7 @@ public class GoodsrbpmyAction extends ActionSupport {
 	private String name;
 	private Double price;
 	private String des;
+	private String contact;
 	private Date time;
 	private PersonPersonInfo personPersonInfo = new PersonPersonInfo();
 	private Goodsrbpmy goodsrbpmy = new Goodsrbpmy();
@@ -28,9 +31,13 @@ public class GoodsrbpmyAction extends ActionSupport {
 	public String add() throws Exception {
 
 		Date d = new Date();
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsrbpmy.setName(name);
 		goodsrbpmy.setPrice(price);
+		goodsrbpmy.setContact(contact);
 		goodsrbpmy.setDes(des);
 		goodsrbpmy.setTime(d);
 		goodsrbpmy.setPersonPersonInfo(personPersonInfo);
@@ -53,8 +60,12 @@ public class GoodsrbpmyAction extends ActionSupport {
 		goodsrbpmy.setName(name);
 		goodsrbpmy.setPrice(price);
 		goodsrbpmy.setDes(des);
+		goodsrbpmy.setContact(contact);
 		goodsrbpmy.setTime(d);
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsrbpmy.setPersonPersonInfo(personPersonInfo);
 		goodsrbpmyService.modify(goodsrbpmy);
 
@@ -105,6 +116,14 @@ public class GoodsrbpmyAction extends ActionSupport {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 }

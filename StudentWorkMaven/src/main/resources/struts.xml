@@ -466,38 +466,38 @@
 	</package>
 	
 	<!-- 物品部分 -->
-		<package name="goods" namespace="/goods" extends="struts-default">
+		 <package name="goods" namespace="/goods" extends="struts-default">    
 		
 		<!-- 买家中心部分 -->
 		
 		  <action name="searchgoodsinfo" class="goodsInfoallAction" method="search">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infosearch.jsp</result>
+            <result>/goods/goods/goods_infosearch.jsp</result>
         </action>
         
         <action name="addgoodsrbp" class="goodsrbpmyAction" method="add">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
         </action>
         
         <action name="deletegoodsrbp" class="goodsrbpmyAction" method="delete">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
         </action>
         	 
         <action name="modifygoodsrbp" class="goodsrbpmyAction" method="modify">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
          </action>
          
 		<!-- 卖家中心部分 -->
 		
         <action name="addgoodsinfo" class="goodsInfomyAction" method="add">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
         
         <action name="deletegoodsinfo" class="goodsInfomyAction" method="delete">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
         	 
         <action name="modifygoodsinfo" class="goodsInfomyAction" method="modify">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
     </package>
     		       
