@@ -34,19 +34,19 @@ public class GroupActServlet extends HttpServlet {
 			Integer id = (Integer) session.getAttribute("curGroup");
 			List<GroupAct> groupActs = groupActDao.findByGid(id);
 			request.setAttribute("gaList", groupActs);
-			request.getRequestDispatcher("group/ga_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/ga_list.jsp").forward(request, response);
 			break;
 		case "2"://返回查看社团活动详细页面
 			id = Integer.valueOf(request.getParameter("gaid"));
 			GroupAct groupAct = groupActDao.findById(id);
 			request.setAttribute("groupAct", groupAct);
-			request.getRequestDispatcher("group/ga_detail.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/ga_detail.jsp").forward(request, response);
 			break;
 		case "3"://返回修改社团活动页面
 			id = Integer.valueOf(request.getParameter("gaid"));
 			groupAct = groupActDao.findById(id);
 			request.setAttribute("groupAct", groupAct);
-			request.getRequestDispatcher("group/ga_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/ga_update.jsp").forward(request, response);
 			break;
 		case "4"://处理删除社团活动请求
 			id = Integer.valueOf(request.getParameter("gaid"));
@@ -54,7 +54,7 @@ public class GroupActServlet extends HttpServlet {
 			request.getRequestDispatcher("GroupAct?type=1").forward(request, response);
 			break;
 		case "5"://处理添加社团活动请求
-			request.getRequestDispatcher("group/ga_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/ga_add.jsp").forward(request, response);
 			break;
 		}
 	}

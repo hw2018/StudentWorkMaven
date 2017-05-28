@@ -16,6 +16,7 @@
 </head>
 <body>
 	<h1 align="center">社团信息</h1>
+	
 	<table>
 		<tr>
 			<td>社团编号</td>
@@ -27,6 +28,8 @@
 			GroupDao groupDao=new GroupDaoImpl();
 			List<Group> groups=groupDao.findByStuno(user);
 			Integer qx = (Integer)session.getAttribute("qx");
+			System.out.println(user);
+			System.out.println(qx);
 			if(qx == 2)
 				groups = groupDao.findAll();
 			for (Group group : groups) {
@@ -53,7 +56,7 @@
 		%>
 	</table>
 	<%if(qx == 2){ %>
-		<h1><a href="group/group_add.jsp" target="dmMain">添加</a></h1>
+		<h1><a href="group/group/group_add.jsp" target="dmMain">添加</a></h1>
 	<%} %>
 </body>
 </html>

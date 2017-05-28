@@ -34,7 +34,7 @@
 				成员职务：<input class="text-input medium-input" type="text" name="groupStudent.job" />
 			</p>
 			<p>
-			<input type="text" name="groupStudent.groupId" value="<%=request.getAttribute("id") %>"/>
+			<input type="hidden" name="groupStudent.groupId" value="<%=request.getAttribute("id") %>"/>
 			</p>
 			<p>
 				<input class="button" type="submit" value="新增" /> <input

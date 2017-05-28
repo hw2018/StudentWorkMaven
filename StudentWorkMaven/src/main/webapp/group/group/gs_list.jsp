@@ -38,7 +38,7 @@
 		<%id=gStudent.getGroupId();%>
 		<%} %>
 	</table>
-	<%if(qx == 1){ %>
+	<%if(qx == 1||qx==2){ %>
 	<h1><a href="GStudent?type=3&id=<%=id%>" target="dmMain">添加</a></h1>
 	<%} %>
 </body>

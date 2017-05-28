@@ -30,22 +30,22 @@ public class GroupSupportServlet extends HttpServlet {
 			Integer id = (Integer) session.getAttribute("curGroup");
 			List<GroupSupport> groupSupports = groupSupportDao.findByGid(id);
 			request.setAttribute("gsupportList", groupSupports);
-			request.getRequestDispatcher("group/gsupport_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gsupport_list.jsp").forward(request, response);
 			break;
 		case "2"://返回修改社团赞助页面
 			id = Integer.valueOf(request.getParameter("gsupportid"));
 			GroupSupport groupSupport = groupSupportDao.findById(id);
 			request.setAttribute("groupSupport", groupSupport);
-			request.getRequestDispatcher("group/gsupport_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gsupport_update.jsp").forward(request, response);
 			break;
 		case "3"://返回添加社团赞助页面
-			request.getRequestDispatcher("group/gsupport_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gsupport_add.jsp").forward(request, response);
 			break;
 		case "4":
 			id = Integer.valueOf(request.getParameter("gsupportid"));
 			groupSupport = groupSupportDao.findById(id);
 			request.setAttribute("groupSupport", groupSupport);
-			request.getRequestDispatcher("group/gsupport_detail.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gsupport_detail.jsp").forward(request, response);
 			break;
 		}
 	}

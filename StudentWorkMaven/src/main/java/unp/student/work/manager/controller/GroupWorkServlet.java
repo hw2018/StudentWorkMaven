@@ -96,7 +96,7 @@ public class GroupWorkServlet extends HttpServlet {
 			request.setAttribute("groupWork73", groupWork73);
 			request.setAttribute("groupWork74", groupWork74);
 			request.setAttribute("groupWork75", groupWork75);
-			request.getRequestDispatcher("group/gw_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gw_list.jsp").forward(request, response);
 			break;
 		case "2"://返回社团值班编辑页面
 			id =Integer.valueOf(request.getParameter("id"));
@@ -170,7 +170,7 @@ public class GroupWorkServlet extends HttpServlet {
 			request.setAttribute("groupWork73", groupWork73);
 			request.setAttribute("groupWork74", groupWork74);
 			request.setAttribute("groupWork75", groupWork75);
-			request.getRequestDispatcher("group/gw_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gw_update.jsp").forward(request, response);
 			break;
 		}
 	}

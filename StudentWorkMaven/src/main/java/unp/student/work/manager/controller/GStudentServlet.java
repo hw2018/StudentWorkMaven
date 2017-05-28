@@ -33,19 +33,19 @@ public class GStudentServlet extends HttpServlet {
 			Integer id = (Integer) session.getAttribute("curGroup");
 			List<GStudent> gStudnets = gStudentDao.findByGid(id); 
 			request.setAttribute("gsList", gStudnets);
-			request.getRequestDispatcher("group/gs_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gs_list.jsp").forward(request, response);
 			break;
 		case "2"://返回社团成员修改页面
 			Integer curGroup = (Integer) session.getAttribute("curGroup");
 			id =Integer.valueOf(request.getParameter("gsid"));
 			GStudent gStudent = gStudentDao.findById(id);
 			request.setAttribute("gStudent", gStudent);
-			request.getRequestDispatcher("group/gs_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gs_update.jsp").forward(request, response);
 			break;
 		case "3"://返回社团成员增加页面
 			id = Integer.valueOf(request.getParameter("id"));
 			request.setAttribute("id", id);
-			request.getRequestDispatcher("group/gs_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gs_add.jsp").forward(request, response);
 			break;
 		case "4"://处理删除社团成员请求
 			id = Integer.valueOf(request.getParameter("gsid"));

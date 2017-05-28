@@ -310,46 +310,46 @@
 		<!-- 使用通配符简化配置 -->
         <!-- Add action here -->
         <action name="addGroup" class="unp.student.work.manager.controller.GroupAction" method="add">
-        	<result name="success">/group/group_show.jsp</result>
+        	<result name="success">/group/group/group_show.jsp</result>
         </action>
         <action name="updateGroup" class="unp.student.work.manager.controller.GroupAction" method="update">
-        	<result name="success">/group/group_show.jsp</result>
+        	<result name="success">/group/group/group_show.jsp</result>
         </action>
         
         <action name="addGStudent" class="unp.student.work.manager.controller.GStudentAction" method="add">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	<action name="updateGStudent" class="unp.student.work.manager.controller.GStudentAction" method="update">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	
     	<action name="addGroupMeeting" class="unp.student.work.manager.controller.GroupMeetingAction" method="add">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	<action name="updateGroupMeeting" class="unp.student.work.manager.controller.GroupMeetingAction" method="update">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	
     	<action name="addGroupAct" class="unp.student.work.manager.controller.GroupActAction" method="add">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	<action name="updateGroupAct" class="unp.student.work.manager.controller.GroupActAction" method="update">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	
     	<action name="updateGroupWork" class="unp.student.work.manager.controller.GroupWorkAction" method="update">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	
     	<action name="addGroupMoney" class="unp.student.work.manager.controller.GroupMoneyAction" method="add">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	
     	<action name="addGroupSupport" class="unp.student.work.manager.controller.GroupSupportAction" method="add">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
     	<action name="updateGroupSupport" class="unp.student.work.manager.controller.GroupSupportAction" method="update">
-    	<result name="success">/group/group_show.jsp</result>
+    	<result name="success">/group/group/group_show.jsp</result>
     	</action>
        
     </package>

@@ -32,10 +32,10 @@ public class GroupMoneyServlet extends HttpServlet {
 			Integer totalmoney = groupMoneyDao.totalOfGroup(id);
 			request.setAttribute("groupMoneys", groupMoneys);
 			request.setAttribute("totalmoney", totalmoney);
-			request.getRequestDispatcher("group/gmoney_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gmoney_list.jsp").forward(request, response);
 			break;
 		case "2"://返回新增社团资金流动页面
-			request.getRequestDispatcher("group/gmoney_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gmoney_add.jsp").forward(request, response);
 			break;
 		}
 	}

@@ -43,6 +43,8 @@
 		}%>
 		<%id=(int)session.getAttribute("curGroup");%>
 	</table>
+	<%if(qx == 1){ %>
 	<h1><a href="GroupAct?type=5&id=<%=id%>" target="dmMain">添加</a></h1>
+	<%}%>
 </body>
 </html>

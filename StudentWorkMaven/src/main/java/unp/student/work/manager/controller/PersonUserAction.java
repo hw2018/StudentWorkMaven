@@ -53,6 +53,7 @@ public class PersonUserAction extends ActionSupport
 					session.put("qx", 0);
 				}
 			session.put("studentid",studentid);	//验证成功，把用户名放入session中
+			session.put("user", studentid);
 			//权限加入session
 			StudentQuanxian studentQuanxian=studentQuanXianService.getByStduent(studentid);
 			if(studentQuanxian==null){

@@ -31,10 +31,10 @@ public class GroupServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		switch (type) {
 		case "1": // 返回新增社团页面
-			request.getRequestDispatcher("group/group_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/group_add.jsp").forward(request, response);
 			break;
 		case "2": // 返回新增社团页面
-			request.getRequestDispatcher("group/group_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/group_update.jsp").forward(request, response);
 			break;
 		/*case "2": // 显示基金列表
 			int pageNo=1;
@@ -49,7 +49,7 @@ public class GroupServlet extends HttpServlet {
 			Integer id = Integer.valueOf(request.getParameter("id"));
 			Group group = groupDao.findById(id);
 			request.setAttribute("group", group);
-			request.getRequestDispatcher("group/group_update.jsp").forward(request, response); // step																					// 4
+			request.getRequestDispatcher("group/group/group_update.jsp").forward(request, response); // step																					// 4
 			break;
 		case "4": // 处理删除基金请求
 			id = Integer.valueOf(request.getParameter("id"));
@@ -61,7 +61,7 @@ public class GroupServlet extends HttpServlet {
 			//System.out.println(id);
 			group = groupDao.findById(id);
 			request.setAttribute("group", group);
-			request.getRequestDispatcher("group/group_detail.jsp").forward(request, response); // step																					// 4
+			request.getRequestDispatcher("group/group/group_detail.jsp").forward(request, response); // step																					// 4
 			break;
 		}
 	}

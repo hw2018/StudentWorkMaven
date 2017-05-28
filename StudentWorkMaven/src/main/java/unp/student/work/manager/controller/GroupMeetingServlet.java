@@ -31,26 +31,26 @@ public class GroupMeetingServlet extends HttpServlet {
 			Integer id = (Integer) session.getAttribute("curGroup");
 			List<GroupMeeting> groupMeetings = groupMeetingDao.findByGid(id);
 			request.setAttribute("gmList", groupMeetings);
-			request.getRequestDispatcher("group/gm_list.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gm_list.jsp").forward(request, response);
 			break;
 		case "2"://返回查看社团会议详细页面
 			id = Integer.valueOf(request.getParameter("gmid"));
 			GroupMeeting groupMeeting=groupMeetingDao.findById(id);
 			request.setAttribute("groupMeeting", groupMeeting);
-			request.getRequestDispatcher("group/gm_detail.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gm_detail.jsp").forward(request, response);
 			break;
 		case "3"://返回修改社团会议页面
 			id = Integer.valueOf(request.getParameter("gmid"));
 			groupMeeting = groupMeetingDao.findById(id);
 			request.setAttribute("groupMeeting", groupMeeting);
-			request.getRequestDispatcher("group/gm_update.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gm_update.jsp").forward(request, response);
 			break;
 		case "4"://处理删除社团会议请求
 			id = Integer.valueOf(request.getParameter("gmid"));
 			groupMeetingDao.delete(id);
 			request.getRequestDispatcher("GroupMeeting?type=1").forward(request, response);
 		case "5"://处理添加社团会议请求
-			request.getRequestDispatcher("group/gm_add.jsp").forward(request, response);
+			request.getRequestDispatcher("group/group/gm_add.jsp").forward(request, response);
 			break;
 		}
 	}
