@@ -57,9 +57,15 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 function check1()
 {
+	var name = document.getElementById("name");
 	var start = document.getElementById("start");
 	var end = document.getElementById("end");
-	if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
+	
+	if(name.value.replace(/^ +| +$/g,"")=="")
+		{alert("计划名称不能为空!");return false;}
+	else if(start.value.replace(/^ +| +$/g,"")=="" || end.value.replace(/^ +| +$/g,"")=="")
+		{alert("计划时间不能为空!");return false;}
+	else if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
 	{
 		alert("开始时间不能大于结束时间！");
 		return false;
@@ -69,9 +75,15 @@ function check1()
 
 function check2()
 {
-	var start = document.getElementById("modifystart");
-	var end = document.getElementById("modifyend");
-	if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
+	var modifyname = document.getElementById("modifyname");
+	var modifystart = document.getElementById("modifystart");
+	var modifyend = document.getElementById("modifyend");
+	
+	if(modifyname.value.replace(/^ +| +$/g,"")=="")
+		{alert("计划名称不能为空!");return false;}
+	else if(modifystart.value.replace(/^ +| +$/g,"")=="" || modifyend.value.replace(/^ +| +$/g,"")=="")
+		{alert("计划时间不能为空!");return false;}
+	else if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
 	{
 		alert("开始时间不能大于结束时间！");
 		return false;
@@ -101,7 +113,7 @@ $(function(){
 <br/>
 <form method="post" onsubmit="return check2()" action="person/modifyPlan.action">
 <lable style="line-height:30px;">计划编号：<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">计划名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>
+<lable style="line-height:30px;">计划名称：<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>
 <lable style="line-height:30px;">开始时间：<input type="text" id = "modifystart" name="start" maxlength="100" size="10" /></lable>&#12288;&#12288;&#12288;&nbsp;&nbsp;&nbsp;
 <lable style="line-height:30px;">结束时间：<input type="text" id = "modifyend" name="end" maxlength="100" size="10" /></lable><br/> 
 
@@ -130,7 +142,7 @@ $(function(){
 <table style="padding:15px;">
 <tr>
 <td>
-<div>计划名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" name="name" id="name1" type="text" maxlength="100" size="30" /></div><br/>
+<div>计划名称：<input name="name" id="name" type="text" maxlength="100" size="30" /></div><br/>
 <div>开始时间：<input name="start" id ="start" type="text" maxlength="100" size="30"/></div><br/>
 <div>结束时间：<input name="end" id ="end" type="text" maxlength="30" size="30" />
 </div>

@@ -40,6 +40,16 @@ function getdiv()
 	document.getElementById("tempcontent").setAttribute("value",replace1(content));
 }
 
+function check()
+{
+	var to = document.getElementById("to");
+	
+	if(to.value.replace(/^ +| +$/g,"") == "" || to.value.match(/^(.+)@(.+)$/)==null )
+		{alert("收件人电子邮件不符合规范!");return false;}
+
+}
+
+
 </script>
 
 
@@ -50,7 +60,7 @@ function getdiv()
 
 <h2 align="left">写邮件：</h2>
 
-<form name="form1" method="post" action="<%=basePath%>person/sendMail.action"> 
+<form name="form1" method="post" onsubmit="return check()" action="<%=basePath%>person/sendMail.action"> 
 发件人：<select name="from" style="width:330px;">
 <%
 ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml"); 
@@ -72,7 +82,7 @@ while(it.hasNext());
 %>
 
 </select><br/><br/>
-收件人：<input id="name" type="text" name="to" size="50" maxlength="128" /><br/><br/>
+收件人：<input type="text" name="to" id="to" size="50" maxlength="128" /><br/><br/>
 主&#12288;题：<input id="name" type="text" name="subject" size="50" maxlength="128" />
 <input id="tempcontent" name="content" type="hidden"/>&#12288;&#12288;
 <input onclick="getdiv()" type="submit" value="发送"/>&#12288;&#12288;<a href="<%=basePath%>person/person/person_mail_list.jsp" target="dmMain"><input type="button" value="返回邮箱账号列表"/></a>

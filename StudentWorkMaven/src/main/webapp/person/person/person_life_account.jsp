@@ -49,6 +49,33 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var body = document.getElementById("body");
+	var account = document.getElementById("account");
+	var password = document.getElementById("password");
+	
+	if(body.value.replace(/^ +| +$/g,"")=="")
+		{alert("主体不能为空!");return false;}
+	else if(account.value.replace(/^ +| +$/g,"")=="")
+		{alert("账号不能为空!");return false;}
+	else if(password.value.replace(/^ +| +$/g,"")=="")
+		{alert("密码不能为空!");return false;}
+}
+
+function check2()
+{
+	var modifybody = document.getElementById("modifybody");
+	var modifyaccount = document.getElementById("modifyaccount");
+	var modifypassword = document.getElementById("modifypassword");
+	
+	if(modifybody.value.replace(/^ +| +$/g,"")=="")
+		{alert("主体不能为空!");return false;}
+	else if(modifyaccount.value.replace(/^ +| +$/g,"")=="")
+		{alert("账号不能为空!");return false;}
+	else if(modifypassword.value.replace(/^ +| +$/g,"")=="")
+		{alert("密码不能为空!");return false;}
+}
 
 </script>
 </head>
@@ -58,11 +85,11 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:300px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyLifeAccount.action">
+<form method="post" onsubmit="return check2()" action="<%=basePath%>person/modifyLifeAccount.action">
 <lable style="line-height:30px;">ID：&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">主体：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('主体不能为空!')" type="text" id = "modifybody" name="body" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">账号：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('账号不能为空!')" type="text" id = "modifyaccount" name="account" maxlength="100" size="50" /></lable><br/>
-<lable style="line-height:30px;">密码：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('密码不能为空!')" type="text" id = "modifypassword" name="password" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">主体：<input type="text" id = "modifybody" name="body" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">账号：<input type="text" id = "modifyaccount" name="account" maxlength="100" size="50" /></lable><br/>
+<lable style="line-height:30px;">密码：<input type="text" id = "modifypassword" name="password" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">备注：<input type="text" id = "modifyremark" name="remark" maxlength="50" size="50"/></lable><br/><br/>
 <input style="cursor:pointer;" type="submit" value="更新"/>&#12288&#12288
 <input onclick="cancel1()" style="cursor:pointer;" type="button" value="取消"/>  
@@ -72,12 +99,12 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">添加生活账号：</h2>
-<form name="form1" method="post" onsubmit="" action="<%=basePath%>person/addLifeAccount.action" style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" onsubmit="return check1()" action="<%=basePath%>person/addLifeAccount.action" style="padding:15px;border:thin dashed black;">
 <table><tr>
 <td>
-<div>账号主体：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('主体不能为空!')" class="text-input medium-input" name="body" id="name1" type="text" maxlength="100" size="30" /></div><br/>
-<div>账号名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('账号不能为空!')" class="text-input medium-input" name="account" id ="name2" type="text" maxlength="100" size="30"/></div><br/>
-<div>账号密码：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('密码不能为空!')" class="text-input medium-input" name="password" id ="password" type="text" maxlength="30" size="30"/></div>
+<div>账号主体：<input class="text-input medium-input" name="body" id="body" type="text" maxlength="100" size="30" /></div><br/>
+<div>账号名称：<input class="text-input medium-input" name="account" id ="account" type="text" maxlength="100" size="30"/></div><br/>
+<div>账号密码：<input class="text-input medium-input" name="password" id ="password" type="text" maxlength="30" size="30"/></div>
 </td>
 
 <td>

@@ -63,6 +63,23 @@ function check1()
 		{alert("固话号码不符合规范!");return false;}
 	else if(email.value!="" && email.value.match(/^(.+)@(.+)$/)==null )
 		{alert("电子邮件不符合规范!");return false;}
+}
+
+function check2()
+{
+	var name = document.getElementById("modifyname");
+	var tel = document.getElementById("modifytel");
+	var fixtel = document.getElementById("modifyfixtel");
+	var email = document.getElementById("modifyemail");
+	
+	if(name.value.replace(/^ +| +$/g,"") == "")
+		{alert("姓名不能为空！");return false;}
+	else if(tel.value.replace(/^ +| +$/g,"")=="" || tel.value.replace(/[\d]/g,"")!="" || tel.value.length!=11)
+		{alert("手机号码不符合规范!");return false;}
+	else if(fixtel.value != "" && tel.value.replace(/[\d]/g,"")!="")
+		{alert("固话号码不符合规范!");return false;}
+	else if(email.value!="" && email.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
 	
 }
 
@@ -74,12 +91,12 @@ function check1()
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:300px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyContacts.action">
+<form method="post" onsubmit="return check2()" action="<%=basePath%>person/modifyContacts.action">
 <lable style="line-height:30px;">ID：&#12288&#12288&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">姓名：&#12288&#12288<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('姓名不能为空!')" type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">姓名：&#12288&#12288<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">手机：&#12288&#12288<input type="text" id = "modifytel" name="tel" maxlength="11" size="50" /></lable><br/>
 <lable style="line-height:30px;">固话：&#12288&#12288<input type="text" id = "modifyfixtel" name="fixtel" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">电子邮件：<input type="text" id = "modifyemail" name="email" maxlength="50" size="50"/></lable><br/><br/>
+<lable style="line-height:30px;">电子邮件：<input type="text" name="email" id = "modifyemail" maxlength="50" size="50"/></lable><br/><br/>
 <input style="cursor:pointer;" type="submit" value="更新"/>&#12288&#12288
 <input onclick="cancel1()" style="cursor:pointer;" type="button" value="取消"/>  
 </form>
@@ -98,7 +115,7 @@ function check1()
 </form>
 
 
-<h2 align="left"  style="padding:10px;margin-bottom:5px;">联系人列表：</h2>
+<h2 align="left"  style="margin-bottom:5px;">联系人列表：</h2>
 
 
 <%!

@@ -49,6 +49,35 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var address = document.getElementById("address");
+	var account = document.getElementById("account");
+	var password = document.getElementById("password");
+	
+	if(address.value.replace(/^ +| +$/g,"") == "" || address.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
+	else if(account.value.replace(/^ +| +$/g,"") == "")
+		{alert("账户不能为空！");return false;}
+	else if(password.value.replace(/^ +| +$/g,"") == "")
+		{alert("密码不能为空！");return false;}
+
+}
+
+function check2()
+{
+	var modifyaddress = document.getElementById("modifyaddress");
+	var modifyaccount = document.getElementById("modifyaccount");
+	var modifypassword = document.getElementById("modifypassword");
+	
+	if(modifyaddress.value.replace(/^ +| +$/g,"") == "" || modifyaddress.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
+	else if(modifyaccount.value.replace(/^ +| +$/g,"") == "")
+		{alert("账户不能为空！");return false;}
+	else if(modifypassword.value.replace(/^ +| +$/g,"") == "")
+		{alert("密码不能为空！");return false;}
+	
+}
 
 </script>
 </head>
@@ -58,7 +87,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:300px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyMailAccount.action">
+<form method="post" onsubmit="return check2()" action="<%=basePath%>person/modifyMailAccount.action">
 <input id="" name="studentid" type="hidden" value="<%=session.getAttribute("studentid")%>"/> <!-- 隐藏域用于传递session中的studentid信息到Action -->
 <lable style="line-height:30px;">ID：&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">邮箱：<input type="text" id = "modifyaddress" name="address" maxlength="50" size="50"/></lable><br/>  
@@ -77,9 +106,9 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <input id="" name="studentid" type="hidden" value="<%=session.getAttribute("studentid")%>"/> <!-- 隐藏域用于传递session中的studentid信息到Action -->
 <table><tr>
 <td>
-<div>邮箱地址：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='' || this.value.length!=0 && this.value.match(/^(.+)@(.+)$/)==null )alert('电子邮件不符合规范!')" class="text-input medium-input" name="address" id="name1" type="text" maxlength="100" size="30" /></div><br/>
-<div>账号名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('账号不能为空!')" class="text-input medium-input" name="account" id ="name2" type="text" maxlength="100" size="30"/></div><br/>
-<div>账号密码：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('密码不能为空!')" class="text-input medium-input" name="password" id ="password" type="text" maxlength="30" size="30"/></div>
+<div>邮箱地址：<input class="text-input medium-input" name="address" id="address" type="text" maxlength="100" size="30" /></div><br/>
+<div>账号名称：<input class="text-input medium-input" name="account" id ="account" type="text" maxlength="100" size="30"/></div><br/>
+<div>账号密码：<input class="text-input medium-input" name="password" id ="password" type="text" maxlength="30" size="30"/></div>
 </td>
 
 <td>

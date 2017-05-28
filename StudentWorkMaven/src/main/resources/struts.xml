@@ -88,9 +88,9 @@
 		<default-interceptor-ref name="mystack" />
 		
 		<global-results>
-			<result name="error">/person/person_error.jsp</result>
-			<result name="success">/person/person_index.jsp</result>
-			<result name="failure">/person/person_login.jsp</result>
+			<result name="error">/person/error.jsp</result>
+			<result name="success">/person/index.jsp</result>
+			<result name="failure">login.jsp</result>
 		</global-results>
 
 		<global-exception-mappings>

@@ -15,10 +15,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<script type="text/javascript" src="person/resources/scripts/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="person/resources/scripts/simpla.jquery.configuration.js"></script>		
-		<script type="text/javascript" src="person/resources/scripts/facebox.js"></script>
 		<script type="text/javascript" src="person/resources/scripts/jquery.wysiwyg.js"></script>
-		<script type="text/javascript" src="person/resources/scripts/jquery.datePicker.js"></script>
-		<script type="text/javascript" src="person/resources/scripts/jquery.date.js"></script>		
+
+
 </head>	
 	
 	<frameset frameSpacing="-30px" cols="260,*" >
