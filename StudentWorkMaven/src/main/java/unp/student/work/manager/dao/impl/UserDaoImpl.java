@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import unp.student.work.manager.dao.UserDao;
 import unp.student.work.manager.domain.PersonInfo;
+import unp.student.work.manager.domain.PersonPersonInfo;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
