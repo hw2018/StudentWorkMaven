@@ -22,6 +22,14 @@ public class WorkCounsellorDaoImpl extends BaseDaoImpl<counsellor> implements Wo
 				.setInteger("major", major).list();
 	}
 
+	@Override
+	public List getResultByPage(int pageno, int size) {
+		// TODO Auto-generated method stub
+		String hql="from counsellor c ";
+		return getSession().createQuery(hql).setFirstResult((pageno-1)*size)
+				.setMaxResults(size).list();
+	}
+
 	
 
 }

@@ -45,7 +45,7 @@
 					<li><a href="class/index.jsp" class="nav" target="_top">班级管理</a></li>
 					<li><a href="group/index.jsp" class="nav" target="_top">社团管理</a></li>
 					<li><a href="apply/index.jsp" class="nav" target="_top">申请管理</a></li>
-					<li><a href="goods/goods_index.jsp" class="nav" target="dmMain">闲置物品</a></li>
+					<li><a href="goods/goods_index.jsp" class="nav" target="_top">跳蚤市场</a></li>
 					<li><a href="work/work_index.jsp" class="nav" target="_top">工作管理</a></li>
 					<li><a href="campus/index.jsp" class="nav" target="_top">校园服务</a></li>
 				</ul>

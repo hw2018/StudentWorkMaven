@@ -45,7 +45,7 @@
 					<li><a href="group/index.jsp" class="nav" target="_top">社团管理</a></li>
 					<li><a href="person/person/person_diary_list.jsp" class="nav" target="dmMain">申请管理</a></li>
 					<li><a href="person/person/person_contacts.jsp" class="nav" target="dmMain">闲置物品</a></li>
-					<li><a href="person/person/person_finance.jsp" class="nav" target="dmMain">工作管理</a></li>
+					<li><a href="counsellor/getresult_counsellor.action" class="nav" target="dmMain">辅导员考核</a></li>
 					<li><a href="person/person/person_plan.jsp" class="nav" target="dmMain">校园服务</a></li>
 				</ul>
 				

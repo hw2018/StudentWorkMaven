@@ -177,7 +177,7 @@
 					//获取当前查询的关键字，通过DataGrid加载相应的信息，使用load加载和显示第一页的所有行。
 					//如果指定了参数，它将取代'queryParams'属性。通常可以通过传递一些参数执行一次查询，通过调用这个方法会向上面url指定的action去发送请求，从服务器加载新数据。
 					$('#dg').datagrid('load',{
-						studentid: value
+						passname: value
 					});
 
 				}, 
