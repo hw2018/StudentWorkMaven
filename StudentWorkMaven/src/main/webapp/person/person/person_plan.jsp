@@ -188,7 +188,7 @@ int []n = personPlanServices.getStatistics((String)session.getAttribute("student
 
 
 
-<h2 align="left">计划列表：</h2><br/>
+<h2 align="left">计划列表：</h2>
 
 <%!
 ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml"); 

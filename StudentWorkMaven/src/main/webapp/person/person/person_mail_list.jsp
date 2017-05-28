@@ -102,7 +102,7 @@ function check2()
 
 
 <h2 align="left">添加邮箱账号：&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288<a href="<%=basePath%>person/person/person_mail_write.jsp" target=dmMain><input type="button" value="写邮件"/></a></h2>
-<form name="form1" method="post" onsubmit="" action="<%=basePath%>person/addMailAccount.action" style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" onsubmit="return check1()" action="<%=basePath%>person/addMailAccount.action" style="padding:15px;border:thin dashed black;">
 <input id="" name="studentid" type="hidden" value="<%=session.getAttribute("studentid")%>"/> <!-- 隐藏域用于传递session中的studentid信息到Action -->
 <table><tr>
 <td>
@@ -120,7 +120,7 @@ function check2()
 </form>
 
 
-<h2 align="left"  style="padding:10px;margin-bottom:5px;">邮箱账号列表：</h2>
+<h2 align="left"  style="margin-bottom:5px;">邮箱账号列表：</h2>
 
 
 <%!

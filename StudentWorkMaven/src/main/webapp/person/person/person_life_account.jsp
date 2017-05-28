@@ -116,7 +116,7 @@ function check2()
 </form>
 
 
-<h2 align="left"  style="padding:10px;margin-bottom:5px;">生活账号列表：</h2>
+<h2 align="left"  style="margin-bottom:5px;">生活账号列表：</h2>
 
 
 <%!
