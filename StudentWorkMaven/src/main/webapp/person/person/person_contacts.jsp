@@ -48,6 +48,23 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var name = document.getElementById("name");
+	var tel = document.getElementById("tel");
+	var fixtel = document.getElementById("fixtel");
+	var email = document.getElementById("email");
+	
+	if(name.value.replace(/^ +| +$/g,"") == "")
+		{alert("姓名不能为空！");return false;}
+	else if(tel.value.replace(/^ +| +$/g,"")=="" || tel.value.replace(/[\d]/g,"")!="" || tel.value.length!=11)
+		{alert("手机号码不符合规范!");return false;}
+	else if(fixtel.value != "" && tel.value.replace(/[\d]/g,"")!="")
+		{alert("固话号码不符合规范!");return false;}
+	else if(email.value!="" && email.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
+	
+}
 
 </script>
 </head>
@@ -71,11 +88,11 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">新建联系人：</h2>
-<form name="form1" method="post" action="<%=basePath%>person/addContacts.action"  style="padding:15px;border:thin dashed black;">
-<div>姓名：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('姓名不能为空!')" class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
-手&#12288&#12288机：<input onblur="if(this.value.replace(/[\d]/g,'')!='' || (this.value.length!=0 && this.value.length!=11))alert('手机号码不符合规范!')" class="text-input medium-input" name="tel" id ="tel" type="text" maxlength="11" size="20" /></div><br/>
+<form name="form1" method="post" onsubmit="return check1()" action="<%=basePath%>person/addContacts.action"  style="padding:15px;border:thin dashed black;">
+<div>姓名：<input class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
+手&#12288&#12288机：<input class="text-input medium-input" name="tel" id ="tel" type="text" maxlength="11" size="20" /></div><br/>
 <div>固话：<input class="text-input medium-input" name="fixtel" id ="fixtel" type="text" maxlength="100" size="20" />&#12288&#12288
-电子邮件：<input onblur="if(this.value.length!=0 && this.value.match(/^(.+)@(.+)$/)==null )alert('电子邮件不符合规范!')" class="text-input medium-input" name="email" id ="email" type="text" maxlength="100" size="20" /> 
+电子邮件：<input class="text-input medium-input" name="email" id ="email" type="text" maxlength="100" size="20" /> 
 &#12288&#12288&#12288&#12288<input type="submit" value="新建"/>&#12288&#12288<input type="reset" value="取消"/>
 </div>
 </form>
