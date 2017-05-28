@@ -136,6 +136,7 @@ public class WebStudentQuanxianAction extends ActionSupport implements ModelDriv
 	
 	//获取学生权限信息
 	public String query(){
+		System.out.println("select");
 		pageMap=new HashMap<String, Object>();
 		List<StudentQuanxian> studentQuanxians=studentQuanXianService.query(studentQuanxian.getStudentid(), page, rows);
 		pageMap.put("rows", studentQuanxians);
