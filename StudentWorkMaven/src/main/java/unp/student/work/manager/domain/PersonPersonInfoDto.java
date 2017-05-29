@@ -18,6 +18,7 @@ public class PersonPersonInfoDto {
 	private String status;   //ÔÚÐ£×´Ì¬
 	private int build;   //Â¥ºÅ
 	private int hostel;  //ËÞÉáºÅ
+	private String password;
 	
 	public String getStudentid() {
 		return studentid;
@@ -146,5 +147,15 @@ public class PersonPersonInfoDto {
 	public void setHostel(int hostel) {
 		this.hostel = hostel;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 }
