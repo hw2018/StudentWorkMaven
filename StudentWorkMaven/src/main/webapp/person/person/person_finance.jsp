@@ -116,8 +116,8 @@ function check2()
 </select>   
 &#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;<input type="submit" value="添加"/>&#12288<input type="reset" value="取消"/>
 <br/><br/>
-金额：<input class="text-input medium-input" name="money" id ="url" type="text" maxlength="100" size="20" />&#12288&#12288
-备注：<input class="text-input medium-input" name="remark" id ="url" type="text" maxlength="100" size="55" />
+金额：<input class="text-input medium-input" name="money" id ="money" type="text" maxlength="100" size="20" />&#12288&#12288
+备注：<input class="text-input medium-input" name="remark" id ="remark" type="text" maxlength="100" size="55" />
 <br/>
 </form>
 </td>
