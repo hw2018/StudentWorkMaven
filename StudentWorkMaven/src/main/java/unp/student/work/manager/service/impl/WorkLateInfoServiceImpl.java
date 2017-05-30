@@ -170,7 +170,7 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 
 	public PageBean showInfo(int pageno,int lateinfoid,String studentid) {
 		// TODO Auto-generated method stub
-		if(studentid==null){
+		if(studentid==""){
 			List iList=latepersonDao.findPageByLateInfo(lateinfoid, pageno);
 			PageBean pageBean=new PageBean();
 			pageBean.setMaxRowCount((int)latepersonDao.findCountByLateInfo(lateinfoid));
@@ -196,6 +196,7 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 	public PageBean showapplyByStudent(String studentid, int pageno,int status) {
 		// TODO Auto-generated method stub
 		if(status==-1){
+			System.out.println(status);
 		List late_persons=latepersonDao.findPageByStudent(studentid, pageno);
 		PageBean pageBean=new PageBean();
 		pageBean.setMaxRowCount((int)latepersonDao.findCountByStudent(studentid));
@@ -206,6 +207,7 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 		return pageBean;
 		}
 		else{
+			System.out.println(status);
 			List late_persons=latepersonDao.findPageByStudentByStatus(studentid, pageno,status);
 			PageBean pageBean=new PageBean();
 			pageBean.setMaxRowCount((int)latepersonDao.findCountByStudentByStatus(studentid,status));

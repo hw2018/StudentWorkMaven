@@ -51,7 +51,7 @@ public class WorkLatePersonDaoImpl extends BaseDaoImpl<late_person> implements W
 	public long findCountByLateInfoByStudent(int lateinfoid,String studentid) {
 		// TODO Auto-generated method stub
 		String hql="select count(*) from late_person lp where lp.late_info.id=:lateinfoid and lp.status!=1 and lp.personInfo.studentid like :studentid"; 
-		return (Long)getSession().createQuery(hql).setInteger("lateinfoid", lateinfoid)
+		return (Long)getSession().createQuery(hql).setInteger("lateinfoid", lateinfoid).setString("studentid", "%"+studentid+"%")
 				.uniqueResult();
 	}
 

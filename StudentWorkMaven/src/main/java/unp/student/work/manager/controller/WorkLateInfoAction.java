@@ -63,6 +63,15 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 	private WorkLateInfoService lateInfoService;
 	
 	
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	public String getDate() {
 		return date;
 	}
@@ -215,7 +224,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 				//有执行添加操作
 				lateInfoService.addinfo(lateInfo.getId(), studentid);
 				//未传入lateinfo.lateperson
-				PageBean pageBean=lateInfoService.showInfo(pageno, lateInfo.getId(),studentid);
+				PageBean pageBean=lateInfoService.showInfo(pageno, lateInfo.getId(),"");
 				lateInfo=lateInfoService.get(lateInfo.getId());
 				request.put("pageBean", pageBean);
 				request.put("lateinfo", lateInfo);
@@ -242,7 +251,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 				//有执行添加操作
 				lateInfoService.deleteinfo(lateInfo.getId(),latepersonid);
 				
-				PageBean pageBean=lateInfoService.showInfo(pageno, lateInfo.getId(),studentid);
+				PageBean pageBean=lateInfoService.showInfo(pageno, lateInfo.getId(),"");
 				lateInfo=lateInfoService.get(lateInfo.getId());
 				request.put("pageBean", pageBean);
 				request.put("lateinfo", lateInfo);
@@ -259,7 +268,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 		
 		if(session.get("studentid").equals(studentid)){
 			lateInfoService.updateinfo(latepersonid, reason);
-			request.put("pageBean",lateInfoService.showapplyByStudent(studentid, pageno,status) );
+			request.put("pageBean",lateInfoService.showapplyByStudent(studentid, pageno,-1) );
 			request.put("status", status);
 			return "applyinfo";
 		}else{
@@ -281,7 +290,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 				//有执行添加操作
 				lateInfoService.dealinfo(lateInfo.getId(), latepersonid);
 				request.put("lateinfo", lateInfoService.get(lateInfo.getId()));
-				request.put("pageBean",lateInfoService.showapplyByManager(id, pageno,status) );
+				request.put("pageBean",lateInfoService.showapplyByManager(id, pageno,-1) );
 				request.put("status", status);
 				return "applyinfo";
 			}else{
@@ -320,7 +329,7 @@ public class WorkLateInfoAction extends ActionSupport implements ModelDriven<lat
 	public String deleteapply(){//删除申诉
 		String id=(String) session.get("studentid");
 		lateInfoService.deleteapply(latepersonid);
-		request.put("pageBean",lateInfoService.showapplyByStudent(id, pageno,status) );
+		request.put("pageBean",lateInfoService.showapplyByStudent(id, pageno,-1) );
 		request.put("status", status);
 		return "applyinfo";
 	}

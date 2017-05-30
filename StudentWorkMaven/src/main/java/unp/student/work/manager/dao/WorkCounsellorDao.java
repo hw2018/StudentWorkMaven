@@ -7,7 +7,7 @@ import unp.student.work.manager.domain.counsellor;
 public interface WorkCounsellorDao extends BaseDao<counsellor> {
 
 	
-	public List findByInfomation(String college,String term,int major,String grade);
+	public List findByInfomation(String college,String term,String major,String grade);
 	
 	public List getResultByPage(int pageno,int size);
 }
