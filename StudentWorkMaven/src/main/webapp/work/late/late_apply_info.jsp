@@ -14,6 +14,9 @@
 </head>
 <body>
 	<h1 align="center">晚点申诉信息</h1>
+	<form name="select"  action="lateinfo/showapply_lateinfo.action" method="post" >
+	申诉状态：<input type="text" class="text-input textarea" name="status"/>
+    <input type="submit" value="查询"/>
 	<table>
 		<tr>
 			<td>缺勤人学号</td>
@@ -31,9 +34,9 @@
 			<td><a>${item.reason }</a></td>
 			
 			<td><a class="status" value="${item.status }">${item.status }</a></td>
-			<td class="deal"><a  name="deal" href="lateinfo/dealinfo_lateinfo.action?latepersonid=${item.id }&id=${item.late_info.id}"> 同意</a></td>
-			<td class="apply"><a id="${item.personInfo.studentid }" name="studentid" href="work/late/late_info_apply.jsp?latepersonid=${item.id }&studentid=${item.personInfo.studentid }&id=${item.late_info.id}"> 申诉</a></td>
-			<td ><a name="delete" class="delete"  href="lateinfo/deleteapply_lateinfo.action?latepersonid=${item.id }&id=${item.late_info.id}"> 删除申诉</a></td>
+			<td class="deal"><a  name="deal" href="lateinfo/dealinfo_lateinfo.action?latepersonid=${item.id }&id=${item.late_info.id}&status=${status}"> 同意</a></td>
+			<td class="apply"><a id="${item.personInfo.studentid }" name="studentid" href="work/late/late_info_apply.jsp?latepersonid=${item.id }&studentid=${item.personInfo.studentid }&id=${item.late_info.id}&status=${status}"> 申诉</a></td>
+			<td ><a name="delete" class="delete"  href="lateinfo/deleteapply_lateinfo.action?latepersonid=${item.id }&id=${item.late_info.id}&status=${status}"> 删除申诉</a></td>
 			
 		</tr>
 	</c:forEach>
@@ -43,11 +46,10 @@
 
 
 <br>
-  <form name="PageForm" action="lateinfo/show_lateinfo.action" method="post">
-			<a id="last" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
-			<a id="next" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage+1 }">下一页</a>
+  <form name="PageForm" action="lateinfo/showapply_lateinfo.action" method="post">
+			<a id="last" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage-1 }&status=${status}">上一页</a>
+			<a id="cur" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage }&status=${status}">  ${pageBean.curPage}</a>
+			<a id="next" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage+1 }&status=${status}">下一页</a>
 			去第<input type="text"  name="pageno"/>页
 			<input type="submit"  vlue="确定"/>
 			

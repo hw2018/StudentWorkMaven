@@ -37,8 +37,8 @@ public class PersonInfo {
 	@Column(name="politicalstatus")
 	private String politicalstatus;
 	
-	@Column(name="majorid")
-	private int majorid;   //专业id
+	@Column(name="major")
+	private String major;   //专业id
 	
 	@Column(name="grade")
 	private String grade;  //年级
@@ -81,7 +81,7 @@ public class PersonInfo {
 
 
 	public PersonInfo(String studentid, String name, String sex, String idcard, String nation, Date birthday,
-			String placeofbirth, String politicalstatus, int majorid, String grade, String tel, String email,
+			String placeofbirth, String politicalstatus, String major, String grade, String tel, String email,
 			String password, String college, String status, int build, int hostel) {
 		super();
 		this.studentid = studentid;
@@ -92,7 +92,7 @@ public class PersonInfo {
 		this.birthday = birthday;
 		this.placeofbirth = placeofbirth;
 		this.politicalstatus = politicalstatus;
-		this.majorid = majorid;
+		this.major = major;
 		this.grade = grade;
 		this.tel = tel;
 		this.email = email;
@@ -171,12 +171,12 @@ public class PersonInfo {
 		this.politicalstatus = politicalstatus;
 	}
 
-	public int getMajorid() {
-		return majorid;
+	public String getMajor() {
+		return major;
 	}
 
-	public void setMajorid(int majorid) {
-		this.majorid = majorid;
+	public void setMajor(String major) {
+		this.major = major;
 	}
 
 	public String getGrade() {
