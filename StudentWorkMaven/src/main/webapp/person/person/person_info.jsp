@@ -62,7 +62,7 @@ String s = new SimpleDateFormat("yyyy-MM-dd").format(d);
 <tr><td width="120">性别：</td><td><% out.print(personPersonInfo.getSex()); %></td>				<td width="120">民族：</td><td><% out.print(personPersonInfo.getNation()); %></td></tr>
 <tr><td width="120">籍贯：</td><td><% out.print(personPersonInfo.getPlaceofbirth()); %></td>		<td width="120">出生年月：</td><td><% out.print(s); %></td></tr>
 <tr><td width="120">年级：</td><td><% out.print(personPersonInfo.getGrade()); %></td>			<td width="120">政治状态：</td><td><% out.print(personPersonInfo.getPoliticalstatus()); %></td></tr>
-<tr><td width="120">学院：</td><td><% out.print(personPersonInfo.getCollege()); %></td>			<td width="120">专业编号：</td><td><% out.print(personPersonInfo.getMajorid()); %></td></tr>
+<tr><td width="120">学院：</td><td><% out.print(personPersonInfo.getCollege()); %></td>			<td width="120">专业：</td><td><% out.print(personPersonInfo.getMajor()); %></td></tr>
 <tr><td width="120">手机：</td><td><% out.print(personPersonInfo.getTel()); %></td>				<td width="120">电子邮箱：</td><td><% out.print(personPersonInfo.getEmail()); %></td></tr>
 <tr><td width="120">楼号：</td><td><% out.print(personPersonInfo.getBuild()); %></td>			<td width="120">宿舍号：</td><td><% out.print(personPersonInfo.getHostel()); %></td></tr>
 <tr><td width="120">身份证号：</td><td><% out.print(personPersonInfo.getIdcard()); %></td>		<td width="120">在校状态：</td><td><% out.print(personPersonInfo.getStatus()); %></td></tr>

@@ -60,7 +60,7 @@ function ini()
 	document.getElementById("grade").value = "<%=personPersonInfo.getGrade()%>";
 	document.getElementById("politicalstatus").value = "<%=personPersonInfo.getPoliticalstatus()%>";
 	document.getElementById("college").value = "<%=personPersonInfo.getCollege()%>";
-	document.getElementById("majorid").value = "<%=personPersonInfo.getMajorid()%>";
+	document.getElementById("major").value = "<%=personPersonInfo.getMajor()%>";
 	document.getElementById("tel").value = "<%=personPersonInfo.getTel()%>";
 	document.getElementById("email").value = "<%=personPersonInfo.getEmail()%>";
 	document.getElementById("build").value = "<%=personPersonInfo.getBuild()%>";
@@ -86,7 +86,7 @@ function check()
 	var grade = document.getElementById("grade");
 	var politicalstatus = document.getElementById("politicalstatus");
 	var college = document.getElementById("college");
-	var majorid = document.getElementById("majorid");
+	var major = document.getElementById("major");
 	var tel = document.getElementById("tel");
 	var email = document.getElementById("email");
 	var build = document.getElementById("build");
@@ -170,8 +170,8 @@ function check()
 		{alert("政治状态不能为空!");return false;}
 	else if(instituteNum2!=instituteNum1)
 		{alert("学院与学号中的学院编号不一致!");return false;}
-	else if(majorid.value.replace(/^ +| +$/g,"")=="" || majorid.value.length!=2 || majorid.value.replace(/\d/g,"")!="")
-		{alert("专业编号不符合规范!");return false;}
+	else if(major.value.replace(/^ +| +$/g,"")=="")
+		{alert("专业不符合规范!");return false;}
 	else if(tel.value.replace(/^ +| +$/g,"")=="" || tel.value.replace(/[\d]/g,"")!="" || tel.value.length!=11)
 		{alert("手机号码不符合规范!");return false;}
 	else if(email.value.replace(/^ +| +$/g,"")=="" || email.value.match(/^(.+)@(.+)$/)==null )
@@ -321,7 +321,89 @@ $(function(){
 </select>
 </td></tr>
 
-<tr><td width="120">专业编号：</td><td><input name="personPersonInfoDto.majorid" id="majorid" type="text" size="30" style="background-color: transparent;border:none;"/></td></tr>
+<tr><td width="120" >专业：</td><td>
+<select name="personPersonInfoDto.major" id="major">
+<option value="无">无</option>	
+<option value="电气工程及其自动化专业">电气工程及其自动化专业</option>			
+<option value="自动化专业">自动化专业</option>
+<option value="建筑电气与智能化专业">建筑电气与智能化专业</option>
+<option value="机械设计制造及其自动化">机械设计制造及其自动化</option>专业专业
+<option value="车辆工程专业">车辆工程专业</option>
+<option value="材料成型及控制工程专业">材料成型及控制工程专业</option>
+<option value="计算机科学与技术专业">计算机科学与技术专业</option>
+<option value="网络工程专业">网络工程专业</option>
+<option value="信息安全专业">信息安全专业</option>
+<option value="信息与计算科学专业">信息与计算科学专业</option>
+<option value="数学与应用数学专业">数学与应用数学专业</option>
+<option value="软件工程专业">软件工程专业</option>
+<option value="过程装备与控制工程专业">过程装备与控制工程专业</option>
+<option value="化学工程与工艺专业">化学工程与工艺专业</option>
+<option value="化学专业">化学专业</option>
+<option value="制药工程专业">制药工程专业</option>
+<option value="土木工程专业">土木工程专业</option>
+<option value="水利水电工程专业">水利水电工程专业</option>
+<option value="给排水科学与工程专业">给排水科学与工程专业</option>
+<option value="工程管理专业">工程管理专业</option>
+<option value="交通工程专业">交通工程专业</option>
+<option value="交通运输专业">交通运输专业</option>
+<option value="环境工程专业">环境工程专业</option>
+<option value="安全工程专业">安全工程专业</option>
+<option value="地质工程专业">地质工程专业</option>
+<option value="人文地理与城乡规划专业">人文地理与城乡规划专业</option>
+<option value="资源循环科学与工程专业">资源循环科学与工程专业</option>
+<option value="工商管理专业">工商管理专业</option>
+<option value="市场营销专业">市场营销专业</option>
+<option value="会计学专业">会计学专业</option>
+<option value="财务管理专业">财务管理专业</option>
+<option value="财政学专业">财政学专业</option>
+<option value="金融学专业">金融学专业</option>
+<option value="经济学专业">经济学专业</option>
+<option value="国际经济与贸易专业">国际经济与贸易专业</option>
+<option value="信息管理与信息系统专业">信息管理与信息系统专业</option>
+<option value="电子商务专业">电子商务专业</option>
+<option value="工业工程专业">工业工程专业</option>
+<option value="经济统计学专业">经济统计学专业</option>
+<option value="物流管理专业">物流管理专业</option>
+<option value="物流工程专业">物流工程专业</option>
+<option value="行政管理专业">行政管理专业</option>
+<option value="公共事业管理专业">公共事业管理专业</option>
+<option value="生物工程专业">生物工程专业</option>
+<option value="生物技术专业">生物技术专业</option>
+<option value="食品科学与工程专业">食品科学与工程专业</option>
+<option value="英语专业">英语专业</option>
+<option value="日语专业">日语专业</option>
+<option value="德语专业">德语专业</option>
+<option value="通信工程专业">通信工程专业</option>
+<option value="电子信息工程专业">电子信息工程专业</option>
+<option value="电子科学与技术专业">电子科学与技术专业</option>
+<option value="微电子科学与工程专业">微电子科学与工程专业</option>
+<option value="光电信息科学与工程专业">光电信息科学与工程专业</option>
+<option value="应用物理学专业">应用物理学专业</option>
+<option value="数字媒体技术专业">数字媒体技术专业</option>
+<option value="物联网工程专业">物联网工程专业</option>
+<option value="建筑学专业">建筑学专业</option>
+<option value="城乡规划专业">城乡规划专业</option>
+<option value="风景园林专业">风景园林专业</option>
+<option value="资源勘查工程专业">资源勘查工程专业</option>
+<option value="采矿工程专业">采矿工程专业</option>
+<option value="矿物加工工程专业">矿物加工工程专业</option>
+<option value="绘画专业">绘画专业</option>
+<option value="雕塑专业">雕塑专业</option>
+<option value="视觉传达设计专业">视觉传达设计专业</option>
+<option value="环境设计专业">环境设计专业</option>
+<option value="产品设计专业">产品设计专业</option>
+<option value="服装与服饰设计专业">服装与服饰设计专业</option>
+<option value="工艺美术专业">工艺美术专业</option>
+<option value="数字媒体艺术专业">数字媒体艺术专业</option>
+<option value="工业设计专业">工业设计专业</option>
+<option value="材料科学与工程专业">材料科学与工程专业</option>
+<option value="高分子材料与工程专业">高分子材料与工程专业</option>
+<option value="法学专业">法学专业</option>
+<option value="社会学专业">社会学专业</option>
+<option value="汉语言文学专业">汉语言文学专业</option>
+<option value="应用心理学专业">应用心理学专业</option>
+<option value="音乐学专业">音乐学专业</option>
+</td></tr>
 <tr><td width="120">手机：</td><td><input name="personPersonInfoDto.tel" id="tel" type="text" size="30" style="background-color: transparent;border:none;"/></td></tr>
 <tr><td width="120">电子邮箱：</td><td><input name="personPersonInfoDto.email" id="email" type="text" size="30" style="background-color: transparent;border:none;"/></td></tr>
 <tr><td width="120">楼号：</td><td><input name="personPersonInfoDto.build" id="build" type="text" size="30" style="background-color: transparent;border:none;"/></td></tr>

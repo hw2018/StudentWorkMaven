@@ -33,7 +33,7 @@ public class PersonInfoAction extends ActionSupport {
 		String pass= personPersonInfoDto.getBirthday(); 
 		Date d = formatter.parse(pass);
 		
-		personPersonInfo = new PersonPersonInfo(personPersonInfoDto.getStudentid(),personPersonInfoDto.getName(),personPersonInfoDto.getSex(),personPersonInfoDto.getIdcard(),personPersonInfoDto.getNation(),d,personPersonInfoDto.getPlaceofbirth(),personPersonInfoDto.getPoliticalstatus(),personPersonInfoDto.getMajorid(),personPersonInfoDto.getGrade(),personPersonInfoDto.getTel(),personPersonInfoDto.getEmail(),personPersonInfoDto.getPassword(),personPersonInfoDto.getCollege(),personPersonInfoDto.getStatus(),personPersonInfoDto.getBuild(),personPersonInfoDto.getHostel());
+		personPersonInfo = new PersonPersonInfo(personPersonInfoDto.getStudentid(),personPersonInfoDto.getName(),personPersonInfoDto.getSex(),personPersonInfoDto.getIdcard(),personPersonInfoDto.getNation(),d,personPersonInfoDto.getPlaceofbirth(),personPersonInfoDto.getPoliticalstatus(),personPersonInfoDto.getMajor(),personPersonInfoDto.getGrade(),personPersonInfoDto.getTel(),personPersonInfoDto.getEmail(),personPersonInfoDto.getPassword(),personPersonInfoDto.getCollege(),personPersonInfoDto.getStatus(),personPersonInfoDto.getBuild(),personPersonInfoDto.getHostel());
 		personInfoService.save(personPersonInfo);
 		
 		return "success";

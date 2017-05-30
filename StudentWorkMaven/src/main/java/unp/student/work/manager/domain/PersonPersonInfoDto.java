@@ -10,7 +10,7 @@ public class PersonPersonInfoDto {
 	private String birthday;
 	private String placeofbirth;
 	private String politicalstatus;
-	private int majorid;   //专业id
+	private String major;   //专业id
 	private String grade;  //年级
 	private String tel;
 	private String email;
@@ -84,12 +84,12 @@ public class PersonPersonInfoDto {
 		this.politicalstatus = politicalstatus;
 	}
 
-	public int getMajorid() {
-		return majorid;
+	public String getMajor() {
+		return major;
 	}
 
-	public void setMajorid(int majorid) {
-		this.majorid = majorid;
+	public void setMajor(String major) {
+		this.major = major;
 	}
 
 	public String getGrade() {

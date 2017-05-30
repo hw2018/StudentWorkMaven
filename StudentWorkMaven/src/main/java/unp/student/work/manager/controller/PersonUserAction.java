@@ -94,7 +94,7 @@ public class PersonUserAction extends ActionSupport
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String pass= personPersonInfoDto2.getBirthday(); 
 		Date d = formatter.parse(pass);
-		personPersonInfo = new PersonPersonInfo(personPersonInfoDto2.getStudentid(),personPersonInfoDto2.getName(),personPersonInfoDto2.getSex(),personPersonInfoDto2.getIdcard(),personPersonInfoDto2.getNation(),d,personPersonInfoDto2.getPlaceofbirth(),personPersonInfoDto2.getPoliticalstatus(),personPersonInfoDto2.getMajorid(),personPersonInfoDto2.getGrade(),personPersonInfoDto2.getTel(),personPersonInfoDto2.getEmail(),personPersonInfoDto2.getPassword(),personPersonInfoDto2.getCollege(),personPersonInfoDto2.getStatus(),personPersonInfoDto2.getBuild(),personPersonInfoDto2.getHostel());
+		personPersonInfo = new PersonPersonInfo(personPersonInfoDto2.getStudentid(),personPersonInfoDto2.getName(),personPersonInfoDto2.getSex(),personPersonInfoDto2.getIdcard(),personPersonInfoDto2.getNation(),d,personPersonInfoDto2.getPlaceofbirth(),personPersonInfoDto2.getPoliticalstatus(),personPersonInfoDto2.getMajor(),personPersonInfoDto2.getGrade(),personPersonInfoDto2.getTel(),personPersonInfoDto2.getEmail(),personPersonInfoDto2.getPassword(),personPersonInfoDto2.getCollege(),personPersonInfoDto2.getStatus(),personPersonInfoDto2.getBuild(),personPersonInfoDto2.getHostel());
 		personInfoService.addUser(personPersonInfo);
 		return "success";
 	}

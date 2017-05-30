@@ -42,7 +42,7 @@ public class WorkCounsellorServiceImpl implements WorkCounsellorService {
 		}else{
 			term=term+"02";
 		}
-		return counsellorDao.findByInfomation(p.getCollege(), term, p.getMajorid(), p.getGrade());
+		return counsellorDao.findByInfomation(p.getCollege(), term, p.getMajor(), p.getGrade());
 	}
 	public List findProblem() {
 		// TODO Auto-generated method stub
