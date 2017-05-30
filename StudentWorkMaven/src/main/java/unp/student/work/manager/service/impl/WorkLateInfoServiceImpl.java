@@ -31,12 +31,12 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 	@Resource
 	private WorkLatePersonDao  latepersonDao;
 
-	public PageBean findByPage(int pageno) {//晚点信息分页
+	public PageBean findByPage(int pageno,String studentid) {//晚点信息分页
 		// TODO Auto-generated method stub
 		
 		PageBean pageBean=new PageBean();
-		pageBean.setData(lateInfoDao.findByPage(pageno));
-		pageBean.setMaxPage((int)(lateInfoDao.findCount(late_info.class)/10)+1);
+		pageBean.setData(lateInfoDao.findByPage(pageno,studentid));
+		pageBean.setMaxPage((int)(lateInfoDao.findCountByPage(pageno,studentid)));
 		pageBean.setCurPage(pageno);
 		return pageBean;
 	}
@@ -168,23 +168,35 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 	
 	//分页显示info
 
-	public PageBean showInfo(int pageno,int lateinfoid) {
+	public PageBean showInfo(int pageno,int lateinfoid,String studentid) {
 		// TODO Auto-generated method stub
+		if(studentid==""){
+			List iList=latepersonDao.findPageByLateInfo(lateinfoid, pageno);
+			PageBean pageBean=new PageBean();
+			pageBean.setMaxRowCount((int)latepersonDao.findCountByLateInfo(lateinfoid));
+			pageBean.setMaxPage(((int)latepersonDao.findCountByLateInfo(lateinfoid)/10)+1);
+			pageBean.setCurPage(pageno);
 		
-		List iList=latepersonDao.findPageByLateInfo(lateinfoid, pageno);
+			pageBean.setData(iList);
+			return pageBean;	
+		}else{
+		List iList=latepersonDao.findPageByLateInfoByStudent(lateinfoid, pageno,studentid);
 		PageBean pageBean=new PageBean();
-		pageBean.setMaxRowCount((int)latepersonDao.findCountByLateInfo(lateinfoid));
-		pageBean.setMaxPage(((int)latepersonDao.findCountByLateInfo(lateinfoid)/10)+1);
+		pageBean.setMaxRowCount((int)latepersonDao.findCountByLateInfoByStudent(lateinfoid,studentid));
+		pageBean.setMaxPage(((int)latepersonDao.findCountByLateInfoByStudent(lateinfoid,studentid)/10)+1);
 		pageBean.setCurPage(pageno);
 	
 		pageBean.setData(iList);
 		return pageBean;
+		}
 	}
 
 	
 	//根据学生查找该学生申诉总记录
-	public PageBean showapplyByStudent(String studentid, int pageno) {
+	public PageBean showapplyByStudent(String studentid, int pageno,int status) {
 		// TODO Auto-generated method stub
+		if(status==-1){
+			System.out.println(status);
 		List late_persons=latepersonDao.findPageByStudent(studentid, pageno);
 		PageBean pageBean=new PageBean();
 		pageBean.setMaxRowCount((int)latepersonDao.findCountByStudent(studentid));
@@ -193,12 +205,25 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 	
 		pageBean.setData(late_persons);
 		return pageBean;
+		}
+		else{
+			System.out.println(status);
+			List late_persons=latepersonDao.findPageByStudentByStatus(studentid, pageno,status);
+			PageBean pageBean=new PageBean();
+			pageBean.setMaxRowCount((int)latepersonDao.findCountByStudentByStatus(studentid,status));
+			pageBean.setMaxPage((int)(latepersonDao.findCountByStudentByStatus(studentid,status)/10)+1);
+			pageBean.setCurPage(pageno);
+		
+			pageBean.setData(late_persons);
+			return pageBean;
+		}
 	}
 
 	
 	//根据管理员查找该管理员被申诉总记录
-	public PageBean showapplyByManager(String studentid, int pageno) {
+	public PageBean showapplyByManager(String studentid, int pageno,int status) {
 		// TODO Auto-generated method stub
+		if(status==-1){
 		List late_persons=latepersonDao.findPageByManager(studentid, pageno);
 		PageBean pageBean=new PageBean();
 		pageBean.setMaxRowCount((int)latepersonDao.findCountByManager(studentid));
@@ -207,6 +232,17 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 	
 		pageBean.setData(late_persons);
 		return pageBean;
+		}else{
+			List late_persons=latepersonDao.findPageByManagerByStatus(studentid, pageno,status);
+			PageBean pageBean=new PageBean();
+			pageBean.setMaxRowCount((int)latepersonDao.findCountByManagerByStatus(studentid,status));
+			pageBean.setMaxPage((int)(latepersonDao.findCountByManagerByStatus(studentid,status)/10)+1);
+			pageBean.setCurPage(pageno);
+		
+			pageBean.setData(late_persons);
+			return pageBean;
+		}
+		
 	}
 
 	
@@ -219,4 +255,6 @@ public class WorkLateInfoServiceImpl implements WorkLateInfoService {
 		latepersonDao.update(late_person);
 		
 	}
+
+
 }
