@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@ page import="com.studentmanagement.apply.domain.Holiday"%>
+<%@ page import="unp.student.work.manager.domain.Holiday"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -27,7 +27,7 @@
 		<h3>新建申请</h3>
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="apply/addHoliday.action" method="post"
+		<form name="form1" action="apply/apply/addHoliday.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
 				留校开始日期：<input class="text-input medium-input" type="text"

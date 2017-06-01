@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.studentmanagement.apply.domain.Activity"%>
+<%@ page import="unp.student.work.manager.domain.Activity"%>
 <%@ include file="../common/head.jsp"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -32,7 +32,7 @@
 		<h3>更新基金信息</h3>
 	</div>
 	<div class="content-box-content">
-		<s:form name="form1" action="activity/saveActivity.action" method="post"
+		<s:form name="form1" action="apply/apply/saveActivity.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
 				活动人数：<input class="text-input medium-input" type="text"

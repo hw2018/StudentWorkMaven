@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@ page import="com.studentmanagement.apply.domain.Scholarship"%>
+<%@ page import="unp.student.work.manager.domain.Scholarship"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -36,7 +36,7 @@
 		<h3>新建申请</h3>
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="apply/addScholarship.action" method="post"
+		<form name="form1" action="apply/apply/addScholarship.action" method="post"
 			onSubmit="return checkNull()">
 			<P>
 				学期：<select name="scholarship.term" id="terms">

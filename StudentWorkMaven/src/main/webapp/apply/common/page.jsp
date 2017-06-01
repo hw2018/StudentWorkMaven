@@ -1,5 +1,5 @@
 <%@ page  pageEncoding="utf-8"%>
-<%@page import="com.studentmanagement.apply.util.PageBean"%>
+<%@page import="unp.student.work.manager.utils.PageBean"%>
 <script>
 function gotoPage(pagenum){
   document.PageForm.pageNo.value = pagenum;

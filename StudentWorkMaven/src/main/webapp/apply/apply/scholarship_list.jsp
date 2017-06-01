@@ -1,9 +1,9 @@
-<%@page import="com.studentmanagement.apply.util.PageBean"%>
+<%@page import="unp.student.work.manager.utils.PageBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@page import="java.util.List,com.studentmanagement.apply.domain.Scholarship"%>
-<%@page import="com.studentmanagement.apply.dao.ScholarshipDao"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Scholarship"%>
+<%@page import="unp.student.work.manager.dao.ApplyScholarshipDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -43,13 +43,13 @@
 			<td><s:property value="#f.status"/></td>
 			<td>
 			<s:date name="#f.createtime" format="yyyy-MM-dd"/></td>
-			<td><a href="apply/updateScholarship.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/deleteScholarship.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<td><a href="apply/apply/updateScholarship.action?id=<s:property value='#f.id'/>">修改</a> 
+			<a href="apply/apply/deleteScholarship.action?id=<s:property value='#f.id'/>">删除</a></td>
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/showScholarship.action" method="post">
+	<form name="PageForm" action="apply/apply/showScholarship.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>
