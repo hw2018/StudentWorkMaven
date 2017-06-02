@@ -11,12 +11,56 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <%@ include file="../common/cssjs.inc"%>
+<style type="text/css">
+		.nav ul{
+				width:980px;
+				margin:0px auto;
+				height:38px;
+				padding:0;
+				}
+		.nav ul li{
+				float:left;
+				}
+		.nav ul li a{
+				width:80px;
+				height:28px;
+				line-height:28px;
+				background:black;
+				color:#FFF;
+				margin:5px 10px;
+				font-size:14px;
+				display:block;
+				text-align:center;
+				text-decoration:none;
+
+		.nav ul li a:hover{
+				width:78px;
+				height:26px;
+				line-height:28px;
+				border:1px solid red;
+				color:blue;
+				background:#FFF;
+				}
+</style>
 </head>
 <body>
+<%
+		Integer id = (Integer)session.getAttribute("curGroup");
+	%>
+	<div class="nav">
+	<ul>
+		<li><a href="GStudent?type=1&id=<%=id%>">成员管理</a></li>
+		<li><a href="GroupMeeting?type=1&id=<%=id%>">会议管理</a></li> 
+		<li><a href="GroupAct?type=1&id=<%=id%>">活动管理</a> </li>
+		<li><a href="GroupMoney?type=1&id=<%=id%>">资金管理</a> </li>
+		<li><a href="GStudent?type=1&id=<%=id%>">物品管理</a> </li>
+		<li><a href="GroupWork?type=1&id=<%=id%>">值班管理</a> </li>
+		<li><a href="GroupSupport?type=1&id=<%=id%>">赞助管理</a> </li>
+	</ul>
+	</div>
 	<h1 align="center">成员信息</h1>
 	<table>
 		<tr>
-			<td>社团名称</td>
 			<td>成员名</td>
 			<td>职务</td>
 			<td>操作</td>
@@ -27,7 +71,6 @@
 		List<GStudent> gStudents=(List<GStudent>)request.getAttribute("gsList");
 		for (GStudent gStudent : gStudents) {%>
 		<tr>
-			<td><%=gStudent.getGroupId()%></td>
 			<td><%=gStudent.getStuno()%></td>
 			<td><%=gStudent.getJob()%></td>
 			<%if(qx == 1){ %>

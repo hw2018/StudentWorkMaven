@@ -9,9 +9,26 @@
 <title>新增社团信息页面</title>
 <%@ include file="../common/cssjs.inc"%>
 <script language="javascript">
-	function checkNull() {
-		/*判断是否有空内容*/
-		for (i = 0; i < form1.length; i++) {
+function checkNull() {
+	/*判断是否有空内容*/
+	for (i = 0; i < form1.length; i++) {
+		System.out.println(form1.elements[i].value);
+		if(i==1){
+			if (form1.elements[i].value == "") {
+				alert(form1.elements[i].title + "不能为空!");
+				form1.elements[i].focus();
+				return false;
+			}
+		}
+		if(i==0){
+			String s=(String)form1.elements[i].value;
+			if (s.endsWith("社")||s.endsWith("协会"));
+			else{
+				alert(form1.elements[i].title + "社团名称不能为空且必须以“社”或者“协会”结尾！");
+				form1.elements[i].focus();
+				return false;
+		}
+		1if(i==2){
 			if (form1.elements[i].value == "") {
 				alert(form1.elements[i].title + "不能为空!");
 				form1.elements[i].focus();
@@ -19,6 +36,7 @@
 			}
 		}
 	}
+}
 </script>
 </head>
 <body>

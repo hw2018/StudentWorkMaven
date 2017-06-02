@@ -34,7 +34,11 @@
 				<h1 id="sidebar-title">
 					<a href="" target="dmMain">学生综合管理系统</a>
 				</h1>
-
+				<div id="profile-links">
+					<p>
+						<a>欢迎您&nbsp;<%=session.getAttribute("studentid")%></a> | <a href="userExit.action" title="退出系统" target="_top">退出</a><br/>
+					</p>
+				</div>
 				<ul id="main-nav">
 					<!-- Accordion Menu -->
 					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->

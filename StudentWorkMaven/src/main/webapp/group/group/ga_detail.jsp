@@ -29,7 +29,7 @@
 					name="groupAct.name" value="<%=groupAct.getName()%>" readonly></input>
 			</p>
 			<p>
-				会议详情：
+				活动详情：
 				<textarea class="text-input textarea"  rows="16" cols="50"
 					name="groupAct.text" readonly><%=groupAct.getText()%></textarea>
 			</p>
