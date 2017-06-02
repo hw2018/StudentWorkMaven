@@ -15,6 +15,10 @@
 </head>
 <body>
 	<h1 align="center">晚点情况</h1>
+	<form name="select"  action="lateinfo/show_lateinfo.action" method="post" >
+	负责人学号：<input type="text" class="text-input textarea" name="studentid"/>
+    <input type="submit" value="查询"/>
+    </form>
 	<table>
 		<tr>
 			<td>晚点编号</td>
@@ -42,23 +46,22 @@
 	</table>
 <a id="add" href="work/late/late_add.jsp">新增</a>
 <br>
-  <form name="PageForm" action="lateinfo/show_lateinfo.action" method="post">
-			<a id="last" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
-			<a id="next" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage+1 }">下一页</a>
-			去第<input type="text"  name="pageno"/>页
+  <form name="PageForm" action="lateinfo/show_lateinfo.action?studentid=${studentid}" method="post">
+			<a id="last" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage-1 }&studentid=${studentid}">上一页</a>
+			<a id="cur" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage }&studentid=${studentid}">    ${pageBean.curPage }     </a>
+			<a id="next" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage+1 }&studentid=${studentid}">下一页</a>
+			去第<input type="text" class="text-input textarea" name="pageno"/>页
 			<input type="submit"  vlue="确定"/><br>
 			
 				<script type="text/javascript">
 				
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
-				 lastbutton.style.visibility="hidden";
+				 lastbutton.style.display="none";
 				 }
 				  if(${pageBean.curPage}>=${pageBean.maxPage}){
 				 var nextbutton=document.getElementById('next');
-				 nextbutton.style.visibility="hidden";
+				 nextbutton.style.display="none";
 				  }		
 				  
 				  var quanxian="${sessionScope.quanxian}";				  

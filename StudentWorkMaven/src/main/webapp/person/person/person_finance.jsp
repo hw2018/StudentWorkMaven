@@ -51,6 +51,25 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var name = document.getElementById("name");
+	var money = document.getElementById("money");
+	if(name.value.replace(/^ +| +$/g,"")=="")
+		{alert("名称不能为空!");return false;}
+	else if(money.value.replace(/^ +| +$/g,"")=="" || money.value.replace(/[\d\.]/g,"")!="")
+		{alert("金额不符合规范!");return false;}
+}
+
+function check2()
+{
+	var modifyname = document.getElementById("modifyname");
+	var modifymoney = document.getElementById("modifymoney");
+	if(modifyname.value.replace(/^ +| +$/g,"")=="")
+		{alert("名称不能为空!");return false;}
+	else if(modifymoney.value.replace(/^ +| +$/g,"")=="" || money.value.replace(/[\d\.]/g,"")!="")
+		{alert("金额不符合规范!");return false;}
+}
 
 </script>
 
@@ -62,9 +81,9 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:270px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyFinance.action">
-<lable style="line-height:30px;">编号：<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">名称：<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>
+<form method="post" onsubmit="return check2()" action="<%=basePath%>person/modifyFinance.action">
+<lable style="line-height:30px;">编号：<input onfocus=this.blur() type="text" name="id" id="modifyid" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">名称：<input type="text" name="name" id="modifyname" maxlength="50" size="50"/></lable><br/>
 类型：<select id="modifytype" name="type">  
 <option value="income">收入</option> 
 <option value="outcome">支出</option> 
@@ -72,7 +91,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 </select>
 &#12288;&#12288;&nbsp;
 <lable style="line-height:30px;">创建时间：<input onfocus=this.blur() type="text" id = "modifycreatetime" name="createtime" maxlength="100" size="20" /></lable><br/> 
-<lable style="line-height:30px;">金额：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='' || this.value.replace(/[\d\.]/g,'')!='')alert('金额不符合规范!')" type="text" id = "modifymoney" name="money" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">金额：<input type="text" id = "modifymoney" name="money" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">备注：<input type="text" id = "modifyremark" name="remark" maxlength="50" size="50"/></lable><br/><br/>
 
 <input style="cursor:pointer;" type="submit" value="更新"/>&#12288&#12288
@@ -87,8 +106,8 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <tr>
 <td>
 <h2 align="left">添加财务记录：</h2>
-<form name="form1" method="post" action="<%=basePath%>person/addFinance.action"  style="padding:15px;border:thin dashed black;">
-名称：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('名称不能为空!')" class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
+<form name="form1" method="post" onsubmit="return check1()" action="<%=basePath%>person/addFinance.action"  style="padding:15px;border:thin dashed black;">
+名称：<input class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
 类型：
 <select name="type"> 
 <option value="income">收入</option> 
@@ -97,8 +116,8 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 </select>   
 &#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;<input type="submit" value="添加"/>&#12288<input type="reset" value="取消"/>
 <br/><br/>
-金额：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='' || this.value.replace(/[\d\.]/g,'')!='')alert('金额不符合规范!')" class="text-input medium-input" name="money" id ="url" type="text" maxlength="100" size="20" />&#12288&#12288
-备注：<input class="text-input medium-input" name="remark" id ="url" type="text" maxlength="100" size="55" />
+金额：<input class="text-input medium-input" name="money" id ="money" type="text" maxlength="100" size="20" />&#12288&#12288
+备注：<input class="text-input medium-input" name="remark" id ="remark" type="text" maxlength="100" size="55" />
 <br/>
 </form>
 </td>

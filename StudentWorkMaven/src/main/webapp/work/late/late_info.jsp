@@ -14,6 +14,9 @@
 </head>
 <body>
 	<h1 align="center">晚点信息</h1>
+		<form name="select"  action="lateinfo/info_lateinfo.action?id=${lateinfo.id}" method="post" >
+	学号：<input type="text" class="text-input textarea" name="studentid"/>
+    <input type="submit" value="查询"/>
 	<table>
 		<tr>
 			<td>缺勤人学号</td>
@@ -38,23 +41,22 @@
 
 
 <br>
-  <form name="PageForm" action="lateinfo/show_lateinfo.action" method="post">
-			<a id="last" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
-			<a id="next" name="pageNum" href="lateinfo/show_lateinfo.action?pageno=${pageBean.curPage+1 }">下一页</a>
-			去第<input type="text"  name="pageno"/>页
+  <form name="PageForm" action="lateinfo/info_lateinfo.action&id=${late_info.id}" method="post">
+			<a id="last" name="pageNum" href="lateinfo/info_lateinfo.action?pageno=${pageBean.curPage-1 }&id=${late_info.id}">上一页</a>
+			<a id="cur" name="pageNum" href="lateinfo/info_lateinfo.action?pageno=${pageBean.curPage }&id=${late_info.id}">    ${pageBean.curPage}   </a>
+			<a id="next" name="pageNum" href="lateinfo/info_lateinfo.action?pageno=${pageBean.curPage+1 }&id=${late_info.id}">下一页</a>
+			去第<input type="text"  class="text-input textarea" name="pageno"/>页
 			<input type="submit"  vlue="确定"/>
 			
 				<script type="text/javascript">
 				
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
-				 lastbutton.style.visibility="hidden";
+				 lastbutton.style.display="none";
 				 }
 				  if(${pageBean.curPage}>=${pageBean.maxPage}){
 				 var nextbutton=document.getElementById('next');
-				 nextbutton.style.visibility="hidden";
+				 nextbutton.style.display="none";
 				  }		
 				  
 				   
@@ -67,15 +69,7 @@
 				  delete1[i].style.display="none";
 				  }
 				  }		  
-				  
-				  var studentid="${sessionScope.user}";
-				  var persons=document.getElementsByName('studentid');
-				  for(var i=0;i<persons.length;i++){
-				  	if(persons[i].id!=studentid){
-				  	persons[i].style.visibility="hidden";
-				  	}
-				  }
-							/*function change(){
+				 		/*function change(){
 				var serach=document.getElementById("search_method").value;
 				if(search=="2"){
 				document.getElementById("form").innerHTML="~<input Id="to"  type="text" name="search_value_to"/>"

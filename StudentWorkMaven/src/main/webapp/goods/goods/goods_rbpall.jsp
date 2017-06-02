@@ -50,7 +50,7 @@ public Goodsrbpall goodsrbpall;
 %>
 
 <%
-String studentid="221400401"; //这里模拟获取session中用户名的方法 
+String studentid = (String)session.getAttribute("studentid"); //获取当前用户的studentid
 
 goodsrbpallPageDao.initialize();
 pageSize = goodsrbpallPageDao.getPageSize();  //设置每一页的行数
@@ -85,7 +85,7 @@ Iterator it = goodsrbpallt.iterator();
 <td class="top" style="width:10%;">单价</td>
 <td class="top" style="width:40%;">描述</td>
 <td class="top" style="width:15%;">时间</td>
-<td class="top" style="width:15%;">征购者</td>
+<td class="top" style="width:15%;">联系方式</td>
 </tr>
 
 <% 
@@ -99,6 +99,7 @@ goodsrbpall = (Goodsrbpall)it.next(); //初始时Iterator的指针指向第一�
 <td class="content" style="width:10%;"><%=goodsrbpall.getPrice()%></td>
 <td class="content" style="width:40%;"><%=goodsrbpall.getDes()%></td>
 <td class="content" style="width:15%;"><%=goodsrbpall.getTime()%></td>
+<td class="content" style="width:15%;"><%=goodsrbpall.getContact()%></td>
 </tr>
 <%}
 while(it.hasNext());
@@ -112,12 +113,12 @@ while(it.hasNext());
 <tr>
 <td></td>
 <td></td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_rbpall.jsp?curPage=1">首页&nbsp|</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_rbpall.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_rbpall.jsp?curPage=1">首页&nbsp|</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_rbpall.jsp?curPage=<%=curPage-1%>">&nbsp上一页&nbsp|&nbsp</a></td> 
 <td class="bottom">第<%=curPage%>页/</td> 
 <td class="bottom">共<%=pageCount%>页</td>
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_rbpall.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
-<td class="bottom"><a href="<%=basePath%>person/goods/goods_rbpall.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_rbpall.jsp?curPage=<%=curPage+1%>">&nbsp|&nbsp下一页</a></td> 
+<td class="bottom"><a href="<%=basePath%>goods/goods/goods_rbpall.jsp?curPage=<%=pageCount%>">&nbsp|&nbsp尾页</a></td> 
 <td ></td>
 <td></td>
 </tr>

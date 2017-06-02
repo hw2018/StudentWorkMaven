@@ -51,7 +51,7 @@ a{color:black;font-size:15px;font-fimily:楷体;text-decoration:none;margin-left
 
 </div>
 <br/><br/><br/><br/><br/><br/><br/><br/>
-<p style="text-align:center;">Copyright &copy; 2017 UNP. All Rights Reserved.<br/>UNP小组 版权所有</p>
+<p style="text-align:center;">Copyright &copy; 2017 UNP. All Rights Reserved.<br/><br/>UNP小组 版权所有</p>
 
 </body>
 </html>

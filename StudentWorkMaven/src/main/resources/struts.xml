@@ -37,7 +37,8 @@
 			<action name="*_counsellor" class="counsellorAction" method="{1}">
 				<result name="select" >/work/counsellor/counsellor_select.jsp</result>
 				<result name="test" >/work/counsellor/counsellor_test.jsp</result>
-			</action>
+				<result name="result">/work/counsellor/counsellor_result.jsp</result>
+ 			</action>
 		</package>
 		<!-- 后台学生权限部分 -->
 		<package name="studentquanxian" namespace="/studentquanxian" extends="json-default">
@@ -88,9 +89,9 @@
 		<default-interceptor-ref name="mystack" />
 		
 		<global-results>
-			<result name="error">/person/person_error.jsp</result>
-			<result name="success">/person/person_index.jsp</result>
-			<result name="failure">/person/person_login.jsp</result>
+			<result name="error">/person/error.jsp</result>
+			<result name="success">/person/index.jsp</result>
+			<result name="failure">login.jsp</result>
 		</global-results>
 
 		<global-exception-mappings>
@@ -226,7 +227,7 @@
 		</action>
 		
 		<action name="userRegister" class="unp.student.work.manager.controller.PersonUserAction" method="userRegister">		
-			<result name="success">/person/person_login.jsp</result>
+			<result name="success">/login.jsp</result>
 		</action>
 		
 		<!-- <action name="passwordModify" class="com.mybank.fund.controller.UserAction" method="passwordModify"> 用于处理登陆请求			
@@ -401,7 +402,6 @@
 			<result name="showSupports">/apply/apply/support_list.jsp</result>
 			<result name="success" type="chain">showSupport</result> 
 		</action>
-		<!-- 用于链接请求 -->
 		<!-- 这里就是直接显示新增页面 -->
 		<action name="support_add">
 			<result name="success">/apply/apply/support_add.jsp</result>
@@ -465,38 +465,38 @@
 	</package>
 	
 	<!-- 物品部分 -->
-		<package name="goods" namespace="/goods" extends="struts-default">
+		 <package name="goods" namespace="/goods" extends="struts-default">    
 		
 		<!-- 买家中心部分 -->
 		
 		  <action name="searchgoodsinfo" class="goodsInfoallAction" method="search">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infosearch.jsp</result>
+            <result>/goods/goods/goods_infosearch.jsp</result>
         </action>
         
         <action name="addgoodsrbp" class="goodsrbpmyAction" method="add">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
         </action>
         
         <action name="deletegoodsrbp" class="goodsrbpmyAction" method="delete">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
         </action>
         	 
         <action name="modifygoodsrbp" class="goodsrbpmyAction" method="modify">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_rbpmy.jsp</result>
+            <result>/goods/goods/goods_rbpmy.jsp</result>
          </action>
          
 		<!-- 卖家中心部分 -->
 		
         <action name="addgoodsinfo" class="goodsInfomyAction" method="add">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
         
         <action name="deletegoodsinfo" class="goodsInfomyAction" method="delete">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
         	 
         <action name="modifygoodsinfo" class="goodsInfomyAction" method="modify">  <!-- 这里的class指的是spring中的一个bean实例 -->
-            <result>/person/goods/goods_infomy.jsp</result>
+            <result>/goods/goods/goods_infomy.jsp</result>
         </action>
     </package>
     		       

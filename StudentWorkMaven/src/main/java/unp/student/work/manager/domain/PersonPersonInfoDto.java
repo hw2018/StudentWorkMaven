@@ -10,7 +10,7 @@ public class PersonPersonInfoDto {
 	private String birthday;
 	private String placeofbirth;
 	private String politicalstatus;
-	private int majorid;   //专业id
+	private String major;   //专业id
 	private String grade;  //年级
 	private String tel;
 	private String email;
@@ -18,6 +18,7 @@ public class PersonPersonInfoDto {
 	private String status;   //在校状态
 	private int build;   //楼号
 	private int hostel;  //宿舍号
+	private String password;
 	
 	public String getStudentid() {
 		return studentid;
@@ -83,12 +84,12 @@ public class PersonPersonInfoDto {
 		this.politicalstatus = politicalstatus;
 	}
 
-	public int getMajorid() {
-		return majorid;
+	public String getMajor() {
+		return major;
 	}
 
-	public void setMajorid(int majorid) {
-		this.majorid = majorid;
+	public void setMajor(String major) {
+		this.major = major;
 	}
 
 	public String getGrade() {
@@ -146,5 +147,15 @@ public class PersonPersonInfoDto {
 	public void setHostel(int hostel) {
 		this.hostel = hostel;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 }

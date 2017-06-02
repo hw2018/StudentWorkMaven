@@ -48,6 +48,40 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var name = document.getElementById("name");
+	var tel = document.getElementById("tel");
+	var fixtel = document.getElementById("fixtel");
+	var email = document.getElementById("email");
+	
+	if(name.value.replace(/^ +| +$/g,"") == "")
+		{alert("姓名不能为空！");return false;}
+	else if(tel.value.replace(/^ +| +$/g,"")=="" || tel.value.replace(/[\d]/g,"")!="" || tel.value.length!=11)
+		{alert("手机号码不符合规范!");return false;}
+	else if(fixtel.value != "" && tel.value.replace(/[\d]/g,"")!="")
+		{alert("固话号码不符合规范!");return false;}
+	else if(email.value!="" && email.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
+}
+
+function check2()
+{
+	var name = document.getElementById("modifyname");
+	var tel = document.getElementById("modifytel");
+	var fixtel = document.getElementById("modifyfixtel");
+	var email = document.getElementById("modifyemail");
+	
+	if(name.value.replace(/^ +| +$/g,"") == "")
+		{alert("姓名不能为空！");return false;}
+	else if(tel.value.replace(/^ +| +$/g,"")=="" || tel.value.replace(/[\d]/g,"")!="" || tel.value.length!=11)
+		{alert("手机号码不符合规范!");return false;}
+	else if(fixtel.value != "" && tel.value.replace(/[\d]/g,"")!="")
+		{alert("固话号码不符合规范!");return false;}
+	else if(email.value!="" && email.value.match(/^(.+)@(.+)$/)==null )
+		{alert("电子邮件不符合规范!");return false;}
+	
+}
 
 </script>
 </head>
@@ -57,12 +91,12 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:300px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>person/modifyContacts.action">
+<form method="post" onsubmit="return check2()" action="<%=basePath%>person/modifyContacts.action">
 <lable style="line-height:30px;">ID：&#12288&#12288&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">姓名：&#12288&#12288<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('姓名不能为空!')" type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
+<lable style="line-height:30px;">姓名：&#12288&#12288<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">手机：&#12288&#12288<input type="text" id = "modifytel" name="tel" maxlength="11" size="50" /></lable><br/>
 <lable style="line-height:30px;">固话：&#12288&#12288<input type="text" id = "modifyfixtel" name="fixtel" maxlength="50" size="50"/></lable><br/>  
-<lable style="line-height:30px;">电子邮件：<input type="text" id = "modifyemail" name="email" maxlength="50" size="50"/></lable><br/><br/>
+<lable style="line-height:30px;">电子邮件：<input type="text" name="email" id = "modifyemail" maxlength="50" size="50"/></lable><br/><br/>
 <input style="cursor:pointer;" type="submit" value="更新"/>&#12288&#12288
 <input onclick="cancel1()" style="cursor:pointer;" type="button" value="取消"/>  
 </form>
@@ -71,17 +105,17 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">新建联系人：</h2>
-<form name="form1" method="post" action="<%=basePath%>person/addContacts.action"  style="padding:15px;border:thin dashed black;">
-<div>姓名：<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('姓名不能为空!')" class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
-手&#12288&#12288机：<input onblur="if(this.value.replace(/[\d]/g,'')!='' || (this.value.length!=0 && this.value.length!=11))alert('手机号码不符合规范!')" class="text-input medium-input" name="tel" id ="tel" type="text" maxlength="11" size="20" /></div><br/>
+<form name="form1" method="post" onsubmit="return check1()" action="<%=basePath%>person/addContacts.action"  style="padding:15px;border:thin dashed black;">
+<div>姓名：<input class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="20" />&#12288&#12288
+手&#12288&#12288机：<input class="text-input medium-input" name="tel" id ="tel" type="text" maxlength="11" size="20" /></div><br/>
 <div>固话：<input class="text-input medium-input" name="fixtel" id ="fixtel" type="text" maxlength="100" size="20" />&#12288&#12288
-电子邮件：<input onblur="if(this.value.length!=0 && this.value.match(/^(.+)@(.+)$/)==null )alert('电子邮件不符合规范!')" class="text-input medium-input" name="email" id ="email" type="text" maxlength="100" size="20" /> 
+电子邮件：<input class="text-input medium-input" name="email" id ="email" type="text" maxlength="100" size="20" /> 
 &#12288&#12288&#12288&#12288<input type="submit" value="新建"/>&#12288&#12288<input type="reset" value="取消"/>
 </div>
 </form>
 
 
-<h2 align="left"  style="padding:10px;margin-bottom:5px;">联系人列表：</h2>
+<h2 align="left"  style="margin-bottom:5px;">联系人列表：</h2>
 
 
 <%!

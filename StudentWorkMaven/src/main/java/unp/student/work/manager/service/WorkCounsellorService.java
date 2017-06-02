@@ -2,7 +2,10 @@ package unp.student.work.manager.service;
 
 import java.util.List;
 
+import unp.student.work.manager.domain.counsellor;
 import unp.student.work.manager.domain.student_counsellor;
+import unp.student.work.manager.service.impl.CounsellorServiceImplTest;
+import unp.student.work.manager.utils.PageBean;
 
 public interface WorkCounsellorService {
 	
@@ -16,6 +19,6 @@ public interface WorkCounsellorService {
 	
 	public void addRecord(String studentid,float[] score,int select);
 	
-	
+	public PageBean getResult(int pageno,int size);
 
 }

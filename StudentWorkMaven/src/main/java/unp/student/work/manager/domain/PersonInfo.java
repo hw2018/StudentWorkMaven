@@ -4,50 +4,87 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * PersonInfo entity. @author MyEclipse Persistence Tools
- */
+import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
-public class PersonInfo implements java.io.Serializable {
-
-	// Fields
-
+@Entity
+@Table(name="person_info")
+public class PersonInfo {
+	@Id
+	@GenericGenerator(name="assigned",strategy="assigned")
+	@GeneratedValue(generator="assigned")
+	@Column(name="studentid")
 	private String studentid;
+	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="sex")
 	private String sex;
+	
+	@Column(name="idcard")
 	private String idcard;
-	private String nation;
+	
+	@Column(name="nation")
+	private String nation;   //民族
+	
+	@Column(name="birthday")
 	private Date birthday;
+	
+	@Column(name="placeofbirth")
 	private String placeofbirth;
+	
+	@Column(name="politicalstatus")
 	private String politicalstatus;
-	private Integer majorid;
-	private String grade;
+	
+	@Column(name="major")
+	private String major;   //专业id
+	
+	@Column(name="grade")
+	private String grade;  //年级
+	
+	@Column(name="tel")
 	private String tel;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="password")
 	private String password;
-	private String college;
-	private Integer status;
-	private Integer build;
-	private Integer hostel;
-	private Integer dormId;
-	private Set late_infos = new HashSet(0);
-	private Set late_persons = new HashSet(0);
-	private Set social_pratices = new HashSet(0);
-	private Set comprehensive_records = new HashSet(0);
+	
+	@Column(name="college")
+	private String college;  //学院
+	
+	@Column(name="status")
+	private String status;   //在校状态
+	
+	@Column(name="build")
+	private int build;   //楼号
+	
+	@Column(name="hostel")
+	private int hostel;  //宿舍号
+	
+	
+	@OneToMany(mappedBy="personPersonInfo")
+	private Set<PersonFavorite> personFavorites = new HashSet<PersonFavorite>();
+	
+	
 
+	
 
-	// Constructors
-
-	/** default constructor */
 	public PersonInfo() {
+		super();
 	}
 
-	/** minimal constructor */
-	public PersonInfo(String name, String sex, String idcard, String nation,
-			Date birthday, String placeofbirth, String politicalstatus,
-			Integer majorid, String grade, String tel, String email,
-			String password, String college, Integer status, Integer build,
-			Integer hostel, Integer dormId) {
+
+
+
+
+	public PersonInfo(String studentid, String name, String sex, String idcard, String nation, Date birthday,
+			String placeofbirth, String politicalstatus, String major, String grade, String tel, String email,
+			String password, String college, String status, int build, int hostel) {
+		super();
+		this.studentid = studentid;
 		this.name = name;
 		this.sex = sex;
 		this.idcard = idcard;
@@ -55,7 +92,7 @@ public class PersonInfo implements java.io.Serializable {
 		this.birthday = birthday;
 		this.placeofbirth = placeofbirth;
 		this.politicalstatus = politicalstatus;
-		this.majorid = majorid;
+		this.major = major;
 		this.grade = grade;
 		this.tel = tel;
 		this.email = email;
@@ -64,48 +101,14 @@ public class PersonInfo implements java.io.Serializable {
 		this.status = status;
 		this.build = build;
 		this.hostel = hostel;
-		this.dormId = dormId;
 	}
 
-	/** full constructor */
-	public PersonInfo(String name, String sex, String idcard, String nation,
-			Date birthday, String placeofbirth, String politicalstatus,
-			Integer majorid, String grade, String tel, String email,
-			String password, String college, Integer status, Integer build,
-			Integer hostel, Integer dormId, Set classPositions,
-			Set workLateInfos, Set workLatePersons, Set classLeaves,
-			Set workSocialPratices, Set classActivities,
-			Set workComprehensiveRecords, Set classHomeworkAbsences) {
-		this.name = name;
-		this.sex = sex;
-		this.idcard = idcard;
-		this.nation = nation;
-		this.birthday = birthday;
-		this.placeofbirth = placeofbirth;
-		this.politicalstatus = politicalstatus;
-		this.majorid = majorid;
-		this.grade = grade;
-		this.tel = tel;
-		this.email = email;
-		this.password = password;
-		this.college = college;
-		this.status = status;
-		this.build = build;
-		this.hostel = hostel;
-		this.dormId = dormId;
-		this.late_infos=workLateInfos;
-		this.comprehensive_records=workComprehensiveRecords;
-		this.late_persons=workLatePersons;
-		this.social_pratices=workSocialPratices;
 
-		
 
-	}
 
-	// Property accessors
 
 	public String getStudentid() {
-		return this.studentid;
+		return studentid;
 	}
 
 	public void setStudentid(String studentid) {
@@ -113,7 +116,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -121,7 +124,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getSex() {
-		return this.sex;
+		return sex;
 	}
 
 	public void setSex(String sex) {
@@ -129,7 +132,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getIdcard() {
-		return this.idcard;
+		return idcard;
 	}
 
 	public void setIdcard(String idcard) {
@@ -137,7 +140,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getNation() {
-		return this.nation;
+		return nation;
 	}
 
 	public void setNation(String nation) {
@@ -145,7 +148,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public Date getBirthday() {
-		return this.birthday;
+		return birthday;
 	}
 
 	public void setBirthday(Date birthday) {
@@ -153,7 +156,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getPlaceofbirth() {
-		return this.placeofbirth;
+		return placeofbirth;
 	}
 
 	public void setPlaceofbirth(String placeofbirth) {
@@ -161,23 +164,23 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getPoliticalstatus() {
-		return this.politicalstatus;
+		return politicalstatus;
 	}
 
 	public void setPoliticalstatus(String politicalstatus) {
 		this.politicalstatus = politicalstatus;
 	}
 
-	public Integer getMajorid() {
-		return this.majorid;
+	public String getMajor() {
+		return major;
 	}
 
-	public void setMajorid(Integer majorid) {
-		this.majorid = majorid;
+	public void setMajor(String major) {
+		this.major = major;
 	}
 
 	public String getGrade() {
-		return this.grade;
+		return grade;
 	}
 
 	public void setGrade(String grade) {
@@ -185,7 +188,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getTel() {
-		return this.tel;
+		return tel;
 	}
 
 	public void setTel(String tel) {
@@ -193,7 +196,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
@@ -201,7 +204,7 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 
 	public void setPassword(String password) {
@@ -209,78 +212,45 @@ public class PersonInfo implements java.io.Serializable {
 	}
 
 	public String getCollege() {
-		return this.college;
+		return college;
 	}
 
 	public void setCollege(String college) {
 		this.college = college;
 	}
 
-	public Integer getStatus() {
-		return this.status;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public Integer getBuild() {
-		return this.build;
+
+	public int getBuild() {
+		return build;
 	}
 
-	public void setBuild(Integer build) {
+	public void setBuild(int build) {
 		this.build = build;
 	}
 
-	public Integer getHostel() {
-		return this.hostel;
+	public int getHostel() {
+		return hostel;
 	}
 
-	public void setHostel(Integer hostel) {
+	public void setHostel(int hostel) {
 		this.hostel = hostel;
 	}
-
-	public Integer getDormId() {
-		return this.dormId;
+	
+	
+	
+	public Set<PersonFavorite> getPersonFavorites() {
+		return personFavorites;
 	}
 
-	public void setDormId(Integer dormId) {
-		this.dormId = dormId;
+	public void setPersonFavorites(Set<PersonFavorite> personFavorites) {
+		this.personFavorites = personFavorites;
 	}
-
-	public Set getLate_infos() {
-		return late_infos;
-	}
-
-	public void setLate_infos(Set late_infos) {
-		this.late_infos = late_infos;
-	}
-
-	public Set getLate_persons() {
-		return late_persons;
-	}
-
-	public void setLate_persons(Set late_persons) {
-		this.late_persons = late_persons;
-	}
-
-	public Set getSocial_pratices() {
-		return social_pratices;
-	}
-
-	public void setSocial_pratices(Set social_pratices) {
-		this.social_pratices = social_pratices;
-	}
-
-	public Set getComprehensive_records() {
-		return comprehensive_records;
-	}
-
-	public void setComprehensive_records(Set comprehensive_records) {
-		this.comprehensive_records = comprehensive_records;
-	}
-
-
-
-
 }

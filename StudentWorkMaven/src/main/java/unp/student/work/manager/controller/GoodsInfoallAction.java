@@ -2,11 +2,13 @@ package unp.student.work.manager.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import unp.student.work.manager.domain.Goodsinfoall;
@@ -41,9 +43,11 @@ public class GoodsInfoallAction extends ActionSupport {
 	private GoodsinfoallService goodsinfoallService;
 
 	public String add() throws Exception {
-
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
 		Date d = new Date();
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsinfoall.setName(name);
 		goodsinfoall.setPrice(price);
 		goodsinfoall.setDes(des);
@@ -71,7 +75,10 @@ public class GoodsInfoallAction extends ActionSupport {
 		goodsinfoall.setDes(des);
 		goodsinfoall.setContact(contact);
 		goodsinfoall.setTime(d);
-		personPersonInfo.setStudentid("221400401"); // 这里是获取当前session中的用户名的代码
+		@SuppressWarnings("unchecked")
+		Map<String, Object> session = (Map) ActionContext.getContext().getSession(); // 得到session的Map形式
+		String studentid = (String) session.get("studentid"); // 取出session中属性为studentid的值
+		personPersonInfo.setStudentid(studentid); // 这里是获取当前session中的用户名的代码
 		goodsinfoall.setPersonPersonInfo(personPersonInfo);
 		goodsinfoallService.modify(goodsinfoall);
 
@@ -84,6 +91,8 @@ public class GoodsInfoallAction extends ActionSupport {
 		// GoodsinfosearchPageDao();
 		// goodsinfosearchPageDao.initialize(searchkey);
 		// list = goodsinfosearchService.search(searchkey);
+		Map<String, Object> request = (Map<String, Object>) ActionContext.getContext().get("request");
+		request.put("key", searchkey);
 		return SUCCESS;
 	}
 
@@ -133,6 +142,14 @@ public class GoodsInfoallAction extends ActionSupport {
 
 	public void setSearchkey(String searchkey) {
 		this.searchkey = searchkey;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 }

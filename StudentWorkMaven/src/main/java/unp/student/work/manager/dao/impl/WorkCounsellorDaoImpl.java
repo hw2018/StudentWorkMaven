@@ -13,13 +13,21 @@ import unp.student.work.manager.domain.counsellor;
 public class WorkCounsellorDaoImpl extends BaseDaoImpl<counsellor> implements WorkCounsellorDao {
 
 	
-	public List findByInfomation(String college, String term, int major,
+	public List findByInfomation(String college, String term, String major,
 			String grade) {
 		// TODO Auto-generated method stub
 		String hql="from counsellor c where c.college=:college and c.term=:term and c.major=:major and c.grade=:grade";
 		return getSession().createQuery(hql).setString("college", college)
 				.setString("term", term).setString("grade", grade)
-				.setInteger("major", major).list();
+				.setString("major", major).list();
+	}
+
+	@Override
+	public List getResultByPage(int pageno, int size) {
+		// TODO Auto-generated method stub
+		String hql="from counsellor c ";
+		return getSession().createQuery(hql).setFirstResult((pageno-1)*size)
+				.setMaxResults(size).list();
 	}
 
 	

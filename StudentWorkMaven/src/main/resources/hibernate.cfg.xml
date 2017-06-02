@@ -15,13 +15,11 @@
 			MYSQL5.7
 		</property>
 		<mapping
-			resource="unp/student/work/manager/domain/PersonInfo.hbm.xml" />
+			class="unp.student.work.manager.domain.PersonInfo" />
 		<mapping
 			resource="unp/student/work/manager/domain/late_info.hbm.xml" />
 		<mapping
 			resource="unp/student/work/manager/domain/late_person.hbm.xml" />
-		<mapping
-			resource="unp/student/work/manager/domain/social_pratice.hbm.xml" />
 		<mapping
 			resource="unp/student/work/manager/domain/comprehensive_record.hbm.xml" />
 		<mapping
@@ -33,7 +31,8 @@
 		<mapping
 			resource="unp/student/work/manager/domain/student_counsellor.hbm.xml" />
 
-	<mapping resource="unp/student/work/manager/domain/teacher_quanxian.hbm.xml" />
+		<mapping
+			resource="unp/student/work/manager/domain/teacher_quanxian.hbm.xml" />
 		<!-- 个人管理部分 -->
 		<mapping
 			class="unp.student.work.manager.domain.PersonPersonInfo" />
@@ -70,33 +69,33 @@
 
 		<mapping class="unp.student.work.manager.domain.ClassChuqin" />
 
-		<mapping class="unp.student.work.manager.domain.PersonInfo" />
-		
 
 
-<!-- 申请部分 -->
 
-			<mapping class="unp.student.work.manager.domain.Activity" />			
+		<!-- 申请部分 -->
+
+		<mapping class="unp.student.work.manager.domain.Activity" />
 		<mapping class="unp.student.work.manager.domain.Holiday" />
 		<mapping class="unp.student.work.manager.domain.Scholarship" />
-		<mapping class="unp.student.work.manager.domain.Support" />		
-		
-		
-<!-- 服务部分 -->
+		<mapping class="unp.student.work.manager.domain.Support" />
 
 
-		<mapping class="unp.student.work.manager.domain.Equityprotect" />				
+		<!-- 服务部分 -->
+
+
+		<mapping class="unp.student.work.manager.domain.Equityprotect" />
 		<mapping class="unp.student.work.manager.domain.Lostandfound" />
-		<mapping class="unp.student.work.manager.domain.Diningroomcomplaints" />
+		<mapping
+			class="unp.student.work.manager.domain.Diningroomcomplaints" />
 
-	<!-- 物品部分 -->
-			<mapping class="unp.student.work.manager.domain.Goodsinfomy"/>
-		<mapping class="unp.student.work.manager.domain.Goodsinfoall"/>
-		<mapping class="unp.student.work.manager.domain.Goodsrbpmy"/>
-		<mapping class="unp.student.work.manager.domain.Goodsrbpall"/>
+		<!-- 物品部分 -->
+		<mapping class="unp.student.work.manager.domain.Goodsinfomy" />
+		<mapping class="unp.student.work.manager.domain.Goodsinfoall" />
+		<mapping class="unp.student.work.manager.domain.Goodsrbpmy" />
+		<mapping class="unp.student.work.manager.domain.Goodsrbpall" />
 	</session-factory>
-	
-	
+
+
 
 
 </hibernate-configuration>

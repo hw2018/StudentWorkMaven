@@ -40,6 +40,13 @@ function getdiv()
 	document.getElementById("tempcontent").setAttribute("value",replace1(content));
 }
 
+function check()
+{
+	var name = document.getElementById("name");
+	if(name.value.replace(/^ +| +$/g,"")=="")
+		{alert("标题不能为空!");return false;}
+}
+
 </script>
 
 
@@ -50,10 +57,10 @@ function getdiv()
 
 <h2 align="left">日记本：</h2>
 
-<form name="form1" method="post" action="<%=basePath%>person/addDiary.action"> 
+<form name="form1" method="post" onsubmit="return check()" action="<%=basePath%>person/addDiary.action"> 
 <div style="position:relative; margin:0 auto;width:800px;">
 &#12288&#12288&#12288&#12288&#12288&#12288  
-<input onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('标题不能为空!')" id="name" class="title" type="text" name="name" size="50" maxlength="128" placeholder="请在这里输入日记标题" />
+<input id="name" class="title" type="text" name="name" size="50" maxlength="128" placeholder="请在这里输入日记标题" />
 <input id="tempcontent" name="content" type="hidden"/>
 <input onclick="getdiv()" type="submit" value="保存"/>&#12288&#12288<a href="<%=basePath%>person/person/person_diary_list.jsp" target="dmMain"><input type="button" value="返回日记列表"/></a>
 </div>

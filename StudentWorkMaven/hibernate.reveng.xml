@@ -17,5 +17,8 @@
 	<table name="goo_goods" catalog="studentworkmanagement"
 		class="goo_goods">
 	</table>
-	<table name="teacher_quanxian" catalog="studentworkmanagement" class="teacher_quanxian"></table>
+	<table name="teacher_quanxian" catalog="studentworkmanagement"
+		class="teacher_quanxian">
+	</table>
+	<table name="person_info" catalog="studentworkmanagement" class="personInfo"></table>
 </hibernate-reverse-engineering>

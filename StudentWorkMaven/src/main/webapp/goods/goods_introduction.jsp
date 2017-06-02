@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <base href="<%=basePath%>">	
-<link rel="stylesheet" href="person/resources/css/style.css" type="text/css"	media="screen" />
+<link rel="stylesheet" href="goods/resources/css/style.css" type="text/css"	media="screen" />
 <style type="text/css">
 li.list{
 	line-height:30px;
@@ -32,7 +32,7 @@ table{border:thin solid black;}
 <body style="background-color:dee6f2">
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<h1 align="center">欢迎使用学生管理系统！</h1>
+<h1 align="center">欢迎使用跳蚤市场！</h1>
 
 
 </body>

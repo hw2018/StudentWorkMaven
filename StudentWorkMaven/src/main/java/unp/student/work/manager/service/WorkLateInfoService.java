@@ -10,7 +10,7 @@ import unp.student.work.manager.utils.PageBean;
 public interface WorkLateInfoService {
 
 	//晚点信息操作
-	public PageBean findByPage(int pageno);//按页查询
+	public PageBean findByPage(int pageno,String studentid);//按页查询
 	void add(late_info lateinfo,String id,String situation);//增加晚点信息
 	void delete(late_info lateinfo);
 	void update(late_info lateinfo,String situation);
@@ -26,7 +26,9 @@ public interface WorkLateInfoService {
 	void updateinfo(int latepersonid,String reason );
 	void dealinfo(int lateinfoid,int latepersonid);
 	void deleteapply(int latepersonid);
-	PageBean showInfo(int pageno,int lateinfoid);
-	PageBean showapplyByStudent(String studentid,int pageno);
-	PageBean showapplyByManager(String studentid,int pageno);
+	
+	
+	PageBean showInfo(int pageno,int lateinfoid,String studentid);
+	PageBean showapplyByStudent(String studentid,int pageno,int status);
+	PageBean showapplyByManager(String studentid,int pageno,int status);
 }
