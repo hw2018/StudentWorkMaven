@@ -52,9 +52,9 @@
 					name="classleave.backdate" />
 			</p>
 			
-			<p>
-				是否同意：<input class="text-input medium-input" type="text"
-					name="classleave.agree" />
+		<p>
+				是否同意： <input type="radio" name="classleave.agree" value="同意"/>是
+				<input type="radio" name="classleave.agree" value="不同意" />否
 			</p>
 			<p>
 				辅导员：<input class="text-input medium-input" type="text"

@@ -57,8 +57,8 @@
 					name="classhomework.studentid" />
 			</p>
 			<p>
-				是否提交：<input class="text-input medium-input" type="text"
-					name="classhomework.submit" />
+				是否提交： <input type="radio" name="classhomework.submit" value="是"/>是
+				<input type="radio" name="classhomework.submit" value="否" />否
 			</p>
 	
 			

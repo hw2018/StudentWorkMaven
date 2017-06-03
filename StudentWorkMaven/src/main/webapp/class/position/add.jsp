@@ -37,10 +37,19 @@
 				学生学号：<input class="text-input medium-input" type="text"
 					name="classposition.studentid" />
 			</p>
-			<p>
-				委任时期：<input class="text-input medium-input" type="text"
-					name="classposition.date" />
-			</p>
+
+						<P>
+				委任时期：<select name="classposition.date" id="terms">
+				<option value="2014-2015第一学期">2014-2015第一学期</option>
+				<option value="2014-2015第二学期">2014-2015第二学期</option>
+				<option value="2015-2016第一学期">2015-2016第一学期</option>
+				<option value="2015-2016第二学期">2015-2016第二学期</option>
+				<option value="2016-2017第一学期">2016-2017第一学期</option>
+				<option value="2016-2017第二学期">2016-2017第二学期</option>
+				<option value="2017-2018第一学期">2017-2018第一学期</option>
+				<option value="2017-2018第二学期">2017-2018第二学期</option>				
+				</select> 
+			</P>
 			<p>
 				<input class="button" type="submit" value="新增" />
 				<input class="button" type="reset" value="取消" />
