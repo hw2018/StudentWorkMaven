@@ -142,6 +142,7 @@ a.remove-link:hover {
 
 /************ Sidebar Accordion Menu ************/
 
+				
 #sidebar #main-nav {
                 width: 206px;
                 padding: 0;
@@ -653,6 +654,7 @@ body#login {
 				margin-left:45px;						                                               
                 font-size: 16px !important;                             
 				}
+			
 
 /********************************      jQuery plugins styles      ********************************/
 

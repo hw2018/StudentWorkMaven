@@ -54,11 +54,12 @@ public class GroupServlet extends HttpServlet {
 		case "4": // 处理删除基金请求
 			id = Integer.valueOf(request.getParameter("id"));
 			groupDao.delete(id);
-			request.getRequestDispatcher("group/group_show.jsp").forward(request, response); // step
+			request.getRequestDispatcher("group/group/group_show.jsp").forward(request, response); // step
 			break;
 		case "5": // 处理查看社团详细信息请求
 			id =  Integer.valueOf(request.getParameter("id"));
-			//System.out.println(id);
+			System.out.println(id);
+			session.setAttribute("curGroup", id);
 			group = groupDao.findById(id);
 			request.setAttribute("group", group);
 			request.getRequestDispatcher("group/group/group_detail.jsp").forward(request, response); // step																					// 4
