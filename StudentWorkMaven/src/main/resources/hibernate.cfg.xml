@@ -54,9 +54,11 @@
 		<mapping class="unp.student.work.manager.domain.PersonPlan" />
 
 		<!-- 宿舍部分 -->
-
-		<mapping class="unp.student.work.manager.domain.DormInfo" />
-		<mapping class="unp.student.work.manager.domain.DormRecord" />
+			<mapping class="unp.student.work.manager.domain.DormInfo" />
+			<mapping class="unp.student.work.manager.domain.DormRecord" />	
+			<mapping class="unp.student.work.manager.domain.DormItem" />
+			<mapping class="unp.student.work.manager.domain.DormBorrowApply" />	
+			<mapping class="unp.student.work.manager.domain.DormRepair" />		
 		<!-- 班级管理部分 -->
 
 		<mapping class="unp.student.work.manager.domain.ClassPosition" />
