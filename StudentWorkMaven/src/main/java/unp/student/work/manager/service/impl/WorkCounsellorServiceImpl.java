@@ -129,13 +129,13 @@ public class WorkCounsellorServiceImpl implements WorkCounsellorService {
 		
 		
 	}
-	@Override
-	public PageBean getResult(int pageno,int size) {
+	
+	public PageBean getResult(String name,int pageno,int size) {
 		// TODO Auto-generated method stub
 		PageBean pageBean=new PageBean();
 		pageBean.setCurPage(pageno);
-		pageBean.setData(counsellorDao.getResultByPage(pageno, size));
-		pageBean.setMaxPage((int)counsellorDao.findCount(counsellor.class));
+		pageBean.setData(counsellorDao.getResultByPage(name, pageno, size));
+		pageBean.setMaxPage((int)counsellorDao.getResultCountByPage(name)/size);
 		
 		return pageBean;
 	}

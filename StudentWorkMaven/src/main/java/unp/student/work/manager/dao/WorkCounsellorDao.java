@@ -9,5 +9,7 @@ public interface WorkCounsellorDao extends BaseDao<counsellor> {
 	
 	public List findByInfomation(String college,String term,String major,String grade);
 	
-	public List getResultByPage(int pageno,int size);
+	public List getResultByPage(String name,int pageno,int size);
+	
+	public long getResultCountByPage(String name);
 }

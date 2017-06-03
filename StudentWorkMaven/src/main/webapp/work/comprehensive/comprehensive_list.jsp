@@ -15,6 +15,10 @@
 </head>
 <body>
 	<h1 align="center">综测情况</h1>
+	<form name="select"  action="comprehensive/show_comprehensive.action" method="post" >
+	学号：<input type="text" class="text-input textarea" name="studentid"/>
+    <input type="submit" value="查询"/>
+    </form>
 	<table>
 		<tr>
 			<td>综测编号</td>
@@ -42,8 +46,7 @@
 <br>
   <form name="PageForm" action="comprehensive/show_comprehensive.action" method="post">
 			<a id="last" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
+			<a id="cur" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage }">${pageBean.curPage }</a>
 			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }">下一页</a>
 			去第<input type="text"  name="pageno"/>页
 			<input type="submit"  vlue="确定"/>
@@ -52,11 +55,11 @@
 				
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
-				 lastbutton.style.visibility="hidden";
+				 lastbutton.style.display="none";
 				 }
 				  if(${pageBean.curPage}>=${pageBean.maxPage}){
 				 var nextbutton=document.getElementById('next');
-				 nextbutton.style.visibility="hidden";
+				 nextbutton.style.display="none";
 				  }		
 				  
 				   var quanxian="${sessionScope.quanxian}";				  

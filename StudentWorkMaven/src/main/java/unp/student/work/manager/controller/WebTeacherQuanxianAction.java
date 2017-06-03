@@ -82,19 +82,19 @@ public class WebTeacherQuanxianAction extends ActionSupport implements RequestAw
 		this.inputStream = inputStream;
 	}
 
-	@Override
+
 	public TeacherQuanxian getModel() {
 		// TODO Auto-generated method stub
 		return tq;
 	}
 
-	@Override
+
 	public void setSession(Map<String, Object> arg0) {
 		// TODO Auto-generated method stub
 		this.session=arg0;
 	}
 
-	@Override
+
 	public void setRequest(Map<String, Object> arg0) {
 		// TODO Auto-generated method stub
 		this.request=arg0;

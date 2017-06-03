@@ -15,6 +15,10 @@
 </head>
 <body>
 	<h1 align="center">辅导员考核</h1>
+		<form name="select"  action="counsellor/getresult_counsellor.action" method="post" >
+	辅导员姓名：<input type="text" class="text-input textarea" name="sname"/>
+    <input type="submit" value="查询"/>
+    </form>
 	<table>
 		<tr>
 			<td>姓名</td>
@@ -33,11 +37,10 @@
 
 	</table>
 <br>
-  <form name="PageForm" action="comprehensive/show_comprehensive.action" method="post">
-			<a id="last" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
-			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }">下一页</a>
+  <form name="PageForm" action="counsellor/getresult_counsellor.action" method="post">
+			<a id="last" name="pageNum" href="counsellor/getresult_counsellor.action?pageno=${pageBean.curPage-1 }&sname=${name}">上一页</a>
+			<a id="cur" name="pageNum" href="counsellor/getresult_counsellor.action?pageno=${pageBean.curPage }&sname=${name}">${pageBean.curPage }</a>
+			<a id="next" name="pageNum" href="counsellor/getresult_counsellor.action?pageno=${pageBean.curPage+1 }&sname=${name}">下一页</a>
 			去第<input type="text"  name="pageno"/>页
 			<input type="submit"  vlue="确定"/>
 			

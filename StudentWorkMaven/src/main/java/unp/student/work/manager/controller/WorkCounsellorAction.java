@@ -27,7 +27,7 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 	private counsellor counsellor=new counsellor();
 	private float[] singlescore;
 	private int select;
-	
+	private String sname="";
 	private int pageno=1;
 	
 	@Resource
@@ -37,6 +37,20 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 		return this.counsellor;
 	}
 	
+
+
+
+	public String getSname() {
+		return sname;
+	}
+
+
+
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
 
 
 
@@ -118,9 +132,10 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 	}
 	
 	public String getresult(){
-		PageBean pageBean=counsellorService.getResult(pageno, 10);
+		PageBean pageBean=counsellorService.getResult(sname,pageno, 10);
 		
 		request.put("pageBean", pageBean);
+		request.put("name", sname);
 		return "result";
 	}
 }
