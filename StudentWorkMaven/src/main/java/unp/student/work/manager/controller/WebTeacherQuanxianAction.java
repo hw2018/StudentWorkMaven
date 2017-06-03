@@ -116,19 +116,21 @@ public class WebTeacherQuanxianAction extends ActionSupport implements RequestAw
 	
 	//保存学生权限
 		public void save(){
+			webTeacherQuanxianService.save(tq);
 	
 		}
 		
 		//更新学生权限
 		public void update(){
-		
+		webTeacherQuanxianService.update(tq);
 		}
 		
 		
 		//删除学生权限
 		public String deleteByIds() {
-			return null;
-		
+			webTeacherQuanxianService.deleteByIds(ids);
+			inputStream = new ByteArrayInputStream("true".getBytes());
+			return "stream";
 		}
 
 	
