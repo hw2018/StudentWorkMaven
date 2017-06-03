@@ -34,7 +34,7 @@ public class ClassActivityAction extends ActionSupport {
 	private String place;
 	private String content;
 	private Date date;
-    private Integer number;
+    private String number;
     private String master;
 
 	@Resource
@@ -103,11 +103,13 @@ public class ClassActivityAction extends ActionSupport {
 		this.date = date;
 	}
 
-	public Integer getNumber() {
+
+
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(Integer number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

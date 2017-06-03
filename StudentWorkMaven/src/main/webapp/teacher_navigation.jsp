@@ -41,7 +41,7 @@
 			   
 			   <ul id="main-nav">
 					<li><a href="person/person/person_mail_list.jsp" class="nav" target="dmMain">宿舍管理</a></li>
-					<li><a href="person/person/person_favorite.jsp" class="nav" target="dmMain">班级管理</a></li>
+					<li><a href="class/leave/add.jsp" class="nav" target="dmMain">添加请假信息</a></li>
 					<li><a href="group/index.jsp" class="nav" target="_top">社团管理</a></li>
 					<li><a href="person/person/person_diary_list.jsp" class="nav" target="dmMain">申请管理</a></li>
 					<li><a href="person/person/person_contacts.jsp" class="nav" target="dmMain">闲置物品</a></li>

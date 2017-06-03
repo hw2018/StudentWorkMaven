@@ -23,7 +23,7 @@ public class ClassActivity {
 	private String place;
 	private String content;
     private Date date;
-    private Integer number;
+    private String number;
     private String master;
     
     
@@ -69,10 +69,11 @@ public class ClassActivity {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Integer getNumber() {
+
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(Integer number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public String getMaster() {

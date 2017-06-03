@@ -47,10 +47,14 @@
 					name="classactivity.place" />
 			</p>
 	
-			<p>
-				参与人数：<input class="text-input medium-input" type="text"
-					name="classactivity.number" />
-			</p>
+			<P>
+				参与人数：<select name="classactivity.number" id="terms">
+				<option value="1~10人">1~10</option>
+				<option value="10~100人">10~100</option>
+				<option value="100~500人">100~500</option>
+				<option value="500人以上">500</option>			
+				</select> 
+			</P>
 			
 			<p>
 				活动时间：<input class="text-input medium-input" type="text"

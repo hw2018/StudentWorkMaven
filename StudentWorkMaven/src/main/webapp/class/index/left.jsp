@@ -37,7 +37,7 @@
 				<div id="profile-links">
 					<p>
 						<a>欢迎您${sessionScope.user}! <br></a> <a href="" title="密码修改" target="dmMain">密码修改
-						</a>| <a href="userExit" title="退出系统" target="_top">退出</a>
+						</a>| <a href="userExit.action" title="退出系统" target="_top">退出</a>
 						<br>
 					</p>
 				</div>
@@ -83,7 +83,6 @@
 							班级请假管理
 					</a>
 						<ul>
-							<li><a href="class/leave/add.jsp" target="dmMain">新增请假信息</a></li>
 							<li><a href="show_classLeave.action" target="dmMain">请假信息列表</a></li>
 						</ul></li>
 
