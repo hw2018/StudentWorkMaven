@@ -39,7 +39,7 @@
 				<div id="profile-links">
 					<p>
 						<a>欢迎您${sessionScope.user}! <br></a> <a href="" title="密码修改" target="dmMain">密码修改
-						</a>| <a href="user/logoutUser.action" title="退出系统" target="_top">退出</a>
+						</a>| <a href="userExit.action" title="退出系统" target="_top">退出</a>
 						<br>
 						当前在线人数:<%=SessionCounter.getActiveSessions() %>
 					</p>
