@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../common/head.jsp"%>
-<%@ page import="unp.student.work.manager.domain.Activity"%>
+<%@ include file="../../common/head.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <base href="<%=basePath%>">
 <!--定义基准路径  -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>新增基金页面</title>
-<%@ include file="../common/cssjs.inc"%>
+<title>创建维修信息页面</title>
+<%@ include file="../../common/cssjs.inc"%>
 <script language="javascript">
 	function checkNull() {
 		/*判断是否有空内容*/
@@ -25,33 +24,36 @@
 </head>
 <body>
 	<div class="content-box-header">
-		<h3>新建活动</h3>
+		<h3>创建维修信息</h3>
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="apply/apply/addActivity.action" method="post"
+		<form name="form1" action="dorm/repairManage/addRepair.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
-				活动人数：<input class="text-input medium-input" type="text"
-					name="activity.peoplenumber" />
+				宿舍号：<input class="text-input medium-input" type="text"
+					name="dormrepair.dormId" />
 			</p>
 			<p>
-				车辆数目：<input class="text-input medium-input" type="text"
-					name="activity.carnumber" />
+				学号：<input class="text-input medium-input" type="text"
+					name="dormrepair.studentId" />
 			</p>
 			<p>
-				带队老师：<input class="text-input medium-input" type="text"
-					name="activity.leadteacher" />
+				维修内容：
+				<textarea class="text-input textarea" rows="16" cols="50"
+					name="dormrepair.content"></textarea>
 			</p>
 			<p>
-				带队老师电话：<input class="text-input medium-input" type="text"
-					name="activity.leadteacherphone" />
+				状态：<input value="未审核" class="text-input medium-input" type="text"
+					name="dormrepair.status" />
 			</p>
+			
 			<p>
-				负责人：<input class="text-input medium-input" type="text"
-					name="activity.principal" />
+				反馈：<input value="(维修完成后评论)" class="text-input medium-input" type="text"
+					name="dormrepair.comment" />
 			</p>
+		
 			<p>
-				<input class="button" type="submit" value="提交" /> <input
+				<input class="button" type="submit" value="新增" /> <input
 					class="button" type="reset" value="取消" />
 			</p>
 		</form>
