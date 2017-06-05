@@ -20,13 +20,13 @@ public class WorkComprehensiveServiceImpl implements WorkComprehensiveService {
 	private WorkComprehensiveRecordDao comprehensiveRecordDao;
 	@Resource
 	private WorkComprehensiveDao comprehensiveDao;
-	public PageBean findByPage(int pageno) {
+	public PageBean findByPage(int pageno,int size,String studentid) {
 		// TODO Auto-generated method stub
 
 		PageBean pageBean=new PageBean();
-		pageBean.setData(comprehensiveRecordDao.findByPage(pageno));
-		pageBean.setMaxRowCount((int)comprehensiveRecordDao.findCount(comprehensive_record.class));
-		pageBean.setMaxPage((int)(comprehensiveRecordDao.findCount(comprehensive_record.class)/10)+1);
+		pageBean.setData(comprehensiveRecordDao.findByPageByStudent(pageno,size,studentid));
+		pageBean.setMaxRowCount((int)comprehensiveRecordDao.findCountByPageByStudent(studentid));
+		pageBean.setMaxPage((int)(comprehensiveRecordDao.findCountByPageByStudent(studentid)/10)+1);
 		pageBean.setCurPage(pageno);
 		return pageBean;
 	}

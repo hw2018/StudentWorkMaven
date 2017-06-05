@@ -44,10 +44,10 @@
 
 	</table>
 <br>
-  <form name="PageForm" action="comprehensive/show_comprehensive.action" method="post">
-			<a id="last" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a id="cur" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage }">${pageBean.curPage }</a>
-			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }">下一页</a>
+  <form name="PageForm" action="comprehensive/show_comprehensive.action?studentid=${student}" method="post">
+			<a id="last" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage-1 }&studentid=${student}">上一页</a>
+			<a id="cur" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage }&studentid=${student}">${pageBean.curPage }</a>
+			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }&studentid=${student}">下一页</a>
 			去第<input type="text"  name="pageno"/>页
 			<input type="submit"  vlue="确定"/>
 			
