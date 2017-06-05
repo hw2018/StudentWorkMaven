@@ -15,9 +15,9 @@
 </head>
 <body>
 	<h1 align="center">晚点情况</h1>
-	<form name="select"  action="lateinfo/show_lateinfo.action" method="post" >
-	负责人学号：<input type="text" class="text-input textarea" name="studentid"/>
-    <input type="submit" value="查询"/>
+	<form id="select" name="select"  action="lateinfo/show_lateinfo.action" method="post" >
+	负责人学号：<input id="studentid" type="text" class="text-input textarea" name="studentid"/>
+    <br><input type="submit" value="查询"/>
     </form>
 	<table>
 		<tr>
@@ -53,8 +53,26 @@
 			去第<input type="text" class="text-input textarea" name="pageno"/>页
 			<input type="submit"  vlue="确定"/><br>
 			
-				<script type="text/javascript">
 				
+		</form>
+		
+		
+<script>
+				$(function () {
+				
+			$( "#select" ).validate( {   
+				rules: {
+					studentid: {
+						required:true,
+						number:true
+					}
+				},
+				messages:{
+					studentid:"输出正确的学号"
+				},
+				
+			} );
+		});
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
 				 lastbutton.style.display="none";
@@ -77,14 +95,12 @@
 				  update[i].style.display="none";
 				  }
 				  }
-					  
-							/*function change(){
+								/*function change(){
 				var serach=document.getElementById("search_method").value;
 				if(search=="2"){
 				document.getElementById("form").innerHTML="~<input Id="to"  type="text" name="search_value_to"/>"
 				}
 				}*/
-				</script>
-		</form>
+		</script>
 </body>
 </html>
