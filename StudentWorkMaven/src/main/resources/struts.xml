@@ -415,7 +415,7 @@
 	
 
 		<!-- 使用通配符简化配置 -->
-		<action name="*Equityprotect" class="unp.student.work.manager.controller.EquityprotectAction"
+		<action name="*Equityprotect" class="unp.student.work.manager.controller.CampusEquityprotectAction"
 			method="{1}">
 			<result name="update">/campus/equityprotect/equityprotect_update.jsp</result>
 			<result name="showEquityprotects">/campus/equityprotect/equityprotect_list.jsp</result>
@@ -433,7 +433,7 @@
 		
 
 		<!-- 使用通配符简化配置 -->
-		<action name="*Diningroomcomplaints" class="unp.student.work.manager.controller.DiningroomcomplaintsAction"
+		<action name="*Diningroomcomplaints" class="unp.student.work.manager.controller.CampusDiningroomcomplaintsAction"
 			method="{1}">
 			<result name="update">/campus/diningroomcomplaints/diningroomcomplaints_update.jsp</result>
 			<result name="showDiningroomcomplaintss">/campus/diningroomcomplaints/diningroomcomplaints_list.jsp</result>
@@ -451,7 +451,7 @@
 		
 
 		<!-- 使用通配符简化配置 -->
-		<action name="*Lostandfound" class="unp.student.work.manager.controller.LostandfoundAction"
+		<action name="*Lostandfound" class="unp.student.work.manager.controller.CampusLostandfoundAction"
 			method="{1}">
 			<result name="update">/campus/lostandfound/lostandfound_update.jsp</result>
 			<result name="showLostandfounds">/campus/lostandfound/lostandfound_list.jsp</result>
