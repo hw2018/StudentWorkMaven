@@ -15,8 +15,8 @@
 </head>
 <body>
 	<h1 align="center">辅导员考核</h1>
-		<form name="select"  action="counsellor/getresult_counsellor.action" method="post" >
-	辅导员姓名：<input type="text" class="text-input textarea" name="sname"/>
+		<form id="select" name="select"  action="counsellor/getresult_counsellor.action" method="post" >
+	辅导员姓名：<input id="sname" type="text" class="text-input textarea" name="sname"/>
     <input type="submit" value="查询"/>
     </form>
 	<table>
@@ -46,6 +46,21 @@
 			
 				<script type="text/javascript">
 				
+				$(function () {
+				
+			$( "#select" ).validate( {   
+				rules: {
+					sname: {
+						maxlength:4 
+						
+					}
+				},
+				messages:{
+					studentid:"输出正确的学号"
+				},
+				
+			} );
+		});
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
 				 lastbutton.style.visibility="hidden";

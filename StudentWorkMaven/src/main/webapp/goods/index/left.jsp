@@ -30,11 +30,11 @@
 			style="background: url('../resources/images/bg-sidebar.gif') top left no-repeat;">
 			<div id="sidebar-wrapper">
 				<h1 id="sidebar-title">
-					<a href="goods/goods_introduction.jsp" target="dmMain">跳蚤市场</a>
+					<a href="goods/goods_introduction.jsp" target="dmMain">闲置物品</a>
 				</h1>
 				<div id="profile-links">
 					<p>
-						<a>欢迎您&nbsp;<%=session.getAttribute("studentid")%></a> | <a href="userExit" title="退出系统" target="_top">退出</a><br/>
+						<a>欢迎您&nbsp;<%=session.getAttribute("studentid")%></a> | <a href="userExit.action" title="退出系统" target="_top">退出</a><br/>
 					</p>
 				</div>
 

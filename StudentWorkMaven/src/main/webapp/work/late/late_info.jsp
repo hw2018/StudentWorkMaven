@@ -14,8 +14,8 @@
 </head>
 <body>
 	<h1 align="center">晚点信息</h1>
-		<form name="select"  action="lateinfo/info_lateinfo.action?id=${lateinfo.id}" method="post" >
-	学号：<input type="text" class="text-input textarea" name="studentid"/>
+		<form id="select" name="select"  action="lateinfo/info_lateinfo.action?id=${lateinfo.id}" method="post" >
+	学号：<input id="studentid" type="text" class="text-input textarea" name="studentid"/>
     <input type="submit" value="查询"/>
 	<table>
 		<tr>
@@ -49,7 +49,20 @@
 			<input type="submit"  vlue="确定"/>
 			
 				<script type="text/javascript">
+				$(function () {
 				
+			$( "#select" ).validate( {   
+				rules: {
+					studentid: {
+						number:true
+					}
+				},
+				messages:{
+					studentid:"只能为数字"
+				},
+				
+			} );
+		});
 				  if(${pageBean.curPage}<=1){
 				 var lastbutton=document.getElementById('last');
 				 lastbutton.style.display="none";

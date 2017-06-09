@@ -12,7 +12,6 @@
 <title></title>
 <%@ include file="../common/cssjs.inc"%>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
@@ -36,11 +35,10 @@
 	<div class="content-box-header">
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="comprehensive/update_comprehensive.action?id=${comprehensiverecord.id}" method="post"
-			onSubmit="return checkNull()">
+		<form id="update" name="form1" action="comprehensive/update_comprehensive.action?id=${comprehensiverecord.id}" method="post">
 			
 				学生综测分：
-				<input type="text" name="score" value="${comprehensiverecord.score}"/>
+				<input id="score" type="text" name="score" value="${comprehensiverecord.score}"/>
 				<br>
 				综测原因:<br>
 				<textarea class="text-input textarea" rows="16" cols="50"
@@ -55,6 +53,22 @@
 			</p>
 		</form>
 	</div>
+	<script>
+		$(function () {
+				
+			$( "#update" ).validate( {   
+				rules: {
+					score: {
+						number:true
+					}
+				},
+				messages:{
+					score :"只能为数字"
+				},
+				
+			} );
+		});
+	</script>
 
 </body>
 </html>

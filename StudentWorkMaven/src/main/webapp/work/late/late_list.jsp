@@ -63,12 +63,11 @@
 			$( "#select" ).validate( {   
 				rules: {
 					studentid: {
-						required:true,
 						number:true
 					}
 				},
 				messages:{
-					studentid:"输出正确的学号"
+					studentid:"只能为数字"
 				},
 				
 			} );
