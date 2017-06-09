@@ -440,7 +440,7 @@
 			<result name="success" type="chain">showDiningroomcomplaints</result>
 		</action>
 		<!-- 用于链接请求 -->
-
+		
 		<action name="*">
 			<result name="success">/campus/diningroomcomplaints/{1}.jsp</result>
 		</action>
