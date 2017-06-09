@@ -10,7 +10,7 @@
 <title></title>
 <%@ include file="../common/cssjs.inc"%>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
@@ -37,11 +37,11 @@
 		
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="lateinfo/addinfo_lateinfo.action?id=${param.lateinfoid}" method="post"
+		<form id="addinfo" name="form1" action="lateinfo/addinfo_lateinfo.action?id=${param.lateinfoid}" method="post"
 			onSubmit="return checkNull()">
 			
 				晚点缺勤人员：
-				<input type="text" class="text-input textarea" rows="16" cols="50"
+				<input id="studentid" type="text" class="text-input textarea" rows="16" cols="50"
 					name="studentid" onKeyDown="textdown(event)"
     onKeyUp="textup()" onfocus="if(value=='输入为学号'){value=''}"
     onblur="if (value ==''){value='输入为学号'}"/>
@@ -53,6 +53,25 @@
 			</p>
 		</form>
 	</div>
+<script type="text/javascript">
+$(function () {
+				
+			$( "#addinfo" ).validate( {   
+				rules: {
+					studentid: {
+						required:true,
+						number:true,
+						minlength:9
+					}
+				},
+				messages:{
+					studentid:"输出正确的学号"
+				},
+				
+			} );
+		});
 
+
+</script>
 </body>
 </html>

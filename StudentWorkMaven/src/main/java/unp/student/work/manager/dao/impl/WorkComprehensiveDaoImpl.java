@@ -15,7 +15,7 @@ public class WorkComprehensiveDaoImpl extends BaseDaoImpl<comprehensive> impleme
 
 	public List findPageByStudent(String studentid, int pageno) {
 		// TODO Auto-generated method stub
-		String hql="from comprehensive c where c.personInfo.studentid=:studentid";
+		String hql="from comprehensive c where c.personInfo.studentid=:studentid and c.status!=1";
 		return getSession().createQuery(hql).setString("studentid", studentid)
 				.setFirstResult((pageno-1)*10).setMaxResults(10).list();
 	}

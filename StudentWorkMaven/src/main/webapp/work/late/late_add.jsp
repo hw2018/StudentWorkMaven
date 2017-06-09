@@ -56,4 +56,27 @@
 	</div>
 
 </body>
+<script>
+
+	jQuery.validator.addMethod("lateinfo", function(value, element) {
+// allow any non-whitespace characters as the host part
+		returnthis.optional( element ) || /[0-9]/.test( value );
+	}	, '请输入正确的格式');
+	$(function () {
+				
+			$( "#select" ).validate( {   
+				rules: {
+					studentid: {
+						required:true,
+						number:true
+					}
+				},
+				messages:{
+					studentid:"输出正确的学号"
+				},
+				
+			} );
+		});
+
+</script>
 </html>

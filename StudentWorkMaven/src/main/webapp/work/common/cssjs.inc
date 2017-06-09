@@ -1,14 +1,16 @@
-<link rel="stylesheet" href="resources/css/reset.css" type="text/css"
+<link rel="stylesheet" href="work/resources/css/reset.css" type="text/css"
 	media="screen" />
-<link rel="stylesheet" href="resources/css/style.css" type="text/css"
+<link rel="stylesheet" href="work/resources/css/style.css" type="text/css"
 	media="screen" />
-<link rel="stylesheet" href="resources/css/invalid.css" type="text/css"
+<link rel="stylesheet" href="work/resources/css/invalid.css" type="text/css"
 	media="screen" />
+
+<!--                       Javascripts                       -->
 
 <!--                       Javascripts                       -->
 <!-- jQuery -->
 <script type="text/javascript"
-	src="resources/scripts/jquery-1.3.2.min.js"></script>
+	src="work/jquery-validation-1.16.0\lib\jquery.js"></script>
 
 <!-- jQuery Configuration -->
 <script type="text/javascript"
@@ -23,3 +25,6 @@
 <script type="text/javascript"
 	src="resources/scripts/jquery.datePicker.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.date.js"></script>
+
+<script type="text/javascript" src="work/jquery-validation-1.16.0\dist\jquery.validate.js"></script>
+

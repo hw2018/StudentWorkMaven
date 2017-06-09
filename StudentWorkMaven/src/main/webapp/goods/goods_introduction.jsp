@@ -32,7 +32,7 @@ table{border:thin solid black;}
 <body style="background-color:dee6f2">
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<h1 align="center">欢迎使用跳蚤市场！</h1>
+<h1 align="center">欢迎使用闲置物品交易！</h1>
 
 
 </body>

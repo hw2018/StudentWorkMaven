@@ -22,12 +22,21 @@ public class WorkCounsellorDaoImpl extends BaseDaoImpl<counsellor> implements Wo
 				.setString("major", major).list();
 	}
 
-	@Override
-	public List getResultByPage(int pageno, int size) {
+	
+	public List getResultByPage(String name,int pageno, int size) {
 		// TODO Auto-generated method stub
-		String hql="from counsellor c ";
-		return getSession().createQuery(hql).setFirstResult((pageno-1)*size)
+		String hql="from counsellor c where c.name like:name";
+		return getSession().createQuery(hql).setString("name", "%"+name+"%").setFirstResult((pageno-1)*size)
 				.setMaxResults(size).list();
+	}
+
+
+
+
+	public long getResultCountByPage(String name) {
+		// TODO Auto-generated method stub
+		String hql="select count(*) from counsellor c where c.name like:name";
+		return (Long)getSession().createQuery(hql).setString("name", "%"+name+"%").uniqueResult();
 	}
 
 	

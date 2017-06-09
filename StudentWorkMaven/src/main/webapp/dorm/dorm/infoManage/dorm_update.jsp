@@ -34,24 +34,20 @@
 	<div class="content-box-content">
 		<s:form name="form1" action="dorm/infoManage/saveDorm.action" method="post"
 			onSubmit="return checkNull()">
-		<p>
-				编号：<input class="text-input medium-input" type="text"
+			<p>
+				编号：<input value="${dorminfo.id}"class="text-input medium-input" type="text"
 					name="dorminfo.id" />
 			</p>
 			<p>
-				宿舍号：
-				<s:textfield class="text-input large-input" type="text"
-					name="dorminfo.dormId"></s:textfield>
+				宿舍号：<input class="text-input large-input" type="text"
+					name="dorminfo.dormId">
+			<p>
+				宿舍楼号：<input class="text-input large-input" type="text"
+					name="dorminfo.locationId">
 			</p>
 			<p>
-				宿舍楼号：
-				<s:textfield class="text-input large-input" type="text"
-					name="dorminfo.locationId"></s:textfield>
-			</p>
-			<p>
-				宿舍人数：
-				<s:textarea class="text-input textarea" rows="16" cols="50"
-					name="dorminfo.stuNumber"></s:textarea>
+				宿舍人数：<input class="text-input textarea" 
+					name="dorminfo.stuNumber">
 			</p>
 
 

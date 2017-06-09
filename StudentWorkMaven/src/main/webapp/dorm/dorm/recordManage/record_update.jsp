@@ -26,36 +26,34 @@
 </head>
 <body>
 	<%
-		DormRecord dorminfo = (DormRecord) request.getAttribute("dormrecord");
+		DormRecord dormrecord = (DormRecord) request.getAttribute("dormrecord");
 	%>
 	<div class="content-box-header">
-		<h3>更新宿舍信息</h3>
+		<h3>更新记录信息</h3>
 	</div>
 	<div class="content-box-content">
 		<s:form name="form1" action="dorm/recordManage/saveRecord.action" method="post"
 			onSubmit="return checkNull()">
-		<p>
-				编号：<input class="text-input medium-input" type="text"
+			<p>
+				编号：<input value="${dormrecord.id} "class="text-input medium-input" type="text"
 					name="dormrecord.id" />
 			</p>
+			
 			<p>
 				宿舍号：
-				<s:textfield class="text-input large-input" type="text"
-					name="dormrecord.dormId"></s:textfield>
+				<input class="text-input large-input" type="text"
+					name="dormrecord.dormId">
 			</p>
 			<p>
 				记录种类：
-				<s:textfield class="text-input large-input" type="text"
-					name="dormrecord.sort"></s:textfield>
+				<input class="text-input large-input" type="text"
+					name="dormrecord.sort">
 			</p>
 			<p>
 				内容：
 				<textarea class="text-input textarea" rows="16" cols="50"
 					name="dormrecord.content"></textarea>
 			</p>
-
-
-			
 			<p>
 				<input class="button" type="submit" value="修改" /> <input
 					class="button" type="reset" value="取消" />

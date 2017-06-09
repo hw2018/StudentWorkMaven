@@ -23,11 +23,11 @@ public class WorkLateInfoDaoImpl  extends BaseDaoImpl<late_info> implements Work
 				.setMaxResults(10).list();
 	}
 
-	@Override
+	
 	public long findCountByPage(int pageno, String studentid) {
 		// TODO Auto-generated method stub
 		String hql="select count(*) from late_info li where li.personInfo.studentid like :studentid";
-		return (long)getSession().createQuery(hql).setString("studentid", "%"+studentid+"%")
+		return (Long)getSession().createQuery(hql).setString("studentid", "%"+studentid+"%")
 			.uniqueResult();
 	}
 	

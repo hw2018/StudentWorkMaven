@@ -48,6 +48,27 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 	document.getElementById("modify").style.display = "none";
 }
 
+function check1()
+{
+	var name = document.getElementById("name");
+	var price = document.getElementById("price");
+	
+	if(name.value.replace(/^ +| +$/g,"")=="")
+		{alert("物品名不能为空!");return false;}
+	else if(price.value.replace(/^ +| +$/g,"")=="")
+		{alert("价格不能为空!");return false;}
+}
+
+function check2()
+{
+	var modifyname = document.getElementById("modifyname");
+	var modifyprice = document.getElementById("modifyprice");
+	
+	if(modifyname.value.replace(/^ +| +$/g,"")=="")
+		{alert("物品名不能为空!");return false;}
+	else if(modifyprice.value.replace(/^ +| +$/g,"")=="")
+		{alert("价格不能为空!");return false;}
+}
 
 </script>
 </head>
@@ -57,7 +78,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 <!--带关闭按钮的div修改弹窗-->
 <div align="center" id="modify" style="display:none;font-height:20px;;color:dddcdc;position:fixed ;margin:auto;left:0px;right:0px;top:0px;bottom:0px;height:260px;width:500px;background-color:4d4c4c;z-index:3;border:thin solid green;"><br/>
 <br/>
-<form method="post" action="<%=basePath%>goods/modifygoodsinfo.action">
+<form method="post" onsubmit="return check2()"action="<%=basePath%>goods/modifygoodsinfo.action">
 <lable style="line-height:30px;">&#12288ID：&#12288&#12288<input onfocus=this.blur() type="text" id = "modifyid" name="id" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">&#12288名称：&#12288<input type="text" id = "modifyname" name="name" maxlength="50" size="50"/></lable><br/>  
 <lable style="line-height:30px;">&#12288单价：&#12288<input type="text" id = "modifyprice" name="price" maxlength="50" size="50"/></lable><br/>  
@@ -72,7 +93,7 @@ function cancel1()  //命名竟然不能是close，好像是保留字
 
 
 <h2 align="left">添加物品：</h2>
-<form name="form1" method="post" action="<%=basePath%>goods/addgoodsinfo.action"  style="padding:15px;border:thin dashed black;">
+<form name="form1" method="post" onsubmit="return check1()"action="<%=basePath%>goods/addgoodsinfo.action"  style="padding:15px;border:thin dashed black;">
 <div>名称：<input class="text-input medium-input" name="name" id="name" type="text" maxlength="50" size="50" />&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288&#12288<input type="submit" value="添加"/>&#12288<input type="reset" value="取消"/></div><br/>
 <div>单价：<input class="text-input medium-input" name="price" id ="price" type="text" maxlength="50" size="50" /></div><br/>
 <div>联系方式：<input class="text-input medium-input" name="contact" id ="contact" type="text" maxlength="50" size="50" /></div><br/>

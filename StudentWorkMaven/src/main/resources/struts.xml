@@ -264,8 +264,47 @@
 			<result name="success">/dorm/dorm/recordManage/{1}.jsp</result>
 		</action>
 		</package>
+		<package name="itemManage" namespace="/dorm/itemManage" extends="struts-default" >
+			
+			
+			<action name="*Item" class="unp.student.work.manager.controller.DormItemManageAction"
+				method="{1}">
+					<result name="update">/dorm/dorm/itemManage/item_update.jsp</result>
+					<result name="showItems">/dorm/dorm/itemManage/item_list.jsp</result>
+					<result name="success" type="chain">showItem</result>
+			</action>
+			<action name="*">
+			<result name="success">/dorm/dorm/itemManage/{1}.jsp</result>
+		</action>
+		</package>
+		<package name="applyManage" namespace="/dorm/applyManage" extends="struts-default" >
+			
+			
+			<action name="*Apply" class="unp.student.work.manager.controller.DormBorrowApplyManageAction"
+				method="{1}">
+					<result name="update">/dorm/dorm/applyManage/apply_update.jsp</result>
+					<result name="showApplys">/dorm/dorm/applyManage/apply_list.jsp</result>
+					<result name="success" type="chain">showApply</result>
+			</action>
+			<action name="*">
+			<result name="success">/dorm/dorm/applyManage/{1}.jsp</result>
+		</action>
+		</package>
+		<package name="repairManage" namespace="/dorm/repairManage" extends="struts-default" >
+			
+			
+			<action name="*Repair" class="unp.student.work.manager.controller.DormRepairManageAction"
+				method="{1}">
+					<result name="update">/dorm/dorm/repairManage/repair_update.jsp</result>
+					<result name="showRepairs">/dorm/dorm/repairManage/repair_list.jsp</result>
+					<result name="success" type="chain">showRepair</result>
+			</action>
+			<action name="*">
+			<result name="success">/dorm/dorm/repairManage/{1}.jsp</result>
+		</action>
+		</package>
 		
-		
+		<!-- 111 -->
 		
 		
 		<!-- 班级部分 -->
@@ -296,6 +335,7 @@
 		    <action name="*_classLeave" class="classLeaveAction" method="{1}">  
 			<result name="update">/class/leave/update.jsp</result>
 			<result name="show">/class/leave/list.jsp</result>
+			<result name="show2">/class/leave/list2.jsp</result>
 			<result name="success" type="chain">show_classLeave</result>
 		</action>
 		

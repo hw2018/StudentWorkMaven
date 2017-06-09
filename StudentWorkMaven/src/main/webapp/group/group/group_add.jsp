@@ -12,27 +12,16 @@
 function checkNull() {
 	/*判断是否有空内容*/
 	for (i = 0; i < form1.length; i++) {
-		System.out.println(form1.elements[i].value);
-		if(i==1){
-			if (form1.elements[i].value == "") {
-				alert(form1.elements[i].title + "不能为空!");
-				form1.elements[i].focus();
-				return false;
-			}
+		if (form1.elements[i].value == "") {
+			alert(form1.elements[i].title + "不能为空!");
+			form1.elements[i].focus();
+			return false;
 		}
 		if(i==0){
-			String s=(String)form1.elements[i].value;
-			if (s.endsWith("社")||s.endsWith("协会"));
-			else{
-				alert(form1.elements[i].title + "社团名称不能为空且必须以“社”或者“协会”结尾！");
+			if(form1.elements[i].value.match(/(.*社)*$/)==null){
+				alert("请输入正确的社团名(以社结尾)"); 
 				form1.elements[i].focus();
-				return false;
-		}
-		1if(i==2){
-			if (form1.elements[i].value == "") {
-				alert(form1.elements[i].title + "不能为空!");
-				form1.elements[i].focus();
-				return false;
+				return (false); 
 			}
 		}
 	}

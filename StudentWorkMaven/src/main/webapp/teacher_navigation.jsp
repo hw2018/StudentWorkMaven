@@ -34,16 +34,16 @@
 				</h1>
 				<div id="profile-links">
 					<p>
-						<a>欢迎您&nbsp;<%=session.getAttribute("studentid")%></a> | <a href="userExit" title="退出系统" target="_top">退出</a><br/>
+						<a>欢迎您&nbsp;<%=session.getAttribute("studentid")%></a> | <a href="userExit.action" title="退出系统" target="_top">退出</a><br/>
 					</p>
 				</div>
 
 			   
 			   <ul id="main-nav">
 					<li><a href="person/person/person_mail_list.jsp" class="nav" target="dmMain">宿舍管理</a></li>
-					<li><a href="class/leave/add.jsp" class="nav" target="dmMain">添加请假信息</a></li>
+					<li><a href="class/index2.jsp" class="nav" target="_top">班级管理</a></li>
 					<li><a href="group/index.jsp" class="nav" target="_top">社团管理</a></li>
-					<li><a href="person/person/person_diary_list.jsp" class="nav" target="dmMain">申请管理</a></li>
+					<li><a href="apply/index.jsp" class="nav" target="dmMain">申请管理</a></li>
 					<li><a href="person/person/person_contacts.jsp" class="nav" target="dmMain">闲置物品</a></li>
 					<li><a href="counsellor/getresult_counsellor.action" class="nav" target="dmMain">辅导员考核</a></li>
 					<li><a href="person/person/person_plan.jsp" class="nav" target="dmMain">校园服务</a></li>

@@ -33,7 +33,7 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 	
 	private String record;
 	
-	private String studentid;
+	private String studentid="";
 	
     private String reason;
 	
@@ -101,21 +101,23 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 		
 	}
 	
-	
+	//获取学生综测信息
 	public String show(){
-		PageBean pageBean=comprehensiveService.findByPage(pageno);
+		PageBean pageBean=comprehensiveService.findByPage(pageno,10,studentid);
 		request.put("pageBean", pageBean);
+		request.put("student", studentid);
 		return "show";
 		
 	}
 	
-	
+	//更新前先获取数据
 	public String get(){
 		comprehensive_record cRecord=comprehensiveService.get(comprehensive_record.getId());
 		request.put("comprehensiverecord", cRecord);
 		return "update";
 	}
-
+	
+	//	更新操作
 	public String update(){
 
 		String id=(String) session.get("studentid");
@@ -130,7 +132,8 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 			
 				 comprehensiveService.addRecord(comprehensive_record,record);
 				 comprehensiveService.update(comprehensive_record);
-				 PageBean pageBean=comprehensiveService.findByPage(pageno);
+				 PageBean pageBean=comprehensiveService.findByPage(pageno,10,studentid);
+				 request.put("student", studentid);
 				request.put("pageBean", pageBean);
 				return "show";
 			}else{
@@ -189,7 +192,7 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 		}
 	}
 	
-	
+	//删除修改记录相对应做的改变也会消失
 	public String deleterecord(){
 		
 		String id=(String)session.get("studentid");
@@ -200,12 +203,14 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 		
 	}
 	
+	
+	//获取申诉记录
 	public String getrecord(){
 		
 		request.put("record", comprehensiveService.getRecord(cid));
 		return "addapply";
 	}
-	public String addapply(){
+	public String addapply(){//添加申诉
 		
 		comprehensiveService.addapply(cid, reason);
 		String id=(String)session.get("studentid");

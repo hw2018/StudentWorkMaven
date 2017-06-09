@@ -19,6 +19,6 @@ public interface WorkCounsellorService {
 	
 	public void addRecord(String studentid,float[] score,int select);
 	
-	public PageBean getResult(int pageno,int size);
+	public PageBean getResult(String name,int pageno,int size);
 
 }

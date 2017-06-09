@@ -8,7 +8,7 @@ import unp.student.work.manager.utils.PageBean;
 public interface WorkComprehensiveService {
 	
 	
-	public PageBean findByPage(int pageno);//按页查询
+	public PageBean findByPage(int pageno,int size,String studnetid);//按页查询
 	public void update(comprehensive_record c);//更新
 	
 	public comprehensive_record get(int cid);//获取综测
