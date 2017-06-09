@@ -107,6 +107,12 @@ public class ClassLeaveAction extends ActionSupport {
 		request.put("pageBean", pageBean);
 		return "show";
 	}
+	public String show2(){
+		pageBean=classleaveService.findByPage(pageNo, 10);
+		Map<String ,Object> request=(Map<String, Object>) ActionContext.getContext().get("request");
+		request.put("pageBean", pageBean);
+		return "show2";
+	}
 	
 	public String save(){
 		classleaveService.update(classleave);

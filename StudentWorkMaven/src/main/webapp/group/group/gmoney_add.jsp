@@ -11,6 +11,13 @@
 	function checkNull() {
 		/*判断是否有空内容*/
 		for (i = 0; i < form1.length; i++) {
+			if(i==0){
+				if(form1.elements[i].value <= 0){
+					alert(form1.elements[i].title + "金额必须为正数！");
+					form1.elements[i].focus();
+					return false;
+				}
+			}
 			if (form1.elements[i].value == "") {
 				alert(form1.elements[i].title + "不能为空!");
 				form1.elements[i].focus();

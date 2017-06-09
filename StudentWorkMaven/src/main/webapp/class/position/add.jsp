@@ -40,14 +40,14 @@
 
 						<P>
 				委任时期：<select name="classposition.date" id="terms">
-				<option value="2014-2015第一学期">2014-2015第一学期</option>
-				<option value="2014-2015第二学期">2014-2015第二学期</option>
-				<option value="2015-2016第一学期">2015-2016第一学期</option>
-				<option value="2015-2016第二学期">2015-2016第二学期</option>
-				<option value="2016-2017第一学期">2016-2017第一学期</option>
-				<option value="2016-2017第二学期">2016-2017第二学期</option>
-				<option value="2017-2018第一学期">2017-2018第一学期</option>
-				<option value="2017-2018第二学期">2017-2018第二学期</option>				
+				<option value="2014-2015  第一学期">2014-2015  第一学期</option>
+				<option value="2014-2015  第二学期">2014-2015  第二学期</option>
+				<option value="2015-2016  第一学期">2015-2016  第一学期</option>
+				<option value="2015-2016  第二学期">2015-2016  第二学期</option>
+				<option value="2016-2017  第一学期">2016-2017  第一学期</option>
+				<option value="2016-2017  第二学期">2016-2017  第二学期</option>
+				<option value="2017-2018  第一学期">2017-2018  第一学期</option>
+				<option value="2017-2018  第二学期">2017-2018  第二学期</option>				
 				</select> 
 			</P>
 			<p>

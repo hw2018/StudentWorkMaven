@@ -20,10 +20,6 @@
 	<div class="content-box-content">
 		<form name="form1" method="post" >
 			<p>
-				社团名字：<input class="text-input large-input" type="text"
-					name="groupAct.groupId" value="<%=groupAct.getGroupId()%>" readonly></input>
-			</p>
-			<p>
 				活动名字：
 				<input class="text-input large-input" type="text"
 					name="groupAct.name" value="<%=groupAct.getName()%>" readonly></input>

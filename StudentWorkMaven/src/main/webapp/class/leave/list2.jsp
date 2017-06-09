@@ -32,7 +32,6 @@
 			<td>销假时间</td>
 			<td>是否同意</td>
 			<td>辅导员</td>	
-			<td>操作</td>
 		</tr>
 		<%-- jsp尽量不要调用service或者dao对象, 应该从request里取出对象 --%>
 		<%
@@ -46,14 +45,13 @@
 		<tr>
 			<td><s:property value="#f.id"/></td>
 			<td><s:property value="#f.studentid"/></td>		
-			<td><s:date name="#f.leavedate" format="yyyy-MM-dd"/></td>
+			<td><s:property value="#f.leavedate"/></td>
 			<td><s:property value="#f.leavereason"/></td>
-			<td><s:date name="#f.backdate" format="yyyy-MM-dd"/></td>
+			<td><s:property value="#f.backdate"/></td>
 			<td><s:property value="#f.agree"/></td>
 			
 			<td><s:property value="#f.instructor"/></td>
-			<td><a href="update_classLeave.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="delete_classLeave.action?id=<s:property value='#f.id'/>">删除</a></td>
+
 		</tr>
 	</s:iterator>
 		
