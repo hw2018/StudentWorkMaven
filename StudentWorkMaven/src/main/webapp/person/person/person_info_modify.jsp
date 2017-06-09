@@ -162,7 +162,7 @@ function check()
 		{alert("籍贯不能为空!");return false;}
 	else if(birthday.value.replace(/^ +| +$/g,"")=="")
 		{alert("出生年月不能为空!");return false;}
-	else if(parseInt(curDate[0])>parseInt(date.getFullYear()) || curDate[1]>date.getMonth()+1 || curDate[2]>date.getDate())
+	else if(parseInt(curDate[0])>parseInt(date.getFullYear()) || parseInt(curDate[0])==parseInt(date.getFullYear()) && curDate[1]>date.getMonth()+1 || parseInt(curDate[0])==parseInt(date.getFullYear()) && curDate[1]==date.getMonth()+1 && curDate[2]>date.getDate())
 		{alert("您填写的出生年月表明您在未来出生,这不符合人类的逻辑!");return false;}
 	else if(grade.value.replace(/^ +| +$/g,"")=="" || grade.value.length!=4 || parseInt(grade.value)>fullyear || grade.value.replace(/\d/g,"")!="")
 		{alert("年级不符合规范!");return false;}
