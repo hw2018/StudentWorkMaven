@@ -34,21 +34,23 @@
 	<div class="content-box-content">
 		<s:form name="form1" action="dorm/itemManage/saveItem.action" method="post"
 			onSubmit="return checkNull()">
-	
+			<p>
+				编号：<input  value="${dormitem.id}"class="text-input medium-input" type="text"
+					name="dormitem.id" /> 
+			</p>
 			<p>
 				宿舍号：
-				<s:textfield class="text-input large-input" type="text"
-					name="dormitem.dormId"></s:textfield>
+				<input class="text-input large-input" type="text"
+					name="dormitem.dormId">
 			</p>
 			<p>
 				名称：
-				<s:textfield class="text-input large-input" type="text"
-					name="dormitem.name"></s:textfield>
-			</p>
+				<input class="text-input large-input" type="text"
+					name="dormitem.name">
 			<p>
 				状态：
-				<s:textfield class="text-input large-input" type="text"
-					name="dormitem.status"></s:textfield>
+				<input class="text-input large-input" type="text"
+					name="dormitem.status">
 			</p>
 			<p>
 				描述：
