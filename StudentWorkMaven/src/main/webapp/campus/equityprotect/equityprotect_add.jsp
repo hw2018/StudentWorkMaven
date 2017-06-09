@@ -33,15 +33,18 @@
 				申请人姓名：<input class="text-input medium-input" type="text"
 					name="equityprotect.name" />
 			</p>
+			
 			<p>
 				性别： <input type="radio" name="equityprotect.sex" value="M"/>男
 				<input type="radio" name="equityprotect.sex" value="F" />女
 			</p>
+			
 			<p>
 				申请权益类型： <input type="radio" name="equityprotect.type" value="Y"/>财产
 				<input type="radio" name="equityprotect.type" value="N" />名誉
 				<input type="radio" name="equityprotect.type" value="W" />其他事件
 			</p>
+			
 			<p>
 				权益维护描述：
 				<textarea class="text-input textarea" rows="16" cols="50"

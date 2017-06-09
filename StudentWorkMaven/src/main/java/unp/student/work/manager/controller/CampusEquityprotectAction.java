@@ -10,6 +10,9 @@ import unp.student.work.manager.domain.Equityprotect;
 import unp.student.work.manager.service.CampusEquityprotectService;
 import unp.student.work.manager.service.impl.CampusEquityprotectServiceImpl;
 import unp.student.work.manager.utils.PageBean;
+import unp.student.work.manager.controller.SessionCounter;
+import unp.student.work.manager.controller.UserServlet;
+import unp.student.work.manager.controller.PersonUserAction;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +35,7 @@ public class CampusEquityprotectAction extends ActionSupport {
 	public String add(){
 		
 		equityprotect.setStarttime(new Date());
+		//equityprotect.setSchoolId(LOGIN);
 		System.out.println(equityprotect.toString());
 		equityprotectService.save(equityprotect);
 		return SUCCESS;

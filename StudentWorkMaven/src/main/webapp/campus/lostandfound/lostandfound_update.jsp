@@ -54,6 +54,11 @@
 					name="lostandfound.tradeplace"></s:textfield>
 			</p>
 			<p>
+				联系方式：
+				<s:textfield class="text-input large-input" type="text"
+					name="lostandfound.tradetype"></s:textfield>
+			</p>
+			<p>
 				权益维护描述：
 				<s:textarea class="text-input textarea" rows="16" cols="50"
 					name="lostandfound.description"></s:textarea>

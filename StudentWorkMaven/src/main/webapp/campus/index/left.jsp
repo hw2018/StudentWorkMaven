@@ -39,7 +39,7 @@
 				<div id="profile-links">
 					<p>
 						<a>欢迎您${sessionScope.user}! <br></a> <a href="" title="密码修改" target="dmMain">密码修改
-						</a>| <a href="userExit" title="退出系统" target="_top">退出</a>
+						</a>| <a href="userExit.action" title="退出系统" target="_top">退出</a>
 						<br>
 						当前在线人数:<%=SessionCounter.getActiveSessions() %>
 					</p>
@@ -70,8 +70,8 @@
 						<ul>
 							<li><a href="diningroomcomplaints/diningroomcomplaints_add.action" target="dmMain">食堂投诉申请</a></li>
 							<li><a href="diningroomcomplaints/showDiningroomcomplaints.action" target="dmMain">食堂投诉记录</a></li>
-							<li><a href="" target="dmMain">说吧</a></li>
-							<li><a href="" target="dmMain">吐槽记录</a></li>
+							<!--<li><a href="" target="dmMain">说吧</a></li>
+							<li><a href="" target="dmMain">吐槽记录</a></li>-->
 						</ul></li>
 					<!--<li><a href="#" class="nav-top-item">校园信息一点通</a>
 						<ul>

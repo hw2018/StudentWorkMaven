@@ -42,6 +42,10 @@
 					name="lostandfound.tradeplace" />
 			</p>
 			<p>
+				联系方式： <input class="text-input medium-input" type="text"
+					name="lostandfound.tradetype" />
+			</p>
+			<p>
 				失物描述：
 				<textarea class="text-input textarea" rows="16" cols="50"
 					name="lostandfound.description"></textarea>
