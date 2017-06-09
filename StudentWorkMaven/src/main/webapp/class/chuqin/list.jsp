@@ -44,7 +44,7 @@
 			<td><s:property value="#f.id"/></td>
 			<td><s:property value="#f.course"/></td>
 			<td><s:property value="#f.studentid"/></td>
-			<td><s:property value="#f.date"/></td>
+			<td><s:date name="#f.date" format="yyyy-MM-dd"/></td>
 			<td><a href="update_classChuqin.action?id=<s:property value='#f.id'/>">修改</a> 
 			<a href="delete_classChuqin.action?id=<s:property value='#f.id'/>">删除</a></td>
 		</tr>

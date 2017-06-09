@@ -44,46 +44,14 @@
 
 				<ul id="main-nav">
 					<!-- Accordion Menu -->
-					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							班级职务管理
-					</a>
-						<ul>		
-							<li><a href="class/position/add.jsp" target="dmMain">委任成员职务</a></li>
-							<li><a href="show_classPosition.action" target="dmMain">成员职务列表</a></li>
-
-						</ul></li>
-						
-						
-				    <li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							班级活动管理
-					</a>
-						<ul>
-							<li><a href="class/activity/add.jsp" target="dmMain">班级活动申请</a></li>
-							<li><a href="show_classActivity.action" target="dmMain">班级活动列表</a></li>
-						</ul></li>
-											
-				<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							班级出勤管理
-					</a>
-						<ul>		
-							<li><a href="class/chuqin/add.jsp" target="dmMain">添加出勤信息</a></li>
-							<li><a href="show_classChuqin.action" target="dmMain">出勤信息列表</a></li>
-
-						</ul></li>
-						
-					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							班级作业管理
-					</a>
-						<ul>
-							<li><a href="class/homework/add.jsp" target="dmMain">新增作业信息</a></li>
-							<li><a href="show_classHomework.action" target="dmMain">作业信息列表</a></li>
-						</ul></li>
+	
 
 					<li><a href="#" class="nav-top-item current"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 							班级请假管理
 					</a>
 						<ul>
-							<li><a href="show2_classLeave.action" target="dmMain">请假信息列表</a></li>
+							<li><a href="class/leave/add.jsp" target="dmMain">添加请假信息</a></li>
+							<li><a href="show_classLeave.action" target="dmMain">请假信息列表</a></li>
 						</ul></li>
 
 				</ul>

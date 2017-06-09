@@ -50,7 +50,7 @@
 			<td><s:property value="#f.studentid"/></td>
 			<td><s:property value="#f.place"/></td>
 			<td><s:property value="#f.number"/></td>
-			<td><s:property value="#f.date"/></td>
+			<td><s:date name="#f.date" format="yyyy-MM-dd"/></td>
 			
 			<td><s:property value="#f.master"/></td>
 		    <td><s:property value="#f.content"/></td>

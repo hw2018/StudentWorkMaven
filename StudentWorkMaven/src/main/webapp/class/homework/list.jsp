@@ -47,8 +47,8 @@
 			<td><s:property value="#f.id"/></td>
 			<td><s:property value="#f.course"/></td>		
 			<td><s:property value="#f.content"/></td>
-			<td><s:property value="#f.startdate"/></td>
-			<td><s:property value="#f.deadline"/></td>
+			<td><s:date name="#f.startdate" format="yyyy-MM-dd"/></td>
+			<td><s:date name="#f.deadline" format="yyyy-MM-dd"/></td>
 			<td><s:property value="#f.studentid"/></td>		
 			<td><s:property value="#f.submit"/></td>
 			<td><a href="update_classHomework.action?id=<s:property value='#f.id'/>">修改</a> 

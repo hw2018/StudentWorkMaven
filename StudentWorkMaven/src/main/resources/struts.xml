@@ -335,6 +335,7 @@
 		    <action name="*_classLeave" class="classLeaveAction" method="{1}">  
 			<result name="update">/class/leave/update.jsp</result>
 			<result name="show">/class/leave/list.jsp</result>
+			<result name="show2">/class/leave/list2.jsp</result>
 			<result name="success" type="chain">show_classLeave</result>
 		</action>
 		
