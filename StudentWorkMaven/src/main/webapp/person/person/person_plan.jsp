@@ -61,11 +61,14 @@ function check1()
 	var start = document.getElementById("start");
 	var end = document.getElementById("end");
 	
+	s[0]=parseInt(s[0]);	s[1]=parseInt(s[1]);	s[2]=parseInt(s[2]);
+	e[0]=parseInt(e[0]);	e[1]=parseInt(e[1]);	e[2]=parseInt(e[2]);
+	
 	if(name.value.replace(/^ +| +$/g,"")=="")
 		{alert("计划名称不能为空!");return false;}
 	else if(start.value.replace(/^ +| +$/g,"")=="" || end.value.replace(/^ +| +$/g,"")=="")
 		{alert("计划时间不能为空!");return false;}
-	else if(parseInt(start.value.replace(/-/g,"")) > parseInt(end.value.replace(/-/g,"")))
+	else if(s[0]>e[0] || s[0]==e[0] && s[1]>e[1] || s[0]==e[0] && s[1]==e[1] && s[2]>e[2])
 	{
 		alert("开始时间不能大于结束时间！");
 		return false;
