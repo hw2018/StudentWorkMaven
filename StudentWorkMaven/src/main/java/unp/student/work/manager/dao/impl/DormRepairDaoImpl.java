@@ -13,7 +13,7 @@ public class DormRepairDaoImpl extends BaseDaoImpl<DormRepair> implements DormRe
 	
 	public List findByPage(int pageNo, int pageSize) {
 		// TODO Auto-generated method stub
-		return findByPage("from DormRecord", pageNo, pageSize);
+		return findByPage("from DormRepair", pageNo, pageSize);
 	}
 
 }

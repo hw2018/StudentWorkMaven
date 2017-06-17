@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 import unp.student.work.manager.domain.DormRepair;
-import unp.student.work.manager.service.DormInfoService;
+
 import unp.student.work.manager.service.DormRepairService;
 import unp.student.work.manager.utils.PageBean;
 @Controller

@@ -47,10 +47,7 @@
 				学号：<input  value="${dormrepair.studentId}"class="text-input medium-input" type="text"
 					name="dormrepair.studentId" /> 
 			</p>
-			<p>
-				物品编号：<input  value="${dormborrowapply.itemId}"class="text-input medium-input" type="text"
-					name="dormrepair.itemId" /> 
-			</p>
+			
 				<p>
 				维修内容：<input  value="${dormrepair.content}"class="text-input medium-input" type="text"
 					name="dormrepair.content" /> 

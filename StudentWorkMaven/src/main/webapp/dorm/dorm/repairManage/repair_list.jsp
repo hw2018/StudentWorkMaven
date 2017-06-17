@@ -39,9 +39,7 @@
 			<td><s:property value="#d.dormId"/></td>
 			<td><s:property value="#d.studentId"/></td>
 			<td><s:property value="#d.content"/></td>
-			
 			<td><s:property value="#d.status"/></td>
-		
 			<td><s:property value="#d.comment"/></td>
 			
 			

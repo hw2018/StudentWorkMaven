@@ -1,6 +1,6 @@
 package unp.student.work.manager.service.impl;
 
-import java.io.Serializable;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

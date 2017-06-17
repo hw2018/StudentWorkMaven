@@ -41,17 +41,17 @@
 			
 			<p>
 				宿舍号：
-				<input class="text-input large-input" type="text"
+				<input value="${dormrecord.dormId} "class="text-input large-input" type="text"
 					name="dormrecord.dormId">
 			</p>
 			<p>
 				记录种类：
-				<input class="text-input large-input" type="text"
+				<input value="${dormrecord.sort} "class="text-input large-input" type="text"
 					name="dormrecord.sort">
 			</p>
 			<p>
 				内容：
-				<textarea class="text-input textarea" rows="16" cols="50"
+				<textarea  class="text-input textarea" rows="16" cols="50"
 					name="dormrecord.content"></textarea>
 			</p>
 			<p>
