@@ -36,5 +36,13 @@ public class WebTeacherQuanxianDaoImpl extends BaseDaoImpl<TeacherQuanxian> impl
 		getSession().createQuery(hql).executeUpdate();
 	}
 
+
+	public TeacherQuanxian getByPassname(String passname) {
+		// TODO Auto-generated method stub
+		
+		String hql="from TeacherQuanxian t where t.passname=:passname";
+		return (TeacherQuanxian)getSession().createQuery(hql).setString("passname", passname).uniqueResult();
+	}
+
 	
 }

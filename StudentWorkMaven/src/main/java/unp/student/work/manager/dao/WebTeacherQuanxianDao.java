@@ -11,4 +11,7 @@ public TeacherQuanxian getByTeacher(int tid);
 	public List<TeacherQuanxian> query(String passname, int pageno,int size);
 	
 	public void deleteByIds(String ids);
+	
+	
+	public TeacherQuanxian getByPassname(String passname);
 }

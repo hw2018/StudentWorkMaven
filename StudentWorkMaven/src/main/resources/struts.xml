@@ -69,6 +69,7 @@
 		
 			<action name="*_*" class="sendAction">
 			 	<result name="send">/webmanager/{1}/{2}.jsp</result>
+			 	<result name="error">/webmanager/error.jsp</result>
 			</action>
 		</package>
 		

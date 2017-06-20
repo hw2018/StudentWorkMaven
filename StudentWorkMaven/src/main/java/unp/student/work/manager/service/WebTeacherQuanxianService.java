@@ -10,6 +10,8 @@ public interface WebTeacherQuanxianService {
 	
 	public TeacherQuanxian getByTeacher(int tid);
 	
+	public TeacherQuanxian getByTeacherByPassname(String passname);
+	
 	public List<TeacherQuanxian> query(String passname, int pageno,int size);
 
 	public Long findCount();

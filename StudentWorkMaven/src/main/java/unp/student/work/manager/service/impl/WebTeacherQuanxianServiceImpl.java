@@ -55,4 +55,12 @@ public class WebTeacherQuanxianServiceImpl implements WebTeacherQuanxianService 
 	}
 
 
+	public TeacherQuanxian getByTeacherByPassname(String passname) {
+		// TODO Auto-generated method stub
+		
+		
+		return webTeacherQuanxianDao.getByPassname(passname);
+	}
+
+
 }

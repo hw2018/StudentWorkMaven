@@ -18,8 +18,10 @@ import unp.student.work.manager.dao.impl.GroupStudentDaoImpl;
 import unp.student.work.manager.domain.PersonPersonInfo;
 import unp.student.work.manager.domain.PersonPersonInfoDto2;
 import unp.student.work.manager.domain.StudentQuanxian;
+import unp.student.work.manager.domain.TeacherQuanxian;
 import unp.student.work.manager.service.PersonInfoService;
 import unp.student.work.manager.service.WebStudentQuanXianService;
+import unp.student.work.manager.service.WebTeacherQuanxianService;
 
 @Component
 public class PersonUserAction extends ActionSupport 
@@ -37,6 +39,9 @@ public class PersonUserAction extends ActionSupport
 	
 	@Resource
 	WebStudentQuanXianService studentQuanXianService;
+	
+	@Resource
+	WebTeacherQuanxianService teacherQuanxianService;
 	public String userValidate() throws Exception 
 	{
 		Map<String, Object> session = ActionContext.getContext().getSession();
@@ -66,7 +71,18 @@ public class PersonUserAction extends ActionSupport
 		}
 		else if(personUserDao.checkTeacher(studentid, password))
 		{
+			
+			//工作管理 和后台管理暂时需要的老师权限验证
+			TeacherQuanxian tq=teacherQuanxianService.getByTeacherByPassname(studentid);
+			session.put("webteacher", tq.getPassname());
+			session.put("teacherquanxian",tq.getQuanxian());
+			
+			
+			
+			
 			boolean flagt=userDao.teacherquanxian(studentid, password);
+			
+			
 			if(flagt){
 				session.put("qx", 2);
 				session.put("user", studentid);
