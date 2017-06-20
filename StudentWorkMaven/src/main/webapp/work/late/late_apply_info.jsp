@@ -17,6 +17,7 @@
 	<form name="select"  action="lateinfo/showapply_lateinfo.action" method="post" >
 	申诉状态：<input type="text" class="text-input textarea" name="status"/>
     <input type="submit" value="查询"/>
+    </form>
 	<table>
 		<tr>
 			<td>缺勤人学号</td>
@@ -46,13 +47,13 @@
 
 
 <br>
-  <form name="PageForm" action="lateinfo/showapply_lateinfo.action" method="post">
+  <form id="pageform" name="PageForm" action="lateinfo/showapply_lateinfo.action" method="post">
 			<a id="last" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage-1 }&status=${status}">上一页</a>
 			<a id="cur" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage }&status=${status}">  ${pageBean.curPage}</a>
 			<a id="next" name="pageNum" href="lateinfo/showapply_lateinfo.action?pageno=${pageBean.curPage+1 }&status=${status}">下一页</a>
 			去第<input type="text"  name="pageno"/>页
-			<input type="submit"  vlue="确定"/>
-			
+			<input type="submit"  vlue="确定"  onclick="return checkpage(this.form)"/>
+			<p id="errorinfo"></p>
 				<script type="text/javascript">
 				
 				  if(${pageBean.curPage}<=1){
@@ -90,7 +91,25 @@
 				  	persons[i].style.visibility="hidden";
 				  	}
 				  }
-				  
+				  function checkpage(form) {
+
+			if(isNaN(form.pageno.value)) {
+                document.getElementById('errorinfo').innerHTML="页码只能为数字";
+                form.pageno.focus();
+                return false;
+           }
+          if(form.pageno.value<=0) {
+                 document.getElementById('errorinfo').innerHTML="页码不能小于0";
+                form.pageno.focus();
+                return false;
+           }
+       if(form.pageno.value>=${pageBean.maxPage}){
+                document.getElementById('errorinfo').innerHTML="页码不能大于最大页";
+                form.pageno.focus();
+                return false;
+         }
+         return true;
+         } 
 				 
 				  
 			

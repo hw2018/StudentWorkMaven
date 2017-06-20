@@ -35,22 +35,22 @@
 		<h3>新增晚点信息</h3>
 	</div>
 	<div class="content-box-content">
-		<form name="form1" action="lateinfo/add_lateinfo.action" method="post"
+		<form id="addlate" name="form1" action="lateinfo/add_lateinfo.action" method="post"
 			onSubmit="return checkNull()">
 			
 				晚点缺勤情况：
-				<textarea class="text-input textarea" rows="16" cols="50"
+				<textarea id="situation" class="text-input textarea" rows="16" cols="50"
 					name="situation" onKeyDown="textdown(event)"
     onKeyUp="textup()" onfocus="if(value=='输入为学号,学号........如111111111,222222222'){value=''}"
     onblur="if (value ==''){value='输入为学号,学号........如111111111,222222222'}">输入为学号,学号........如111111111,222222222</textarea>
+			<p  id="errorinfo">
 			</p>
-			<p>
 				 晚点时间：<p>Date: <input type="text" id="datepicker" name="date"></p>
 				
 			</p>
 			<p>
-				<input class="button" type="submit" value="新增" /> <input
-					class="button" type="reset" value="取消" />
+				<input class="button" type="submit" value="新增" onclick="return checkinfo(this.form)" /> 
+				<input	class="button" type="reset" value="取消" />
 			</p>
 		</form>
 	</div>
@@ -58,25 +58,22 @@
 </body>
 <script>
 
-	jQuery.validator.addMethod("lateinfo", function(value, element) {
-// allow any non-whitespace characters as the host part
-		returnthis.optional( element ) || /[0-9]/.test( value );
-	}	, '请输入正确的格式');
-	$(function () {
-				
-			$( "#select" ).validate( {   
-				rules: {
-					studentid: {
-						required:true,
-						number:true
+
+	function checkinfo(form){
+			
+			var reg=/\\d{9}/ig;
+		var situation=form.situation.value;
+
+		var strings = situation.split(",");
+		for(var i=0;i<strings.length;i++){
+					if(!reg.test(strings[i])){
+						document.getElementById('errorinfo').innerHTML="格式不正确";
+						return false;
 					}
-				},
-				messages:{
-					studentid:"输出正确的学号"
-				},
-				
-			} );
-		});
+		}
+		return true;
+	}
+	
 
 </script>
 </html>
