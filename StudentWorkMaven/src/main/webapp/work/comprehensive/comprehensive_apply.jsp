@@ -53,7 +53,7 @@
 			<a href="#">${pageBean.maxPage}</a>
 			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }">下一页</a>
 			去第<input type="text"  name="pageno"/>页
-			<input type="submit"  vlue="确定"/>
+			<input type="submit"  vlue="确定"  onclick="return checkpage(this.form)"/>
 			
 				<script type="text/javascript">
 				
@@ -83,7 +83,26 @@
 				 	  }
 				 	  }
 				 	  
-				 	 
+				 function checkpage(form) {
+
+			if(isNaN(form.pageno.value)) {
+                document.getElementById('errorinfo').innerHTML="页码只能为数字";
+                form.pageno.focus();
+                return false;
+           }
+          if(form.pageno.value<=0) {
+                 document.getElementById('errorinfo').innerHTML="页码不能小于0";
+                form.pageno.focus();
+                return false;
+           }
+       if(form.pageno.value>=${pageBean.maxPage}){
+                document.getElementById('errorinfo').innerHTML="页码不能大于最大页";
+                form.pageno.focus();
+                return false;
+         }
+         return true;
+         } 
+				
 							/*function change(){
 				var serach=document.getElementById("search_method").value;
 				if(search=="2"){

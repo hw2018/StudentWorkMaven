@@ -42,7 +42,7 @@
 			<a id="cur" name="pageNum" href="counsellor/getresult_counsellor.action?pageno=${pageBean.curPage }&sname=${name}">${pageBean.curPage }</a>
 			<a id="next" name="pageNum" href="counsellor/getresult_counsellor.action?pageno=${pageBean.curPage+1 }&sname=${name}">下一页</a>
 			去第<input type="text"  name="pageno"/>页
-			<input type="submit"  vlue="确定"/>
+			<input type="submit"  vlue="确定"  onclick="return checkpage(this.form)"/>
 			
 				<script type="text/javascript">
 				
@@ -70,6 +70,25 @@
 				 nextbutton.style.visibility="hidden";
 				  }		
 				  
+				 function checkpage(form) {
+
+			if(isNaN(form.pageno.value)) {
+                document.getElementById('errorinfo').innerHTML="页码只能为数字";
+                form.pageno.focus();
+                return false;
+           }
+          if(form.pageno.value<=0) {
+                 document.getElementById('errorinfo').innerHTML="页码不能小于0";
+                form.pageno.focus();
+                return false;
+           }
+       if(form.pageno.value>=${pageBean.maxPage}){
+                document.getElementById('errorinfo').innerHTML="页码不能大于最大页";
+                form.pageno.focus();
+                return false;
+         }
+         return true;
+         } 
 				 
 				</script>
 		</form>

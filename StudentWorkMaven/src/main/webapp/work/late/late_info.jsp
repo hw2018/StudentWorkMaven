@@ -46,7 +46,7 @@
 			<a id="cur" name="pageNum" href="lateinfo/info_lateinfo.action?pageno=${pageBean.curPage }&id=${late_info.id}">    ${pageBean.curPage}   </a>
 			<a id="next" name="pageNum" href="lateinfo/info_lateinfo.action?pageno=${pageBean.curPage+1 }&id=${late_info.id}">下一页</a>
 			去第<input type="text"  class="text-input textarea" name="pageno"/>页
-			<input type="submit"  vlue="确定"/>
+			<input type="submit"  vlue="确定"  onclick="return checkpage(this.form)"/>
 			
 				<script type="text/javascript">
 				$(function () {
@@ -82,7 +82,27 @@
 				  delete1[i].style.display="none";
 				  }
 				  }		  
-				 		/*function change(){
+				 	
+				 	 function checkpage(form) {
+
+			if(isNaN(form.pageno.value)) {
+                document.getElementById('errorinfo').innerHTML="页码只能为数字";
+                form.pageno.focus();
+                return false;
+           }
+          if(form.pageno.value<=0) {
+                 document.getElementById('errorinfo').innerHTML="页码不能小于0";
+                form.pageno.focus();
+                return false;
+           }
+       if(form.pageno.value>=${pageBean.maxPage}){
+                document.getElementById('errorinfo').innerHTML="页码不能大于最大页";
+                form.pageno.focus();
+                return false;
+         }
+         return true;
+         } 
+					/*function change(){
 				var serach=document.getElementById("search_method").value;
 				if(search=="2"){
 				document.getElementById("form").innerHTML="~<input Id="to"  type="text" name="search_value_to"/>"
