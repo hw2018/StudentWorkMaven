@@ -42,7 +42,7 @@
 			
 			
 			
-			<td>
+			<td><a href="dorm/applyManage/updateApply.action?id=<s:property value='#d.id'/>">审核</a> 
 			<a href="dorm/applyManage/deleteApply.action?id=<s:property value='#d.id'/>">删除</a></td>
 		</tr>
 	</s:iterator>

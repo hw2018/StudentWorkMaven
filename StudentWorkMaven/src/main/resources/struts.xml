@@ -285,6 +285,7 @@
 				method="{1}">
 					<result name="update">/dorm/dorm/applyManage/apply_update.jsp</result>
 					<result name="showApplys">/dorm/dorm/applyManage/apply_list.jsp</result>
+					<result name="show1Applys">/dorm/dorm/applyManage/apply_list1.jsp</result>
 					<result name="success" type="chain">showApply</result>
 			</action>
 			<action name="*">
@@ -297,6 +298,7 @@
 			<action name="*Repair" class="unp.student.work.manager.controller.DormRepairManageAction"
 				method="{1}">
 					<result name="update">/dorm/dorm/repairManage/repair_update.jsp</result>
+					<result name="show1Repairs">/dorm/dorm/repairManage/repair_list1.jsp</result>
 					<result name="showRepairs">/dorm/dorm/repairManage/repair_list.jsp</result>
 					<result name="success" type="chain">showRepair</result>
 			</action>

@@ -43,7 +43,7 @@
 			<td><s:property value="#d.comment"/></td>
 			
 			
-			<td><a href="dorm/repairManage/updateRepair.action?id=<s:property value='#d.id'/>">修改</a> 
+			<td>
 			<a href="dorm/repairManage/repair_comment.jsp?id=<s:property value='#d.id'/>">反馈</a>
 			<a href="dorm/repairManage/deleteRepair.action?id=<s:property value='#d.id'/>">删除</a></td>
 		</tr>

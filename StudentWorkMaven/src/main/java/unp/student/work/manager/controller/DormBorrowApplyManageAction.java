@@ -32,6 +32,10 @@ public class DormBorrowApplyManageAction extends ActionSupport {
 	 /**
      * 处理分页显示基金请求
      */
+	public String show1(){
+		pageBean=dormborrowapplyService.findByPage(pageNo, 10);
+		return "show1Applys";
+	}
 	public String show(){
 		pageBean=dormborrowapplyService.findByPage(pageNo, 10);
 		return "showApplys";

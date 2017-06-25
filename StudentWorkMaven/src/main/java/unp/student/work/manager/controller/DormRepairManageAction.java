@@ -32,9 +32,10 @@ public class DormRepairManageAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	 /**
-     * 处理分页显示基金请求
-     */
+	public String show1(){
+		pageBean=dormrepairService.findByPage(pageNo, 10);
+		return "show1Repairs";
+	}
 	public String show(){
 		pageBean=dormrepairService.findByPage(pageNo, 10);
 		return "showRepairs";
