@@ -35,15 +35,15 @@
 		<s:form name="form1" action="save_classActivity.action" method="post"
 			onSubmit="return checkNull()">
 		<p>
-				活动名称：<input class="text-input medium-input" type="text"
+				活动名称：<input value="${classactivity.name}" class="text-input medium-input" type="text"
 					name="classactivity.name" />
 			</p>
 			<p>
-				申请人学号：<input class="text-input medium-input" type="text"
+				申请人学号：<input value="${classactivity.studentid}" class="text-input medium-input" type="text"
 					name="classactivity.studentid" />
 			</p>
 			<p>
-				活动地点：<input class="text-input medium-input" type="text"
+				活动地点：<input value="${classactivity.place}" class="text-input medium-input" type="text"
 					name="classactivity.place" />
 			</p>
 	
@@ -57,16 +57,16 @@
 			</P>
 			
 			<p>
-				活动时间：<input class="text-input medium-input" type="text"
+				活动时间：<input value="${classactivity.date}" class="text-input medium-input" type="text"
 					name="classactivity.date" />
 			</p>
 			<p>
-				负责人：<input class="text-input medium-input" type="text"
+				负责人：<input value="${classactivity.master}" class="text-input medium-input" type="text"
 					name="classactivity.master" />
 			</p>
 					<p>
-				活动内容：				<textarea class="text-input textarea" rows="13" cols="50"
-					name="classactivity.content"></textarea>
+				活动内容：<input value="${classactivity.content}" class="text-input medium-input" type="text"
+					name="classactivity.content" />
 			</p>
 
 			

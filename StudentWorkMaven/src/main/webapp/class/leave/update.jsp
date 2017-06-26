@@ -35,20 +35,20 @@
 		<s:form name="form1" action="save_classLeave.action" method="post"
 			onSubmit="return checkNull()">
 	        <p>
-				学生学号：<input class="text-input medium-input" type="text"
+				学生学号：<input value="${classleave.studentid}" class="text-input medium-input" type="text"
 					name="classleave.studentid" />
 			</p>
 			<p>
-				请假时间：<input class="text-input medium-input" type="text"
+				请假时间：<input value="${classleave.leavedate}" class="text-input medium-input" type="text"
 					name="classleave.leavedate" />
 			</p>
 			<p>
-				请假原因：<input class="text-input medium-input" type="text"
+				请假原因：<input value="${classleave.leavereason}" class="text-input medium-input" type="text"
 					name="classleave.leavereason" />
 			</p>
 	
 			<p>
-				销假时间：<input class="text-input medium-input" type="text"
+				销假时间：<input value="${classleave.backdate}" class="text-input medium-input" type="text"
 					name="classleave.backdate" />
 			</p>
 			
@@ -57,7 +57,7 @@
 				<input type="radio" name="classleave.agree" value="不同意" />否
 			</p>
 			<p>
-				辅导员：<input class="text-input medium-input" type="text"
+				辅导员：<input value="${classleave.instructor}" class="text-input medium-input" type="text"
 					name="classleave.instructor" />
 			</p>
 			

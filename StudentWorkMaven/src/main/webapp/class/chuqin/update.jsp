@@ -35,15 +35,15 @@
 		<s:form name="form1" action="save_classChuqin.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
-				课程名称：<input class="text-input medium-input" type="text"
+				课程名称：<input value="${classchuqin.course}" class="text-input medium-input" type="text"
 					name="classchuqin.course" />
 			</p>
 			<p>
-				缺勤学生：<input class="text-input medium-input" type="text"
+				缺勤学生：<input value="${classchuqin.studentid}" class="text-input medium-input" type="text"
 					name="classchuqin.studentid" />
 			</p>
 			<p>
-				缺勤日期：<input class="text-input medium-input" type="text"
+				缺勤日期：<input value="${classchuqin.date}" class="text-input medium-input" type="text"
 					name="classchuqin.date" />
 			</p>
 

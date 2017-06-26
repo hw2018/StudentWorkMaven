@@ -35,25 +35,25 @@
 		<s:form name="form1" action="save_classHomework.action" method="post"
 			onSubmit="return checkNull()">
 	<p>
-				课程名称：<input class="text-input medium-input" type="text"
+				课程名称：<input value="${classhomework.course}" class="text-input medium-input" type="text"
 					name="classhomework.course" />
 			</p>
 			<p>
-				作业内容：<input class="text-input medium-input" type="text"
+				作业内容：<input value="${classhomework.content}" class="text-input medium-input" type="text"
 					name="classhomework.content" />
 			</p>
 			<p>
-				发布时间：<input class="text-input medium-input" type="text"
+				发布时间：<input value="${classhomework.startdate}" class="text-input medium-input" type="text"
 					name="classhomework.startdate" />
 			</p>
 	
 			<p>
-				提交时间：<input class="text-input medium-input" type="text"
+				提交时间：<input value="${classhomework.deadline}" class="text-input medium-input" type="text"
 					name="classhomework.deadline" />
 			</p>
 			
 			<p>
-				学生学号：<input class="text-input medium-input" type="text"
+				学生学号：<input value="${classhomework.studentid}" class="text-input medium-input" type="text"
 					name="classhomework.studentid" />
 			</p>
 			<p>

@@ -35,11 +35,11 @@
 		<s:form name="form1" action="save_classPosition.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
-				职务名称：<input class="text-input medium-input" type="text"
+				职务名称：<input value="${classposition.position}" class="text-input medium-input" type="text"
 					name="classposition.position" />
 			</p>
 			<p>
-				学生学号：<input class="text-input medium-input" type="text"
+				学生学号：<input value="${classposition.studentid}" class="text-input medium-input" type="text"
 					name="classposition.studentid" />
 			</p>
 					<P>

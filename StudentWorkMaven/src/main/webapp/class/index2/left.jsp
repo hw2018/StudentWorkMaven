@@ -51,7 +51,7 @@
 					</a>
 						<ul>
 							<li><a href="class/leave/add.jsp" target="dmMain">添加请假信息</a></li>
-							<li><a href="show_classLeave.action" target="dmMain">请假信息列表</a></li>
+							<li><a href="show_classLeave.action" target="dmMain">请假信息审核</a></li>
 						</ul></li>
 
 				</ul>

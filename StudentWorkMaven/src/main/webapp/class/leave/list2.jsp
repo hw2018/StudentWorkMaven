@@ -45,9 +45,9 @@
 		<tr>
 			<td><s:property value="#f.id"/></td>
 			<td><s:property value="#f.studentid"/></td>		
-			<td><s:property value="#f.leavedate"/></td>
+			<td><s:date name="#f.leavedate" format="yyyy-MM-dd"/></td>
 			<td><s:property value="#f.leavereason"/></td>
-			<td><s:property value="#f.backdate"/></td>
+			<td><s:date name="#f.backdate" format="yyyy-MM-dd"/></td>
 			<td><s:property value="#f.agree"/></td>
 			
 			<td><s:property value="#f.instructor"/></td>

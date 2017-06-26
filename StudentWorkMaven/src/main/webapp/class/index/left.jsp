@@ -58,7 +58,7 @@
 							班级活动管理
 					</a>
 						<ul>
-							<li><a href="class/activity/add.jsp" target="dmMain">班级活动申请</a></li>
+							<li><a href="class/activity/add.jsp" target="dmMain">新增班级活动</a></li>
 							<li><a href="show_classActivity.action" target="dmMain">班级活动列表</a></li>
 						</ul></li>
 											
@@ -76,7 +76,7 @@
 					</a>
 						<ul>
 							<li><a href="class/homework/add.jsp" target="dmMain">新增作业信息</a></li>
-							<li><a href="show_classHomework.action" target="dmMain">作业信息列表</a></li>
+							<li><a href="show_classHomework.action" target="dmMain">作业信息审核</a></li>
 						</ul></li>
 
 					<li><a href="#" class="nav-top-item current"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
