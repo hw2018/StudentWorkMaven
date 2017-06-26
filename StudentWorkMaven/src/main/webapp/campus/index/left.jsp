@@ -53,14 +53,14 @@
 						<ul>
 							<li><a href="equityprotect/equityprotect_add.action" target="dmMain">权益维护申请</a></li>
 							<li><a href="equityprotect/showEquityprotect.action" target="dmMain">权益维护记录</a></li>
-							<li><a href="equityprotect/showEquityprotect.action" target="dmMain">我的权益维护</a></li>
+							<!--<li><a href="equityprotect/showEquityprotect.action" target="dmMain">我的权益维护</a></li>-->
 						</ul></li>
 					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 							失物招领
 					</a>
 						<ul>
 							<li><a href="lostandfound/lostandfound_add.action" target="dmMain">登记失物信息</a></li>
-							<li><a href="lostandfound/lostandfound_add.action" target="dmMain">查询失物信息</a></li>
+							<!--<li><a href="lostandfound/lostandfound_add.action" target="dmMain">查询失物信息</a></li>-->
 							<li><a href="lostandfound/showLostandfound.action" target="dmMain">失物招领记录</a></li>
 						</ul></li>
 

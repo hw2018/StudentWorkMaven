@@ -36,8 +36,10 @@
 			onSubmit="return checkNull()">
 			<p>
 				申请人姓名：
-				<s:textfield class="text-input large-input" type="text"
-					name="lostandfound.name"></s:textfield>
+				<input  value="${lostandfound.name}"class="text-input medium-input" type="text"
+					name="lostandfound.name" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="lostandfound.name"></s:textfield>-->
 			</p>
 			<p>
 				失物类型：
@@ -50,18 +52,24 @@
 			</p>
 			<p>
 				归还地点：
-				<s:textfield class="text-input large-input" type="text"
-					name="lostandfound.tradeplace"></s:textfield>
+				<input  value="${lostandfound.tradeplace}"class="text-input medium-input" type="text"
+					name="lostandfound.tradeplace" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="lostandfound.tradeplace"></s:textfield>-->
 			</p>
 			<p>
 				联系方式：
-				<s:textfield class="text-input large-input" type="text"
-					name="lostandfound.tradetype"></s:textfield>
+				<input  value="${lostandfound.tradetype}"class="text-input medium-input" type="text"
+					name="lostandfound.tradetype" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="lostandfound.tradetype"></s:textfield>-->
 			</p>
 			<p>
 				权益维护描述：
-				<s:textarea class="text-input textarea" rows="16" cols="50"
-					name="lostandfound.description"></s:textarea>
+				<input  value="${lostandfound.description}"class="text-input medium-input" type="text"
+					name="lostandfound.description" />
+				<!--<s:textarea class="text-input textarea" rows="16" cols="50"
+					name="lostandfound.description"></s:textarea>-->
 			</p>
 
 			<s:hidden name="lostandfound.id" />

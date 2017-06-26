@@ -21,6 +21,7 @@
 			<td>失物招领编号</td>
 			<td>失主姓名</td>
 			<td>失物类型</td>
+			<td>失主联系方式</td>
 			<td>归还地点</td>
 			<td>失物登记日期</td>
 			
@@ -44,6 +45,7 @@
 					物品
 				</s:else>
 			</td>
+			<td><s:property value="#g.tradetype"/></td>
 			<td><s:property value="#g.tradeplace"/></td>
 			<td>
 			<s:date name="#g.releasedate" format="yyyy-MM-dd"/>

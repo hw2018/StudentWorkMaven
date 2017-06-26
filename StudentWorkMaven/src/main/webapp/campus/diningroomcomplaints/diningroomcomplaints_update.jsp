@@ -36,13 +36,17 @@
 			onSubmit="return checkNull()">
 			<p>
 				投诉人姓名：
-				<s:textfield class="text-input large-input" type="text"
-					name="diningroomcomplaints.name"></s:textfield>
+				<input  value="${diningroomcomplaints.name}"class="text-input medium-input" type="text"
+					name="diningroomcomplaints.name" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="diningroomcomplaints.name"></s:textfield>-->
 			</p>
 			<p>
 				食堂名称：
-				<s:textfield class="text-input large-input" type="text"
-					name="diningroomcomplaints.dininingroom"></s:textfield>
+				<input  value="${diningroomcomplaints.diningroom}"class="text-input medium-input" type="text"
+					name="diningroomcomplaints.diningroom" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="diningroomcomplaints.dininingroom"></s:textfield>-->
 			</p>
 			<p>
 				投诉类型：
@@ -58,8 +62,10 @@
 			</p>
 			<p>
 				具体理由：
-				<s:textarea class="text-input textarea" rows="16" cols="50"
-					name="diningroomcomplaints.reason"></s:textarea>
+				<input  value="${diningroomcomplaints.reason}"class="text-input medium-input" type="text"
+					name="diningroomcomplaints.reason" />	
+				<!--<s:textarea class="text-input textarea" rows="16" cols="50"
+					name="diningroomcomplaints.reason"></s:textarea>-->
 			</p>
 
 			<s:hidden name="diningroomcomplaints.id" />

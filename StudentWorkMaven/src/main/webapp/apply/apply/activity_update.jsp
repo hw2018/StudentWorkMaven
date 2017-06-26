@@ -29,7 +29,7 @@
 		Activity activity = (Activity)request.getAttribute("activity");
 	%>
 	<div class="content-box-header">
-		<h3>更新基金信息</h3>
+		<h3>更新活动信息</h3>
 	</div>
 	<div class="content-box-content">
 		<s:form name="form1" action="apply/apply/saveActivity.action" method="post"
