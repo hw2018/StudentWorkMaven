@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@ page import="unp.student.work.manager.domain.Scholarship"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -39,7 +38,7 @@
 		<form name="form1" action="apply/apply/addScholarship.action" method="post"
 			onSubmit="return checkNull()">
 			<P>
-				学期：<select name="scholarship.term" id="terms">
+				学期：<select name="scholarship.term"  id="terms">
 				<option value="2014-2015第一学期">2014-2015第一学期</option>
 				<option value="2014-2015第二学期">2014-2015第二学期</option>
 				<option value="2015-2016第一学期">2015-2016第一学期</option>
@@ -51,7 +50,7 @@
 				</select> 
 			</P>
 			<p>
-				专业：<select name="scholarship.profession" id="professions">
+				专业：<select name="scholarship.profession"  id="professions">
 				<option value="计算机科学技术">计算机科学技术</option>
 				<option value="德语">德语</option>
 				<option value="市场营销">市场营销</option>
@@ -80,6 +79,15 @@
 					name="scholarship.studentID"  id="a" 
 					onkeyup="value=value.replace(/[^(\d)]/g,'')" />
 			</p>
+			<p>
+				<input type="radio" name="scholarship.status" value="Y" checked />Y
+				<input type="radio" name="scholarship.status" value="N" checked/>N
+			</p>
+<!-- 			<p>
+				<input type="radio" name="scholarship.status" value="N" checked />
+			</p> -->
+			<p>
+			</p>			
 			<p>
 				<input class="button" type="submit" value="提交" /> <input
 					class="button" type="reset" value="取消" />

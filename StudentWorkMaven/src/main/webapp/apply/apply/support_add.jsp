@@ -86,6 +86,10 @@
 					onkeyup="value=value.replace(/[^(\d)]/g,'')" />
 			</p>
 			<p>
+				<input type="radio" name="support.status" value="Y" checked />Y
+				<input type="radio" name="support.status" value="N"  />N
+			</p>			
+			<p>
 				<input class="button" type="submit" value="提交" /> <input
 					class="button" type="reset" value="取消" />
 			</p>

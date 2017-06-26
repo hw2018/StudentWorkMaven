@@ -2,8 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@page import="java.util.List,unp.student.work.manager.domain.Holiday"%>
-<%@page import="unp.student.work.manager.dao.ApplyHolidayDao"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Activity"%>
+<%@page import="unp.student.work.manager.dao.ApplyActivityDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -15,30 +15,31 @@
 <%@ include file="../common/cssjs.inc"%>
 </head>
 <body>
-	<h1 align="center">申请查询结果</h1>
+	<h1 align="center">活动查询结果</h1>
 	<table>
 		<tr>
-			<td>编号</td>
-			<td>留校开始时间</td>
-			<td>留校结束时间</td>
-			<td>联系电话</td>
-			<td>留宿宿舍</td>
-			<td>申请原因</td>
+			<td>活动编号</td>
+			<td>活动人数</td>
+			<td>车辆数</td>
+			<td>带队老师</td>
+			<td>负责人</td>
 			<td>申请状态</td>
-			<td>申请时间 </td>
+			<td>申请时间</td>
 			<td>操作</td>
 		</tr>
-		<% 
+		<%-- jsp尽量不要调用service或者dao对象, 应该从request里取出对象 --%>
+		<%
+			//FundDao fundDao=new FundDaoJDBCImpl();
+			//List<Fund> funds=fundDao.findAll();
 			PageBean pageBean = (PageBean) request.getAttribute("pageBean"); //important!
 		%>
 		<s:iterator value="pageBean.data" var="f" status="st">
 		<tr>
 			<td><s:property value="#f.id"/></td>
-			<td><s:property value="#f.starttime"/></td>
-			<td><s:property value="#f.endtime"/></td>
-			<td><s:property value="#f.phone"/></td>
-			<td><s:property value="#f.dormitory"/></td>
-			<td><s:property value="#f.statement"/></td>		
+			<td><s:property value="#f.peoplenumber"/></td>
+			<td><s:property value="#f.carnumber"/></td>
+			<td><s:property value="#f.leadteacher"/></td>
+			<td><s:property value="#f.principal"/></td>			
 			<td>
 				<s:if test='#f.status=="Y"'>
 					审核中
@@ -48,14 +49,13 @@
 				</s:else>
 			</td>
 			<td>
-			<s:date name="#f.createtime" format="yyyy-MM-dd"/>
-			<td><a href="apply/apply/updateHoliday.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/apply/deleteHoliday.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<s:date name="#f.createTime" format="yyyy-MM-dd"/>
+			<td><a href="apply/apply/teacherupdateActivity.action?id=<s:property value='#f.id'/>">审核</a> 
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/apply/showHoliday.action" method="post">
+	<form name="PageForm" action="apply/apply/show1Activity.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>

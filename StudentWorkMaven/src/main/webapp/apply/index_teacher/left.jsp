@@ -48,33 +48,26 @@
 							奖学金
 					</a>
 						<ul>
-							<li><a href="apply/showScholarship.action" target="dmMain">奖学金管理</a></li>
+							<li><a href="apply/show1Scholarship.action" target="dmMain">奖学金管理</a></li>
 						</ul></li>
 					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 							社会资助
 					</a>
 						<ul>
-							<li><a href="apply/showSupport.action" target="dmMain">资助管理</a></li>
-						</ul></li>
-
-					<li><a href="#" class="nav-top-item "> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							勤工俭学
-					</a>
-						<ul>
-							<li><a href="" target="dmMain">勤工管理</a></li>
+							<li><a href="apply/show1Support.action" target="dmMain">资助管理</a></li>
 						</ul></li>
 					<li><a href="#" class="nav-top-item">
 							活动申请
 					</a>
 						<ul>
-							<li><a href="apply/showActivity.action" target="dmMain">活动申请管理</a></li>
+							<li><a href="apply/show1Activity.action" target="dmMain">活动申请管理</a></li>
 						</ul></li>
 					
 					<li><a href="#" class="nav-top-item"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 							假期留校
 					</a>
 						<ul>
-							<li><a href="apply/showHoliday.action" target="dmMain">留校&提前返校管理</li>
+							<li><a href="apply/show1Holiday.action" target="dmMain">留校&提前返校管理</li>
 						</ul></li>
 					<li>																		
 				</ul>

@@ -19,7 +19,7 @@ public class Holiday {
 		private int phone;
 		private String dormitory;
 		private String statement;
-		private int status;
+		private String status;
 		private Date createtime;
 		
 		public Date getCreatetime() {
@@ -52,10 +52,10 @@ public class Holiday {
 		public void setStatement(String statement) {
 			this.statement = statement;
 		}
-		public int getStatus() {
+		public String getStatus() {
 			return status;
 		}
-		public void setStatus(int status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 		
@@ -71,7 +71,7 @@ public class Holiday {
 		public void setEndtime(String endtime) {
 			this.endtime = endtime;
 		}
-		public Holiday(int id, String starttime, String endtime, int phone, String dormitory, String statement, int status,
+		public Holiday(int id, String starttime, String endtime, int phone, String dormitory, String statement, String status,
 				Date createtime) {
 			super();
 			this.id = id;

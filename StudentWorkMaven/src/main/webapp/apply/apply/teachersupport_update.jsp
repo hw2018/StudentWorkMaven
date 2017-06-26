@@ -32,7 +32,7 @@
 		<h3>更新申请信息</h3>
 	</div>
 	<div class="content-box-content">
-		<s:form name="form1" action="apply/apply/saveSupport.action" method="post"
+		<s:form name="form1" action="apply/apply/save1Support.action" method="post"
 			onSubmit="return checkNull()">
 		<P>
 				学期：<input  value="${support.term}"class="text-input medium-input" type="text"
@@ -53,6 +53,15 @@
 			<p>
 				学号：<input  value="${support.studentID}"class="text-input medium-input" type="text"
 					name="support.studentID" />
+			</p>
+			<p>
+				审核
+				<input type="radio" name="support.status" value="Y"
+				  <s:if test='support.status=="Y"'>checked</s:if>>
+				审核通过 
+				<input type="radio" name="support.status" value="N"
+				<s:if test='support.status=="N"'>checked</s:if>>
+				审核不通过
 			</p>
 			<s:hidden name="support.id" />
 			<p>

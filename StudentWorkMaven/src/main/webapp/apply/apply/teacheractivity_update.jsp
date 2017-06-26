@@ -32,7 +32,7 @@
 		<h3>更新基金信息</h3>
 	</div>
 	<div class="content-box-content">
-		<s:form name="form1" action="apply/apply/saveActivity.action" method="post"
+		<s:form name="form1" action="apply/apply/save1Activity.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
 				活动人数：<input  value="${activity.peoplenumber}"class="text-input medium-input" type="text"
@@ -50,7 +50,15 @@
 				负责人：<input  value="${activity.principal}"class="text-input medium-input" type="text"
 					name="activity.principal" /> 
 			</p>
-			
+			<p>
+				审核
+				<input type="radio" name="scholarship.status" value="Y"
+				  <s:if test='scholarship.status=="Y"'>checked</s:if>>
+				审核通过 
+				<input type="radio" name="scholarship.status" value="N"
+				<s:if test='scholarship.status=="N"'>checked</s:if>>
+				审核通过
+			</p>
 			<s:hidden name="activity.id" />
 			<p>
 				<input class="button" type="submit" value="修改" /> <input

@@ -2,8 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/head.jsp"%>
-<%@page import="java.util.List,unp.student.work.manager.domain.Holiday"%>
-<%@page import="unp.student.work.manager.dao.ApplyHolidayDao"%>
+<%@page import="java.util.List,unp.student.work.manager.domain.Scholarship"%>
+<%@page import="unp.student.work.manager.dao.ApplyScholarshipDao"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -15,47 +15,46 @@
 <%@ include file="../common/cssjs.inc"%>
 </head>
 <body>
-	<h1 align="center">申请查询结果</h1>
+	<h1 align="center">奖学金查询结果</h1>
 	<table>
 		<tr>
 			<td>编号</td>
-			<td>留校开始时间</td>
-			<td>留校结束时间</td>
-			<td>联系电话</td>
-			<td>留宿宿舍</td>
-			<td>申请原因</td>
+			<td>学期</td>
+			<td>学号</td>
+			<td>专业</td>
+			<td>奖学金种类</td>
 			<td>申请状态</td>
-			<td>申请时间 </td>
+			<td>申请时间</td>
 			<td>操作</td>
 		</tr>
-		<% 
+		<%-- jsp尽量不要调用service或者dao对象, 应该从request里取出对象 --%>
+		<%
 			PageBean pageBean = (PageBean) request.getAttribute("pageBean"); //important!
 		%>
 		<s:iterator value="pageBean.data" var="f" status="st">
 		<tr>
 			<td><s:property value="#f.id"/></td>
-			<td><s:property value="#f.starttime"/></td>
-			<td><s:property value="#f.endtime"/></td>
-			<td><s:property value="#f.phone"/></td>
-			<td><s:property value="#f.dormitory"/></td>
-			<td><s:property value="#f.statement"/></td>		
+			<td><s:property value="#f.term"/></td>
+			<td><s:property value="#f.studentID"/></td>
+			<td><s:property value="#f.profession"/></td>
+			<td><s:property value="#f.schsort"/></td>
+<%-- 			<td><s:property value="#f.status"/></td> --%>
 			<td>
 				<s:if test='#f.status=="Y"'>
 					审核中
 				</s:if>
-				<s:else>
+				<s:if test='#f.status=="N"'>
 					审核通过
-				</s:else>
+				</s:if>
 			</td>
 			<td>
-			<s:date name="#f.createtime" format="yyyy-MM-dd"/>
-			<td><a href="apply/apply/updateHoliday.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/apply/deleteHoliday.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<s:date name="#f.createtime" format="yyyy-MM-dd"/></td>
+			<td><a href="apply/apply/teacherupdateScholarship.action?id=<s:property value='#f.id'/>">审核</a> 
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/apply/showHoliday.action" method="post">
+	<form name="PageForm" action="apply/apply/showScholarship.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>

@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Controller
 @Scope("prototype")
-public class ApplyScholarshipAction extends ActionSupport {
+public class ApplyScholarshipAction extends ActionSupport{
 	private int id;
 	private Integer pageNo=1;
 	private PageBean pageBean;	
@@ -36,18 +36,31 @@ public class ApplyScholarshipAction extends ActionSupport {
 		return "showScholarships";
 
 	}
+	public String show1(){
+		//funds=fundDao.findAll();
+		pageBean=scholarshipService.findByPage(pageNo,10);
+		return "show1Scholarships";
+	}	
 	
 	public String update(){
-		//System.out.println("我到了这�?+type);
+		//System.out.println("我到了这�?+type);
 		scholarship=scholarshipService.findById(id);
 		return "update";
+	}
+	public String teacherupdate(){
+		//System.out.println("我到了这�?+type);
+		scholarship=scholarshipService.findById(id);
+		return "updateteacher";
 	}
 
 	public String save(){
 		scholarshipService.update(scholarship);
 		return SUCCESS;
 	}
-	
+	public String save1(){
+		scholarshipService.update(scholarship);
+		return "show2";
+	}	
 	public String delete(){
 		scholarshipService.deleteById(id);
 		return SUCCESS;

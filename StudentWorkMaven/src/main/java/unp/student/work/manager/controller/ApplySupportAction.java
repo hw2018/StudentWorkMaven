@@ -36,17 +36,31 @@ public class ApplySupportAction extends ActionSupport {
 		return "showSupports";
 
 	}
+	public String show1(){
+		//funds=fundDao.findAll();
+		pageBean=supportService.findByPage(pageNo,10);
+		return "show1Supports";
+	}
 	
 	public String update(){
-		//System.out.println("我到了这�?+type);
+		//System.out.println("我到了这�?+type);
 		support=supportService.findById(id);
 		return "update";
 	}
+	public String teacherupdate(){
+		//System.out.println("我到了这�?+type);
+		support=supportService.findById(id);
+		return "updateteacher";
+	}	
 
 	public String save(){
 		supportService.update(support);
 		return SUCCESS;
 	}
+	public String save1(){
+		supportService.update(support);
+		return "show2";
+	}	
 	
 	public String delete(){
 		supportService.deleteById(id);

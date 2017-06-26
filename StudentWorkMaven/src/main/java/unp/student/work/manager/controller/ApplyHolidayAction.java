@@ -35,17 +35,28 @@ public class ApplyHolidayAction extends ActionSupport {
 		return "showHolidaies";
 
 	}
-	
+	public String show1(){
+		//funds=fundDao.findAll();
+		pageBean=holidayService.findByPage(pageNo,10);
+		return "show1Holidaies";
+	}
 	public String update(){
 		holiday=holidayService.findById(id);
 		return "update";
 	}
-
+	public String teacherupdate(){
+		//System.out.println("我到了这�?+type);
+		holiday=holidayService.findById(id);
+		return "updateteacher";
+	}	
 	public String save(){
 		holidayService.update(holiday);
 		return SUCCESS;
 	}
-	
+	public String save1(){
+		holidayService.update(holiday);
+		return "show2";
+	}
 	public String delete(){
 		holidayService.deleteById(id);
 		return SUCCESS;

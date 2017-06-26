@@ -19,7 +19,7 @@
 	<table>
 		<tr>
 			<td>编号</td>
-			<td>留校开始时间</td>
+			<td>留校开始开始时间</td>
 			<td>留校结束时间</td>
 			<td>联系电话</td>
 			<td>留宿宿舍</td>
@@ -49,13 +49,12 @@
 			</td>
 			<td>
 			<s:date name="#f.createtime" format="yyyy-MM-dd"/>
-			<td><a href="apply/apply/updateHoliday.action?id=<s:property value='#f.id'/>">修改</a> 
-			<a href="apply/apply/deleteHoliday.action?id=<s:property value='#f.id'/>">删除</a></td>
+			<td><a href="apply/apply/teacherupdateHoliday.action?id=<s:property value='#f.id'/>">审核</a> 
 		</tr>
 	</s:iterator>
 		
 	</table>
-	<form name="PageForm" action="apply/apply/showHoliday.action" method="post">
+	<form name="PageForm" action="apply/apply/show1Holiday.action" method="post">
 			<%@ include file="../common/page.jsp"%>
 	</form>
 </body>

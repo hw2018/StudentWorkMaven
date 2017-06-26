@@ -10,20 +10,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="apply_activity")
 public class Activity {
-@Override
-	public String toString() {
-		return "Activity [id=" + id + ", peoplenumber=" + peoplenumber + ", carnumber=" + carnumber + ", leadteacher="
-				+ leadteacher + ", leadteacherphone=" + leadteacherphone + ", principal=" + principal + ", createTime="
-				+ createTime + "]";
-	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private int peoplenumber;
 	private int carnumber;
 	private String leadteacher;
-	private int leadteacherphone;
 	private String principal;
+	private String status;
 	private Date    createTime;
 	public int getId() {
 		return id;
@@ -49,12 +43,6 @@ public class Activity {
 	public void setLeadteacher(String leadteacher) {
 		this.leadteacher = leadteacher;
 	}
-	public int getLeadteacherphone() {
-		return leadteacherphone;
-	}
-	public void setLeadteacherphone(int leadteacherphone) {
-		this.leadteacherphone = leadteacherphone;
-	}
 	public String getPrincipal() {
 		return principal;
 	}
@@ -67,14 +55,20 @@ public class Activity {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	public Activity(int peoplenumber, int carnumber, String leadteacher, int leadteacherphone, String principal,Date createTime) {
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Activity(int peoplenumber, int carnumber, String leadteacher, String principal,String status,Date createTime) {
 		super();
 		this.peoplenumber = peoplenumber;
 		this.carnumber = carnumber;
 		this.leadteacher = leadteacher;
-		this.leadteacherphone = leadteacherphone;
 		this.principal = principal;
 		this.createTime = createTime;
+		this.status=status;
 	}
 	public Activity() {
 		super();

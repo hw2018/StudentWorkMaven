@@ -18,7 +18,7 @@ public class Support {
 		private String level;
 		private String profession;
 		private String supsort;
-		private int status;
+		private String status;
 		private Date createtime;
 		public int getId() {
 			return id;
@@ -56,10 +56,10 @@ public class Support {
 		public void setSupsort(String supsort) {
 			this.supsort = supsort;
 		}
-		public int getStatus() {
+		public String getStatus() {
 			return status;
 		}
-		public void setStatus(int status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 		public Date getCreatetime() {
@@ -68,7 +68,7 @@ public class Support {
 		public void setCreatetime(Date createtime) {
 			this.createtime = createtime;
 		}
-		public Support(int id, String term, int studentID, String level, String profession, String supsort, int status,
+		public Support(int id, String term, int studentID, String level, String profession, String supsort, String status,
 				Date createtime) {
 			super();
 			this.id = id;

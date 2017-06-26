@@ -403,8 +403,11 @@
     <package  name="activity"  namespace="/apply" extends="struts-default">
 		<action name="*Activity"   class="unp.student.work.manager.controller.ApplyActivityAction" method="{1}">
 			<result name="update">/apply/apply/activity_update.jsp</result>
+			<result name="updateteacher">/apply/apply/teacheractivity_update.jsp</result>
 			<result name="showActivities">/apply/apply/activity_list.jsp</result>	
+			<result name="show1Activities">/apply/apply/teacheractivity_list.jsp</result>
 			<result name="success" type="chain">showActivity</result>			
+			<result name="show2" type="chain">show1Activity</result> 
 		</action>
 
 		<action name="activity_add">
@@ -416,8 +419,11 @@
 	<package name="holiday" namespace="/apply"  extends="struts-default">
 		<action name="*Holiday" class="unp.student.work.manager.controller.ApplyHolidayAction" method="{1}">
 			<result name="update">/apply/apply/holiday_update.jsp</result>
+			<result name="updateteacher">/apply/apply/teacherholiday_update.jsp</result>
 			<result name="showHolidaies">/apply/apply/holiday_list.jsp</result>
+			<result name="show1Holidaies">/apply/apply/teacherholiday_list.jsp</result>
 			<result name="success" type="chain">showHoliday</result>
+			<result name="show2" type="chain">show1Holiday</result> 
 		</action>
 		<!-- 用于链接请求 -->
 		<!-- 这里就是直接显示新增页面 -->
@@ -429,8 +435,11 @@
 	<package name="scholarship" namespace="/apply"  extends="struts-default">
 		<action name="*Scholarship" class="unp.student.work.manager.controller.ApplyScholarshipAction" method="{1}">
 			<result name="update">/apply/apply/scholarship_update.jsp</result>
+			<result name="updateteacher">/apply/apply/teacherscholarship_update.jsp</result>			
 			<result name="showScholarships">/apply/apply/scholarship_list.jsp</result>
-			<result name="success" type="chain">showScholarship</result> 
+			<result name="show1Scholarships">/apply/apply/teacherscholarship_list.jsp</result>			
+			<result name="success" type="chain">showScholarship</result>
+			<result name="show2" type="chain">show1Scholarship</result> 
 		</action>
 		<!-- 用于链接请求 -->
 		<!-- 这里就是直接显示新增页面 -->
@@ -443,7 +452,10 @@
 		<action name="*Support" class="unp.student.work.manager.controller.ApplySupportAction" method="{1}">
 			<result name="update">/apply/apply/support_update.jsp</result>
 			<result name="showSupports">/apply/apply/support_list.jsp</result>
+			<result name="show1Supports">/apply/apply/teachersupport_list.jsp</result>	
+			<result name="updateteacher">/apply/apply/teachersupport_update.jsp</result>
 			<result name="success" type="chain">showSupport</result> 
+			<result name="show2" type="chain">show1Support</result> 
 		</action>
 		<!-- 这里就是直接显示新增页面 -->
 		<action name="support_add">

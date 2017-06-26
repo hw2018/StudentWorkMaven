@@ -44,7 +44,6 @@ public class ApplyActivityServiceImpl extends BaseServiceImpl<Activity> implemen
 		f.setPeoplenumber(activity.getPeoplenumber());
 		f.setCarnumber(activity.getCarnumber());
 		f.setLeadteacher(activity.getLeadteacher());
-		f.setLeadteacherphone(activity.getLeadteacherphone());
 		f.setPrincipal(activity.getPrincipal());
 	}
 	

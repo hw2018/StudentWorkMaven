@@ -32,7 +32,7 @@
 		<h3>更新申请信息</h3>
 	</div>
 	<div class="content-box-content">
-		<s:form name="form1" action="apply/apply/saveScholarship.action" method="post"
+		<s:form name="form1" action="apply/apply/save1Scholarship.action" method="post"
 		onSubmit="return checkNull()">
 			<p>
 				学期：
@@ -54,27 +54,28 @@
 					<input  value="${scholarship.schsort}"class="text-input medium-input" type="text"
 					name="scholarship.schsort" />	
 			</p>
-<!-- 			<p>
-				申请状态： 
+			<p>
+				审核
 				<input type="radio" name="scholarship.status" value="Y"
 				  <s:if test='scholarship.status=="Y"'>checked</s:if>>
 				审核通过 
 				<input type="radio" name="scholarship.status" value="N"
-					<s:if test='scholarship.status=="N"'>checked</s:if>>
-				审核不通过
-			</p> -->
+				<s:if test='scholarship.status=="N"'>checked</s:if>>
+				审核通过
+			</p>
 <!-- 			<p>
 				<input type="radio" name="scholarship.status" value="N" checked />
 			</p> -->
 			<p>
-			<p>
-				<input type="radio" name="scholarship.status" value="Y" checked />Y
-				<input type="radio" name="scholarship.status" value="N" />N
-			</p>
-			</p>
+<%-- 				申请状态： 
+				<s:textfield value="审核" class="text-input large-input" type="text"
+					name="scholarship.status"></s:textfield> --%>
+<!-- 				状态：<input value="审核" class="text-input medium-input" type="text"
+					name="scholarship.status" /> -->
+			</p>			
 			<s:hidden name="scholarship.id" />
 			<p>
-				<input class="button" type="submit" value="修改" /> <input
+				<input class="button" type="submit" value="确定" /> <input
 					class="button" type="reset" value="取消" />
 			</p>
 		</s:form>

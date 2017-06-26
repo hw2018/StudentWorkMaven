@@ -22,8 +22,8 @@
 			<td>活动人数</td>
 			<td>车辆数</td>
 			<td>带队老师</td>
-			<td>带队老师电话</td>
 			<td>负责人</td>
+			<td>申请状态</td>
 			<td>申请时间</td>
 			<td>操作</td>
 		</tr>
@@ -39,8 +39,15 @@
 			<td><s:property value="#f.peoplenumber"/></td>
 			<td><s:property value="#f.carnumber"/></td>
 			<td><s:property value="#f.leadteacher"/></td>
-			<td><s:property value="#f.leadteacherphone"/></td>
 			<td><s:property value="#f.principal"/></td>			
+			<td>
+				<s:if test='#f.status=="Y"'>
+					审核中
+				</s:if>
+				<s:else>
+					审核通过
+				</s:else>
+			</td>
 			<td>
 			<s:date name="#f.createTime" format="yyyy-MM-dd"/>
 			<td><a href="apply/apply/updateActivity.action?id=<s:property value='#f.id'/>">修改</a> 

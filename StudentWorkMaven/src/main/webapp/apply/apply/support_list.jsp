@@ -42,7 +42,15 @@
 			<td><s:property value="#f.profession"/></td>
 			<td><s:property value="#f.level"/></td>			
 			<td><s:property value="#f.supsort"/></td>
-			<td><s:property value="#f.status"/></td>
+<%-- 			<td><s:property value="#f.status"/></td> --%>
+			<td>
+				<s:if test='#f.status=="Y"'>
+					审核中
+				</s:if>
+				<s:else>
+					审核通过
+				</s:else>
+			</td>
 			<td>
 			<s:date name="#f.createtime" format="yyyy-MM-dd"/></td>
 			<td><a href="apply/apply/updateSupport.action?id=<s:property value='#f.id'/>">修改</a> 

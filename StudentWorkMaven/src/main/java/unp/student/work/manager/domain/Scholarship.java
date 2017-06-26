@@ -18,7 +18,7 @@ public class Scholarship {
 	private int studentID;
 	private String profession;
 	private String schsort;
-	private int status;
+	private String status;
 	private Date createtime;
 	public int getId() {
 		return id;
@@ -44,10 +44,10 @@ public class Scholarship {
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public int getStudentID() {
@@ -63,7 +63,7 @@ public class Scholarship {
 		this.profession = profession;
 	}
 
-	public Scholarship(int id, String term, int studentID, String profession, String schsort, int status,
+	public Scholarship(int id, String term, int studentID, String profession, String schsort, String status,
 			Date createtime) {
 		super();
 		this.id = id;

@@ -36,18 +36,29 @@ public class ApplyActivityAction extends ActionSupport {
 		return "showActivities";
 
 	}
-	
+	public String show1(){
+		//funds=fundDao.findAll();
+		pageBean=activityService.findByPage(pageNo,10);
+		return "show1Activities";
+	}
 	public String update(){
-		//System.out.println("我到了这�?+type);
+		//System.out.println("我到了这�?+type);
 		activity=activityService.findById(id);
 		return "update";
 	}
-
+	public String teacherupdate(){
+		//System.out.println("我到了这�?+type);
+		activity=activityService.findById(id);
+		return "updateteacher";
+	}	
 	public String save(){
 		activityService.update(activity);
 		return 	SUCCESS;
 	}
-	
+	public String save1(){
+		activityService.update(activity);
+		return "show2";
+	}	
 	public String delete(){
 		activityService.deleteById(id);
 		return SUCCESS;

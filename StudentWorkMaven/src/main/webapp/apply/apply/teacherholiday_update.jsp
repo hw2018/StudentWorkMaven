@@ -56,7 +56,17 @@
 					name="holiday.statement" />
 			</p>
 			<p>
-				<input class="button" type="submit" value="修改" /> <input
+				审核
+				<input type="radio" name="holiday.status" value="Y"
+				  <s:if test='holiday.status=="Y"'>checked</s:if>>
+				审核通过 
+				<input type="radio" name="holiday.status" value="N"
+				<s:if test='holiday.status=="N"'>checked</s:if>>
+				审核未通过
+			</p>
+			<s:hidden name="holiday.id" />
+			<p>
+				<input class="button" type="submit" value="确定" /> <input
 					class="button" type="reset" value="取消" />
 			</p>
 		</s:form>

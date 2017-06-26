@@ -53,6 +53,10 @@
 				</select>					
 			</p>
 			<p>
+				<input type="radio" name="holiday.status" value="Y" checked />Y
+				<input type="radio" name="holiday.status" value="N"  />N
+			</p>
+			<p>
 				<input class="button" type="submit" value="提交" /> <input
 					class="button" type="reset" value="取消" />
 			</p>

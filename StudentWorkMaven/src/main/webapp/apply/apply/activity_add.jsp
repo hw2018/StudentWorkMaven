@@ -43,13 +43,13 @@
 					name="activity.leadteacher" />
 			</p>
 			<p>
-				带队老师电话：<input class="text-input medium-input" type="text"
-					name="activity.leadteacherphone" />
-			</p>
-			<p>
 				负责人：<input class="text-input medium-input" type="text"
 					name="activity.principal" />
 			</p>
+			<p>
+				<input type="radio" name="activity.status" value="Y" checked />Y
+				<input type="radio" name="activity.status" value="N"  />N
+			</p>	
 			<p>
 				<input class="button" type="submit" value="提交" /> <input
 					class="button" type="reset" value="取消" />

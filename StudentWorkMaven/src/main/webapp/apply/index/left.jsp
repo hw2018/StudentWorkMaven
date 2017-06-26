@@ -58,15 +58,6 @@
 							<li><a href="apply/support_add.action" target="dmMain">资助申请</a></li>
 							<li><a href="apply/showSupport.action" target="dmMain">申请公示</a></li>
 						</ul></li>
-
-					<li><a href="#" class="nav-top-item "> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-							勤工俭学
-					</a>
-						<ul>
-							<li><a href="" target="dmMain">岗位申请</a></li>
-							<li><a href="" target="dmMain">记录查询</a></li>
-							<li><a href="" target="dmMain">审核公示</a></li>
-						</ul></li>
 					<li><a href="#" class="nav-top-item">
 							活动申请
 					</a>
