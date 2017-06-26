@@ -61,12 +61,14 @@
 
 	function checkinfo(form){
 			
-			var reg=/\\d{9}/ig;
+			var reg=/^\d{9}$/ig;
 		var situation=form.situation.value;
 
 		var strings = situation.split(",");
 		for(var i=0;i<strings.length;i++){
+
 					if(!reg.test(strings[i])){
+						
 						document.getElementById('errorinfo').innerHTML="格式不正确";
 						return false;
 					}

@@ -30,11 +30,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<tr>
     		<th style="width:80px;">选择</th>
     		<th style="width:120px;">姓名</th>
+    		<th style="width:120px;">分数</th>
     	</tr>
-    	<c:forEach var="item" items="${counsellor }">
+    	<c:forEach var="item" items="${counsellor }" varStatus="loop">
     	<tr>
     		<td><input  value="${item.id }" name="select"   type="radio"></td>
     		<td>${item.name }</td>
+    		<c:choose>
+    			<c:when test="${Score[loop.count-1]=='0' }">
+    			<td>未评价</td>
+    			</c:when>
+    			<c:otherwise>
+    			<td>${Score[loop.count-1]}</td>
+    			</c:otherwise>
+    		</c:choose>
     	</tr>
     	</c:forEach>
     	

@@ -49,8 +49,7 @@
 <br>
   <form name="PageForm" action="comprehensive/show_comprehensive.action" method="post">
 			<a id="last" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage-1 }">上一页</a>
-			<a href="#">${pageBean.curPage}......</a>
-			<a href="#">${pageBean.maxPage}</a>
+			<a id="cur" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage }">${pageBean.curPage }</a>
 			<a id="next" name="pageNum" href="comprehensive/show_comprehensive.action?pageno=${pageBean.curPage+1 }">下一页</a>
 			去第<input type="text"  name="pageno"/>页
 			<input type="submit"  vlue="确定"  onclick="return checkpage(this.form)"/>
@@ -66,22 +65,33 @@
 				 nextbutton.style.visibility="hidden";
 				  }		
 				  
-				   var quanxian="${sessionScope.quanxian}";				  
-				 if(quanxian.charAt(3)!='1'){
-				  var deal=document.getElementsByClassName('deal');
-				  for(var i=0;i<deal.length;i++){
-				  deal[i].style.display="none";
-				  }
-				 	  }else{
-				 	   var delete1=document.getElementsByClassName('delete');
-				  for(var i=0;i<delete1.length;i++){
-				  delete1[i].style.display="none";
-				 	  }
-				 	   var apply=document.getElementsByClassName('apply');
-				  for(var i=0;i<apply.length;i++){
-				  apply[i].style.display="none";
-				 	  }
-				 	  }
+				   var quanxian="${sessionScope.quanxian}";	
+				   var manager="${manager}";				  
+					 if(quanxian.charAt(3)!='1'){
+					  var deal=document.getElementsByClassName('deal');
+				 			 for(var i=0;i<deal.length;i++){
+				 			 deal[i].style.display="none";
+				 			 }
+				 	  	}else{
+				 	  		if(manager==1){
+				 	  			 var delete1=document.getElementsByClassName('delete');
+				  				for(var i=0;i<delete1.length;i++){
+				 				 delete1[i].style.display="none";
+				 	 			 }
+				 	 			 var studentid="${sessionScope.studentid}";	
+				 	  			 var apply=document.getElementsByClassName('apply');
+				 				 for(var i=0;i<apply.length;i++){
+				 		 		apply[i].style.display="none";
+				 	  			}
+				 	  		}else{
+				 	  			 var deal=document.getElementsByClassName('deal');
+				 			 	for(var i=0;i<deal.length;i++){
+				 				 deal[i].style.display="none";
+				 			 	}
+				 	  		}
+				 		  }
+				 	  
+				 	   
 				 	  
 				 function checkpage(form) {
 

@@ -139,6 +139,28 @@ public class WorkCounsellorServiceImpl implements WorkCounsellorService {
 		
 		return pageBean;
 	}
+	@Override
+	public List findscoreByStudent(String studentid) {
+		// TODO Auto-generated method stub
+		List studentresult=new ArrayList<Integer>();
+		List teacherList=this.findCounsellorByStudent(studentid);
+		for(int i=0;i<teacherList.size();i++){
+			
+			counsellor counsellor=(counsellor)teacherList.get(i);
+			student_counsellor sc=studentCounsellorDao.getRecordByStudentAndTeacher(studentid, counsellor.getId());
+			if(sc==null){
+				
+				studentresult.add(0);
+			}
+			else{
+				studentresult.add(sc.getScore());
+				}
+			}
+		
+		return studentresult;
+		}
+
+	
 
 
 }

@@ -14,6 +14,9 @@ public interface WorkCounsellorService {
 	
 	public List findProblem();
 	
+	
+	public List findscoreByStudent(String studentid);
+	
 	public List findResult(String studentid,int select);
 	
 	

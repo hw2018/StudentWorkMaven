@@ -40,9 +40,19 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 	private int cid;  //comprehensive id
 	private int pageno=1;
 	
+	//管理员判断执行个人综测申诉还是管理综测申诉操作
+	private int manager;
 	
 	
 
+
+	public int getManager() {
+		return manager;
+	}
+
+	public void setManager(int manager) {
+		this.manager = manager;
+	}
 
 	public String getReason() {
 		return reason;
@@ -145,7 +155,7 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 	//申诉查询
 	public String applyshow(){//
 		String id=(String) session.get("studentid");
-		//判断是否有晚点管理员权限
+		//判断是否有综测管理员权限
 		//可以直接获取session的权限判断   省略数据库查询
 		//下次修改
 		/**
@@ -160,10 +170,16 @@ ModelDriven<comprehensive_record>,RequestAware,SessionAware {
 			char[] s=studentQuanxian.getQuanxian().toCharArray();
 			if(s[2]=='1'){
 				//有执行添加操作
-			
-				 PageBean pageBean=comprehensiveService.showapplyByManager(pageno);
-				 request.put("pageBean", pageBean);
-				 
+					if(manager==1){
+						PageBean pageBean=comprehensiveService.showapplyByManager(pageno);
+						request.put("pageBean", pageBean);
+						request.put("manager", manager);
+					}
+					else{
+						PageBean pageBean=comprehensiveService.showapplyByStudent(id, pageno);
+						request.put("pageBean", pageBean);
+						request.put("manager", manager);
+					}
 				 
 				return "applyshow";
 			}else{

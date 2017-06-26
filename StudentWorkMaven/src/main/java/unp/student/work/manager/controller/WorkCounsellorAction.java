@@ -104,6 +104,7 @@ public class WorkCounsellorAction extends ActionSupport implements RequestAware,
 		String studentid=(String)session.get("studentid");
 		System.out.println(studentid);
 		request.put("counsellor", counsellorService.findCounsellorByStudent(studentid));
+		request.put("Score", counsellorService.findscoreByStudent(studentid));
 		return "select";
 	}
 	

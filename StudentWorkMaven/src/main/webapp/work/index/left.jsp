@@ -53,7 +53,8 @@
 					<li><a href="#" class="nav-top-item">综测管理</a>
 								<ul>
 									<li><a href="comprehensive/show_comprehensive.action" target="dmMain">综测信息</a></li>
-									<li><a href="comprehensive/applyshow_comprehensive.action" target="dmMain">综测申诉</a></li>
+									<li id="manager"><a href="comprehensive/applyshow_comprehensive.action?manager=1" target="dmMain">综测申诉处理</a></li>
+									<li><a href="comprehensive/applyshow_comprehensive.action?manager=0" target="dmMain">综测个人申诉</a></li>
 								</ul>
 					</li>
 					<li><a href="#" class="nav-top-item">辅导员考核</a>
@@ -71,5 +72,12 @@
 		</div>
 		<!-- End #sidebar -->
 	</div>
+	<script type="text/javascript">
+		  var quanxian="${sessionScope.quanxian}";				  
+				 if(quanxian.charAt(2)!='1'){
+				  var add=document.getElementById('manager');
+				  add.style.display="none";
+				  }
+	</script>
 </body>
 </html>

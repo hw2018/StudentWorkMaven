@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../common/head.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -33,7 +34,7 @@
 		<tr>
 			<td><a href="lateinfo/info_lateinfo.action?id=${item.id }">${item.id }</a></td>
 			<td><a href="lateinfo/info_lateinfo.action?id=${item.id }">${item.num }</a></td>
-			<td><a href="lateinfo/info_lateinfo.action?id=${item.id }">${item.time }</a></td>
+			<td><a href="lateinfo/info_lateinfo.action?id=${item.id }"><fmt:formatDate value="${item.time}" pattern="yyyy-MM-dd"/></a></td>
 			
 			<td><a href="lateinfo/info_lateinfo.action?id=${item.id }">${item.personInfo.studentid }</a></td>
 			<td class="update"><a name="update" href="lateinfo/info_lateinfo.action?id=${item.id }"> 修改</a></td>
