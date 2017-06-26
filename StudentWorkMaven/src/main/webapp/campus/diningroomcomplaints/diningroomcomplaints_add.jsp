@@ -30,11 +30,11 @@
 		<form name="form1" action="diningroomcomplaints/addDiningroomcomplaints.action" method="post"
 			onSubmit="return checkNull()">
 			<p>
-				投诉人姓名：<input class="text-input medium-input" type="text"
+				投诉人姓名：<input value="${diningroomcomplaints.name}"class="text-input medium-input" type="text"
 					name="diningroomcomplaints.name" />
 			</p>
 			<p>
-				食堂名称： <input class="text-input medium-input" type="text"
+				食堂名称： <input value="${diningroomcomplaints.diningroom}"class="text-input medium-input" type="text"
 					name="diningroomcomplaints.diningroom" />
 			</p>
 			<p>
@@ -44,8 +44,10 @@
 			</p>
 			<p>
 				具体理由：
-				<textarea class="text-input textarea" rows="16" cols="50"
-					name="diningroomcomplaints.reason"></textarea>
+				<input  class="text-input medium-input" type="text"
+					name="diningroomcomplaints.reason" />
+				<!--<textarea class="text-input textarea" rows="16" cols="50"
+					name="diningroomcomplaints.reason"></textarea>-->
 			</p>
 			<p>
 				<input class="button" type="submit" value="新增" /> 

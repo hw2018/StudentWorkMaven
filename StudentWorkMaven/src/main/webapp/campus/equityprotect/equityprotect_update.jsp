@@ -36,8 +36,10 @@
 			onSubmit="return checkNull()">
 			<p>
 				申请人姓名：
-				<s:textfield class="text-input large-input" type="text"
-					name="equityprotect.name"></s:textfield>
+				<input  value="${equityprotect.name}"class="text-input medium-input" type="text"
+					name="equityprotect.name" />
+				<!--<s:textfield class="text-input large-input" type="text"
+					name="equityprotect.name"></s:textfield>-->
 			</p>
 			<p>
 				性别：
@@ -62,8 +64,10 @@
 			</p>
 			<p>
 				权益维护描述：
-				<s:textarea class="text-input textarea" rows="16" cols="50"
-					name="equityprotect.description"></s:textarea>
+				<input  value="${equityprotect.description}"class="text-input medium-input" type="text"
+					name="equityprotect.description" />
+				<!--<s:textarea class="text-input textarea" rows="16" cols="50"
+					name="equityprotect.description"></s:textarea>-->
 			</p>
 
 			<s:hidden name="equityprotect.id" />
